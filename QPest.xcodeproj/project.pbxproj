@@ -54,6 +54,38 @@
 		6B52B3731DA8676B00D632E1 /* QPest */ = {
 			isa = PBXGroup;
 			children = (
+				6B52B3891DA867E700D632E1 /* General */,
+				6B52B3881DA867DF00D632E1 /* Monitoring */,
+				6B52B3871DA867D300D632E1 /* Identification */,
+				6B52B3861DA867CF00D632E1 /* Map */,
+			);
+			path = QPest;
+			sourceTree = "<group>";
+		};
+		6B52B3861DA867CF00D632E1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		6B52B3871DA867D300D632E1 /* Identification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Identification;
+			sourceTree = "<group>";
+		};
+		6B52B3881DA867DF00D632E1 /* Monitoring */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Monitoring;
+			sourceTree = "<group>";
+		};
+		6B52B3891DA867E700D632E1 /* General */ = {
+			isa = PBXGroup;
+			children = (
 				6B52B3741DA8676B00D632E1 /* AppDelegate.swift */,
 				6B52B3761DA8676B00D632E1 /* ViewController.swift */,
 				6B52B3781DA8676B00D632E1 /* Main.storyboard */,
@@ -61,7 +93,7 @@
 				6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */,
 				6B52B3801DA8676B00D632E1 /* Info.plist */,
 			);
-			path = QPest;
+			name = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

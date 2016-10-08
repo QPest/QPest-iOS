@@ -78,7 +78,7 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.generateCellForMessage(tableview: tableView, index: indexPath as NSIndexPath)
+        return self.generateCell(tableview: tableView, index: indexPath as NSIndexPath)
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,7 +89,7 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         // Ao selecionar a tabela
     }
     
-    func generateCellForMessage(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
+    func generateCell(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
         let cell = tableview.dequeueReusableCell(withIdentifier: IdentificationMainTableViewCell.reuseIdentifier, for: index as IndexPath) as! IdentificationMainTableViewCell
         
         cell.selectionStyle = .none
@@ -103,6 +103,4 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         return cell
     }
     
-
-
 }

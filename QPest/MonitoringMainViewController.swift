@@ -13,14 +13,16 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     
     let monitoringTitle = "Monitoramento"
+    var notificationIcon : String = String()
     
-    let titles : [String] = []
+    var notificationButton : UIBarButtonItem = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.setupNavigationBar()
         self.setupTableView()
+        self.setupNotifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +31,31 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     private func setupNavigationBar(){
-    
         self.navigationItem.title = self.monitoringTitle
+    }
+    
+    private func setupNotifications(){
+    
+        self.notificationIcon = "notificationOn"
+        
+        self.setupNotificationButton()
+    }
+    
+    private func setupNotificationButton(){
+        
+        let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
+        let button = UIButton(frame: rect)
+        button.addTarget(self, action: #selector(MonitoringMainViewController.didClickNotification), for: .touchUpInside)
+        button.setImage(UIImage(named: self.notificationIcon), for: .normal)
+        self.notificationButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = self.notificationButton
+        
+    }
+    
+    func didClickNotification(){
+        
+        self.performSegue(withIdentifier: "goNotificationView", sender: nil)
+  
     }
     
     func setupTableView(){

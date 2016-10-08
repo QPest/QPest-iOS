@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,7 +13,7 @@
                 <navigationController id="65q-yy-MBZ" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="384" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5GP-x1-mkd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="5GP-x1-mkd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,11 +57,74 @@
                     <navigationItem key="navigationItem" id="LNx-aR-6Ew"/>
                     <connections>
                         <outlet property="tableView" destination="vbz-vs-c1Y" id="r37-4L-Q73"/>
+                        <segue destination="Ie3-aR-u9I" kind="presentation" identifier="goNotificationView" id="zbd-AM-lZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMa-zB-KMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-40" y="-376.46176911544228"/>
         </scene>
+        <!--Monitoring Notification View Controller-->
+        <scene sceneID="3W7-fo-Pqs">
+            <objects>
+                <viewController id="Ie3-aR-u9I" customClass="MonitoringNotificationViewController" customModule="QPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lAZ-wX-bG6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cj0-i1-cLu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lon-6Q-ajL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe7-Ut-8vy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="V1N-3Z-gKB"/>
+                                    <constraint firstAttribute="height" constant="28" id="soR-Ge-sOK"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="dismissAction:" destination="Ie3-aR-u9I" eventType="touchUpInside" id="UNf-mi-fOg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vj-KB-bTt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="L4g-nJ-BG0"/>
+                                    <constraint firstAttribute="height" constant="21" id="uxp-ds-QxX"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Notificações">
+                                        <attributes>
+                                            <color key="NSColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="Avenir-Book"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F2w-7U-iIi">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fe7-Ut-8vy" firstAttribute="top" secondItem="lAZ-wX-bG6" secondAttribute="bottom" constant="10" id="8N3-6r-zhI"/>
+                            <constraint firstAttribute="trailing" secondItem="F2w-7U-iIi" secondAttribute="trailing" id="8Wv-Xf-Dc0"/>
+                            <constraint firstItem="7Vj-KB-bTt" firstAttribute="top" secondItem="lAZ-wX-bG6" secondAttribute="bottom" constant="14" id="HFY-m2-pjf"/>
+                            <constraint firstItem="Cj0-i1-cLu" firstAttribute="top" secondItem="F2w-7U-iIi" secondAttribute="bottom" id="Tgx-nM-6kP"/>
+                            <constraint firstItem="fe7-Ut-8vy" firstAttribute="leading" secondItem="lon-6Q-ajL" secondAttribute="leadingMargin" id="lP1-sS-GjI"/>
+                            <constraint firstItem="F2w-7U-iIi" firstAttribute="top" secondItem="lAZ-wX-bG6" secondAttribute="bottom" constant="52" id="t54-zi-Kj6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Vj-KB-bTt" secondAttribute="trailing" constant="121" id="vDJ-eo-z7s"/>
+                            <constraint firstItem="7Vj-KB-bTt" firstAttribute="leading" secondItem="lon-6Q-ajL" secondAttribute="leadingMargin" constant="121" id="wOb-5l-mDr"/>
+                            <constraint firstItem="F2w-7U-iIi" firstAttribute="leading" secondItem="lon-6Q-ajL" secondAttribute="leading" id="zh1-dl-9Gw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEH-KB-egM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="684" y="-376.46176911544228"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="close" width="38" height="37"/>
+    </resources>
 </document>

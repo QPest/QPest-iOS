@@ -31,6 +31,7 @@
 		6B52B3B41DA9322A00D632E1 /* MonitoringHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B3B21DA9322A00D632E1 /* MonitoringHeaderTableViewCell.xib */; };
 		6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3B51DA9323800D632E1 /* MonitoringInfoTableViewCell.swift */; };
 		6B52B3B81DA9323800D632E1 /* MonitoringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B3B61DA9323800D632E1 /* MonitoringInfoTableViewCell.xib */; };
+		6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3BA1DA941EA00D632E1 /* MonitoringNotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		6B52B3B21DA9322A00D632E1 /* MonitoringHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6B52B3B51DA9323800D632E1 /* MonitoringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringInfoTableViewCell.swift; sourceTree = "<group>"; };
 		6B52B3B61DA9323800D632E1 /* MonitoringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringInfoTableViewCell.xib; sourceTree = "<group>"; };
+		6B52B3BA1DA941EA00D632E1 /* MonitoringNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringNotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				6B52B39B1DA86D7000D632E1 /* MonotoringStoryboard.storyboard */,
 				6B52B3A51DA86DEB00D632E1 /* MonitoringMainViewController.swift */,
+				6B52B3BA1DA941EA00D632E1 /* MonitoringNotificationViewController.swift */,
 				6B52B3B91DA9323E00D632E1 /* Table View */,
 			);
 			name = Monitoring;
@@ -291,6 +294,7 @@
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
+				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,
 				6B52B3941DA86AAB00D632E1 /* CustomTabBarItem.swift in Sources */,
 				6B52B3B31DA9322A00D632E1 /* MonitoringHeaderTableViewCell.swift in Sources */,

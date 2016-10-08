@@ -40,13 +40,25 @@
                     <view key="view" contentMode="scaleToFill" id="JhP-qt-VFc">
                         <rect key="frame" x="0.0" y="64" width="384" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="edg-dp-iup"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="edg-dp-iup" secondAttribute="trailing" id="ETd-Ud-S4u"/>
+                            <constraint firstItem="dbj-KH-JIK" firstAttribute="top" secondItem="edg-dp-iup" secondAttribute="bottom" id="UZx-Z6-eWZ"/>
+                            <constraint firstItem="edg-dp-iup" firstAttribute="top" secondItem="i1l-4o-hbs" secondAttribute="bottom" id="pnT-Rq-yft"/>
+                            <constraint firstItem="edg-dp-iup" firstAttribute="leading" secondItem="JhP-qt-VFc" secondAttribute="leading" id="zh5-sb-qaL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MGV-Fv-7Yh"/>
+                    <connections>
+                        <outlet property="mapView" destination="edg-dp-iup" id="hiG-fp-pxJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLT-L2-j4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="37"/>
+            <point key="canvasLocation" x="-580.79999999999995" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>

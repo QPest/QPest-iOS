@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 class MapMainViewController: UIViewController {
 
     let mapTitle = "Meu Terreno"
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

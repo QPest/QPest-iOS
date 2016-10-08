@@ -10,10 +10,6 @@ import UIKit
 
 class QPestTabBarController: UITabBarController, CustomTabBarDataSource, CustomTabBarDelegate, UITabBarControllerDelegate  {
     
-    let monitoringTitle = ""
-    let identificationTitle = ""
-    let mapTitle = ""
-    
     let monitoringIcon = "monitoringIcon"
     let identificationIcon = "cameraIcon"
     let mapIcon = "mapIcon"
@@ -66,7 +62,6 @@ class QPestTabBarController: UITabBarController, CustomTabBarDataSource, CustomT
 
         // first view controller
         if let monitoringView = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "MonotoringStoryboard", identifier: ""){
-            monitoringView.tabBarItem.title = self.monitoringTitle
             monitoringView.tabBarItem.image = UIImage(named: self.monitoringIcon)
             
             viewControllers.append(monitoringView)
@@ -75,7 +70,6 @@ class QPestTabBarController: UITabBarController, CustomTabBarDataSource, CustomT
         // second view controller
 
         if let identificationView = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "IdentificationStoryboard", identifier: ""){
-            identificationView.tabBarItem.title = "Identificação"
             identificationView.tabBarItem.image = UIImage(named: self.identificationIcon)
             
             viewControllers.append(identificationView)
@@ -85,7 +79,6 @@ class QPestTabBarController: UITabBarController, CustomTabBarDataSource, CustomT
         // third view controller
         
         if let mapView = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "MapStoryboard", identifier: ""){
-            mapView.tabBarItem.title = "Meu Terreno"
             mapView.tabBarItem.image = UIImage(named: self.mapIcon)
             
             viewControllers.append(mapView)

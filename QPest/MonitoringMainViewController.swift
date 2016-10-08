@@ -11,6 +11,7 @@ import UIKit
 class MonitoringMainViewController: UIViewController {
 
     let monitoringTitle = "Monitoramento"
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

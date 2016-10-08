@@ -25,6 +25,8 @@
 		6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3A51DA86DEB00D632E1 /* MonitoringMainViewController.swift */; };
 		6B52B3A91DA87A2900D632E1 /* IdentificationMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3A71DA87A2900D632E1 /* IdentificationMainTableViewCell.swift */; };
 		6B52B3AA1DA87A2900D632E1 /* IdentificationMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B3A81DA87A2900D632E1 /* IdentificationMainTableViewCell.xib */; };
+		6B52B3AD1DA920F300D632E1 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */; };
+		6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		6B52B3A51DA86DEB00D632E1 /* MonitoringMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringMainViewController.swift; sourceTree = "<group>"; };
 		6B52B3A71DA87A2900D632E1 /* IdentificationMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMainTableViewCell.swift; sourceTree = "<group>"; };
 		6B52B3A81DA87A2900D632E1 /* IdentificationMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IdentificationMainTableViewCell.xib; sourceTree = "<group>"; };
+		6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,7 @@
 			children = (
 				6B52B3731DA8676B00D632E1 /* QPest */,
 				6B52B3721DA8676B00D632E1 /* Products */,
+				6B52B3AE1DA922C400D632E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				6B52B3741DA8676B00D632E1 /* AppDelegate.swift */,
+				6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */,
 				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
 				6B52B38E1DA86A1F00D632E1 /* Initial Tab Bar */,
 				6B52B38F1DA86A2900D632E1 /* Others */,
@@ -165,6 +172,14 @@
 				6B52B3A81DA87A2900D632E1 /* IdentificationMainTableViewCell.xib */,
 			);
 			name = "Main Table View Cell";
+			sourceTree = "<group>";
+		};
+		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +270,7 @@
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,
 				6B52B3941DA86AAB00D632E1 /* CustomTabBarItem.swift in Sources */,
+				6B52B3AD1DA920F300D632E1 /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

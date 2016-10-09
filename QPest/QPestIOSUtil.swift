@@ -25,12 +25,33 @@ class QPestIOSUtil: NSObject {
     }
     
     class func getViewControllerToShow()->UIViewController{
-        if let initialViewController = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "QPestTabBarController", identifier: ""){
-            return initialViewController
+       
+        if (QPestIOSUtil.checkIfUserAgreedTerms() == false){
+            if let initialViewController = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "OnboardingStoryboard", identifier: ""){
+                return initialViewController
+            }
+        }
+        else{
+        
+            if let initialViewController = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "QPestTabBarController", identifier: ""){
+                return initialViewController
+            }
         }
         
         return UIViewController()
         
+    }
+    
+    //MARK:Checks if the user has agreed with terms of us
+    
+    class func checkIfUserAgreedTerms()->Bool{
+        let defaults = UserDefaults.standard
+        return defaults.bool(forKey: "userAgreedTerms")
+    }
+    
+    class func setUserAgreedTerms(status : Bool){
+        let defaults = UserDefaults.standard
+        defaults.set(status, forKey: "userAgreedTerms")
     }
     
     class func getRect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {

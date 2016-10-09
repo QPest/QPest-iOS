@@ -16,4 +16,5 @@ class ColorPalette: NSObject {
     let pragueTableViewColor = UIColor.colorWithHexString(hex: "E3625F")
     let naturalEnemyTableViewColor = UIColor.colorWithHexString(hex: "B8E986")
     
+    let paperOnboardingColors : [UIColor] = [ UIColor.colorWithHexString(hex: "3CA95C"), UIColor.colorWithHexString(hex: "E67E22"), UIColor.colorWithHexString(hex: "3498DB"), UIColor.colorWithHexString(hex: "34495E")]
 }

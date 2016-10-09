@@ -40,6 +40,7 @@
 		6B52B3D41DAA8D1B00D632E1 /* SurveyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D31DAA8D1B00D632E1 /* SurveyMainViewController.swift */; };
 		6B52B3D81DAA912C00D632E1 /* MonitoringLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D71DAA912C00D632E1 /* MonitoringLog.swift */; };
 		6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D91DAA91B100D632E1 /* MonitoringLogDataSource.swift */; };
+		6B52B3DF1DAA946A00D632E1 /* IdentificationManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		6B52B3D31DAA8D1B00D632E1 /* SurveyMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyMainViewController.swift; sourceTree = "<group>"; };
 		6B52B3D71DAA912C00D632E1 /* MonitoringLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringLog.swift; sourceTree = "<group>"; };
 		6B52B3D91DAA91B100D632E1 /* MonitoringLogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringLogDataSource.swift; sourceTree = "<group>"; };
+		6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationManualViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				6B52B39D1DA86D8600D632E1 /* IdentificationStoryboard.storyboard */,
 				6B52B3CF1DAA8C3700D632E1 /* Main */,
+				6B52B3DD1DAA945500D632E1 /* Manual */,
 			);
 			name = Identification;
 			sourceTree = "<group>";
@@ -310,6 +313,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		6B52B3DD1DAA945500D632E1 /* Manual */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */,
+			);
+			name = Manual;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,6 +439,7 @@
 				6B52B3B31DA9322A00D632E1 /* MonitoringHeaderTableViewCell.swift in Sources */,
 				6B52B3D41DAA8D1B00D632E1 /* SurveyMainViewController.swift in Sources */,
 				6B52B3AD1DA920F300D632E1 /* ColorPalette.swift in Sources */,
+				6B52B3DF1DAA946A00D632E1 /* IdentificationManualViewController.swift in Sources */,
 				6B52B3D81DAA912C00D632E1 /* MonitoringLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

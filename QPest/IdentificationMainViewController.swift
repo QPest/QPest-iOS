@@ -86,7 +86,17 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Ao selecionar a tabela
+        
+        if indexPath.row == 0{
+            // Camera selected
+        }
+        else  if indexPath.row == 1{
+            // Camera library selected
+        }
+        else if indexPath.row == 2{
+            self.performSegue(withIdentifier: "goManual", sender: nil)
+        }
+        
     }
     
     func generateCell(tableview : UITableView, index : NSIndexPath)->UITableViewCell{

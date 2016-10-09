@@ -47,6 +47,7 @@
                             <constraint firstItem="lu6-nu-Gph" firstAttribute="top" secondItem="5fX-Fo-Sab" secondAttribute="bottom" constant="107" id="zim-Oj-YX2"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="continueButton" destination="5fX-Fo-Sab" id="N0y-IW-VvF"/>
                         <segue destination="L01-cz-4XS" kind="presentation" identifier="goTerms" id="gqy-lj-Ira"/>
@@ -132,6 +133,7 @@
                             <constraint firstItem="PWY-Tg-ghX" firstAttribute="leading" secondItem="gzb-Cp-3CE" secondAttribute="leadingMargin" id="vSr-dL-Df0"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="textView" destination="PWY-Tg-ghX" id="woQ-Gv-wtF"/>
                     </connections>

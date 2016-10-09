@@ -37,6 +37,9 @@
 		6B52B3C51DA975DA00D632E1 /* QPestTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3C41DA975DA00D632E1 /* QPestTermsViewController.swift */; };
 		6B52B3C71DA975E800D632E1 /* QPestPaperOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3C61DA975E800D632E1 /* QPestPaperOnboardingViewController.swift */; };
 		6B52B3CB1DA9E72200D632E1 /* terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B3CA1DA9E72200D632E1 /* terms.txt */; };
+		6B52B3D41DAA8D1B00D632E1 /* SurveyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D31DAA8D1B00D632E1 /* SurveyMainViewController.swift */; };
+		6B52B3D81DAA912C00D632E1 /* MonitoringLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D71DAA912C00D632E1 /* MonitoringLog.swift */; };
+		6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D91DAA91B100D632E1 /* MonitoringLogDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		6B52B3C41DA975DA00D632E1 /* QPestTermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestTermsViewController.swift; sourceTree = "<group>"; };
 		6B52B3C61DA975E800D632E1 /* QPestPaperOnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestPaperOnboardingViewController.swift; sourceTree = "<group>"; };
 		6B52B3CA1DA9E72200D632E1 /* terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = terms.txt; sourceTree = "<group>"; };
+		6B52B3D31DAA8D1B00D632E1 /* SurveyMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyMainViewController.swift; sourceTree = "<group>"; };
+		6B52B3D71DAA912C00D632E1 /* MonitoringLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringLog.swift; sourceTree = "<group>"; };
+		6B52B3D91DAA91B100D632E1 /* MonitoringLogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringLogDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +113,16 @@
 		6B52B3731DA8676B00D632E1 /* QPest */ = {
 			isa = PBXGroup;
 			children = (
-				6B52B3891DA867E700D632E1 /* General */,
+				6B52B3D11DAA8C8900D632E1 /* Delegate and Util */,
+				6B52B3DB1DAA92C400D632E1 /* Model */,
+				6B52B38E1DA86A1F00D632E1 /* Initial Tab Bar */,
 				6B52B3881DA867DF00D632E1 /* Monitoring */,
 				6B52B3871DA867D300D632E1 /* Identification */,
 				6B52B3861DA867CF00D632E1 /* Map */,
+				6B52B3D21DAA8CDD00D632E1 /* Survey */,
 				6B52B3C11DA9759100D632E1 /* Onboarding */,
+				6B52B3CC1DAA8BC200D632E1 /* FrontEnd Extensions */,
+				6B52B38F1DA86A2900D632E1 /* Others */,
 			);
 			path = QPest;
 			sourceTree = "<group>";
@@ -120,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				6B52B39F1DA86D8E00D632E1 /* MapStoryboard.storyboard */,
-				6B52B3A11DA86DDB00D632E1 /* MapMainViewController.swift */,
+				6B52B3D01DAA8C4C00D632E1 /* Main */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -129,8 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				6B52B39D1DA86D8600D632E1 /* IdentificationStoryboard.storyboard */,
-				6B52B3A31DA86DE300D632E1 /* IdentificationMainViewController.swift */,
-				6B52B3AB1DA87A5C00D632E1 /* Main Table View Cell */,
+				6B52B3CF1DAA8C3700D632E1 /* Main */,
 			);
 			name = Identification;
 			sourceTree = "<group>";
@@ -139,24 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				6B52B39B1DA86D7000D632E1 /* MonotoringStoryboard.storyboard */,
-				6B52B3A51DA86DEB00D632E1 /* MonitoringMainViewController.swift */,
-				6B52B3BA1DA941EA00D632E1 /* MonitoringNotificationViewController.swift */,
-				6B52B3B91DA9323E00D632E1 /* Table View */,
+				6B52B3CD1DAA8C0400D632E1 /* Main */,
+				6B52B3CE1DAA8C1E00D632E1 /* Notification */,
 			);
 			name = Monitoring;
-			sourceTree = "<group>";
-		};
-		6B52B3891DA867E700D632E1 /* General */ = {
-			isa = PBXGroup;
-			children = (
-				6B52B3741DA8676B00D632E1 /* AppDelegate.swift */,
-				6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */,
-				6B52B3971DA86AF900D632E1 /* QPestIOSUtil.swift */,
-				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
-				6B52B38E1DA86A1F00D632E1 /* Initial Tab Bar */,
-				6B52B38F1DA86A2900D632E1 /* Others */,
-			);
-			name = General;
 			sourceTree = "<group>";
 		};
 		6B52B38E1DA86A1F00D632E1 /* Initial Tab Bar */ = {
@@ -173,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */,
-				6B52B3991DA86B4D00D632E1 /* UIColor+Util.swift */,
 				6B52B3801DA8676B00D632E1 /* Info.plist */,
 				6B52B3CA1DA9E72200D632E1 /* terms.txt */,
 			);
@@ -227,6 +222,92 @@
 				6B52B3C41DA975DA00D632E1 /* QPestTermsViewController.swift */,
 			);
 			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		6B52B3CC1DAA8BC200D632E1 /* FrontEnd Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3991DA86B4D00D632E1 /* UIColor+Util.swift */,
+				6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */,
+				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
+			);
+			name = "FrontEnd Extensions";
+			sourceTree = "<group>";
+		};
+		6B52B3CD1DAA8C0400D632E1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3A51DA86DEB00D632E1 /* MonitoringMainViewController.swift */,
+				6B52B3B91DA9323E00D632E1 /* Table View */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		6B52B3CE1DAA8C1E00D632E1 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3BA1DA941EA00D632E1 /* MonitoringNotificationViewController.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		6B52B3CF1DAA8C3700D632E1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3A31DA86DE300D632E1 /* IdentificationMainViewController.swift */,
+				6B52B3AB1DA87A5C00D632E1 /* Main Table View Cell */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		6B52B3D01DAA8C4C00D632E1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3A11DA86DDB00D632E1 /* MapMainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		6B52B3D11DAA8C8900D632E1 /* Delegate and Util */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3741DA8676B00D632E1 /* AppDelegate.swift */,
+				6B52B3971DA86AF900D632E1 /* QPestIOSUtil.swift */,
+			);
+			name = "Delegate and Util";
+			sourceTree = "<group>";
+		};
+		6B52B3D21DAA8CDD00D632E1 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3D51DAA8D3C00D632E1 /* Main */,
+			);
+			name = Survey;
+			sourceTree = "<group>";
+		};
+		6B52B3D51DAA8D3C00D632E1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3D31DAA8D1B00D632E1 /* SurveyMainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		6B52B3D61DAA90A700D632E1 /* Monitoring Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3D71DAA912C00D632E1 /* MonitoringLog.swift */,
+				6B52B3D91DAA91B100D632E1 /* MonitoringLogDataSource.swift */,
+			);
+			name = "Monitoring Model";
+			sourceTree = "<group>";
+		};
+		6B52B3DB1DAA92C400D632E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B52B3D61DAA90A700D632E1 /* Monitoring Model */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,12 +420,15 @@
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
+				6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
 				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,
 				6B52B3941DA86AAB00D632E1 /* CustomTabBarItem.swift in Sources */,
 				6B52B3B31DA9322A00D632E1 /* MonitoringHeaderTableViewCell.swift in Sources */,
+				6B52B3D41DAA8D1B00D632E1 /* SurveyMainViewController.swift in Sources */,
 				6B52B3AD1DA920F300D632E1 /* ColorPalette.swift in Sources */,
+				6B52B3D81DAA912C00D632E1 /* MonitoringLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

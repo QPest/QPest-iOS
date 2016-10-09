@@ -36,6 +36,7 @@
 		6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B3C21DA975A900D632E1 /* OnboardingStoryboard.storyboard */; };
 		6B52B3C51DA975DA00D632E1 /* QPestTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3C41DA975DA00D632E1 /* QPestTermsViewController.swift */; };
 		6B52B3C71DA975E800D632E1 /* QPestPaperOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3C61DA975E800D632E1 /* QPestPaperOnboardingViewController.swift */; };
+		6B52B3CB1DA9E72200D632E1 /* terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B3CA1DA9E72200D632E1 /* terms.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		6B52B3C21DA975A900D632E1 /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
 		6B52B3C41DA975DA00D632E1 /* QPestTermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestTermsViewController.swift; sourceTree = "<group>"; };
 		6B52B3C61DA975E800D632E1 /* QPestPaperOnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestPaperOnboardingViewController.swift; sourceTree = "<group>"; };
+		6B52B3CA1DA9E72200D632E1 /* terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = terms.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */,
 				6B52B3991DA86B4D00D632E1 /* UIColor+Util.swift */,
 				6B52B3801DA8676B00D632E1 /* Info.plist */,
+				6B52B3CA1DA9E72200D632E1 /* terms.txt */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				6B52B3B81DA9323800D632E1 /* MonitoringInfoTableViewCell.xib in Resources */,
 				6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */,
 				6B52B39E1DA86D8600D632E1 /* IdentificationStoryboard.storyboard in Resources */,
+				6B52B3CB1DA9E72200D632E1 /* terms.txt in Resources */,
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
 				6B52B3B41DA9322A00D632E1 /* MonitoringHeaderTableViewCell.xib in Resources */,

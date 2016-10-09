@@ -10,10 +10,12 @@ import UIKit
 
 class QPestTermsViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.initiateTermsView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +23,35 @@ class QPestTermsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didClickAcceptTerms(_ sender: AnyObject) {
     }
-    */
 
+    @IBAction func didClickRefuseTerms(_ sender: AnyObject) {
+    }
+  
+    private func initiateTermsView(){
+        
+        self.textView.isScrollEnabled = true
+        
+        if let url : NSURL = Bundle.main.url(forResource: "terms", withExtension: "txt") as NSURL?{
+          
+            do {
+                // Read the file contents
+                let readString = try String(contentsOf: url as URL)
+                print(readString)
+                self.textView.text = readString
+
+            } catch let error as NSError {
+                print("Failed reading from URL: \(url), Error: " + error.localizedDescription)
+            }
+            
+        }
+        self.textView.font = UIFont.systemFont(ofSize: 16)
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.textView.setContentOffset(CGPoint.zero, animated: false)
+    }
 }

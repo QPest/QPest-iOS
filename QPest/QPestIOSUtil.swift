@@ -1,8 +1,8 @@
 //
-//  CartolaVIPIOSUtil.swift
-//  Cartola VIP
+//  QPestIOSUtil.swift
+//  QPest
 //
-//  Created by Henrique Dutra on 19/09/16.
+//  Created by Henrique Dutra on 09/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
 
@@ -33,7 +33,7 @@ class QPestIOSUtil: NSObject {
         }
         else{
         
-            if let initialViewController = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "QPestTabBarController", identifier: ""){
+            if let initialViewController = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "QPestTabBar", identifier: ""){
                 return initialViewController
             }
         }

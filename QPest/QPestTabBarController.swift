@@ -1,8 +1,8 @@
 //
 //  CartolaVIPTabBarController.swift
-//  Cartola VIP
+//  QPest
 //
-//  Created by Henrique Dutra on 14/07/16.
+//  Created by Henrique Dutra on 09/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
 

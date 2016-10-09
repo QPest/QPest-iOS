@@ -24,9 +24,17 @@ class QPestTermsViewController: UIViewController {
     }
     
     @IBAction func didClickAcceptTerms(_ sender: AnyObject) {
+    
+        QPestIOSUtil.setUserAgreedTerms(status: true)
+        let newViewController = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "QPestTabBar", identifier: "")
+        UIApplication.shared.keyWindow?.rootViewController = newViewController
     }
 
     @IBAction func didClickRefuseTerms(_ sender: AnyObject) {
+    
+        self.dismiss(animated: true) { 
+            //
+        }
     }
   
     private func initiateTermsView(){

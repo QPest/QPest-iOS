@@ -93,7 +93,6 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         if self.onboarding.currentIndex == 4{
             self.continueButton.isHidden = false
         }
-        
     }
     
     func onboardingItemsCount() -> Int {

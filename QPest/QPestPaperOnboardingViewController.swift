@@ -11,18 +11,31 @@ import PaperOnboarding
 
 class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataSource, PaperOnboardingDelegate{
 
-    var colors : [UIColor] = []
+    @IBOutlet weak var continueButton: UIButton!
     
+    var colors : [UIColor] = []
+
+    var onboarding = PaperOnboarding(itemsCount: 5)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupColors()
         self.setupOnboarding()
+        self.setupContinueButton()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func setupContinueButton(){
+    
+        self.view.bringSubview(toFront: self.continueButton)
+        self.continueButton.layer.cornerRadius = 8
+        self.continueButton.isHidden = true
+        
     }
     
     private func setupColors(){
@@ -30,10 +43,12 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         self.colors = ColorPalette.defaultPalette.paperOnboardingColors
     }
     
+    
     func setupOnboarding(){
     
-        let onboarding = PaperOnboarding(itemsCount: 4)
+        self.onboarding = PaperOnboarding(itemsCount: 4)
         onboarding.dataSource = self
+        onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(onboarding)
         
@@ -64,7 +79,9 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         
         let fourthItem : OnboardingItemInfo = (imageName: "close", title: "Monitoramento, automação e muito mais", description: "Aproveite as diversas funcionaldiades do QPest como o monitoramento de seu terreno através de mapas, notificações sobre corretos locais para manejo, e um histórico de seus monitoramento na palma de sua mão", iconName: "close", color: self.colors[3], titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: UIFont(name: "Avenir-Medium", size: 18)!, descriptionFont: UIFont(name: "Avenir", size: 15)!)
   
-        return [firstItem, secondItem, thirdItem, fourthItem][index]
+          let finalItem : OnboardingItemInfo = (imageName: "close", title: "Comece já usar o QPest", description: "", iconName: "close", color: self.colors[0], titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: UIFont(name: "Avenir-Medium", size: 28)!, descriptionFont: UIFont(name: "Avenir", size: 15)!)
+        
+        return [firstItem, secondItem, thirdItem, fourthItem, finalItem][index]
         
     }
     
@@ -72,14 +89,23 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
     }
     
     func onboardingDidTransitonToIndex(_ index: Int){
+
+        if self.onboarding.currentIndex == 4{
+            self.continueButton.isHidden = false
+        }
         
     }
     
     func onboardingItemsCount() -> Int {
-        return 4
+        return 5
     }
     
     func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
 
+    }
+    @IBAction func didClickContune(_ sender: AnyObject) {
+    
+        self.performSegue(withIdentifier: "goTerms", sender: nil)
+        
     }
 }

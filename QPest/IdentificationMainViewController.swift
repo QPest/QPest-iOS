@@ -88,7 +88,10 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0{
-            // Camera selected
+            let vc: CameraViewController? = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "CameraStoryboard", identifier: "") as? CameraViewController
+            //self.navigationController?.pushViewController(vc!, animated: true)
+            //self.show(vc!, sender: nil)
+            self.performSegue(withIdentifier: "goCamera", sender: nil)
         }
         else  if indexPath.row == 1{
             // Camera library selected

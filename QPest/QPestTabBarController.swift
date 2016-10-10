@@ -31,6 +31,9 @@ class QPestTabBarController: UITabBarController, CustomTabBarDataSource, CustomT
         customTabBar.delegate = self
         customTabBar.setup()
         
+        let identificationButton = customTabBar.tabBarButtons[1]
+        customTabBar.barItemTapped(sender: identificationButton)
+        
         self.view.addSubview(customTabBar)
     }
     
@@ -87,7 +90,6 @@ class QPestTabBarController: UITabBarController, CustomTabBarDataSource, CustomT
 
         //Adding views on tab bar
         self.viewControllers = viewControllers
-        self.selectedIndex = 1
     }
     
     

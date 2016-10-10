@@ -24,6 +24,10 @@
 	<string></string>
 	<key>NSLocationUsageDescription</key>
 	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>QPest vai utilizar sua câmera para identificação de pragas.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>QPest vai utilizar sua biblioteca para processar a imagem capturada.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

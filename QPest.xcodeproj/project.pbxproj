@@ -46,6 +46,7 @@
 		DD06DF421DAB006400BAC1A2 /* CameraStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */; };
 		DD335FE21DB3DB8B00E60952 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD335FE11DB3DB8A00E60952 /* opencv2.framework */; };
 		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
+		DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */ = {isa = PBXBuildFile; fileRef = DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */; };
 		DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */; };
 		DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDED5ABC1DB3DD77009DAF69 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt_tree.xml; sourceTree = "<group>"; };
 		DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CameraManager.framework; path = Carthage/Build/iOS/CameraManager.framework; sourceTree = "<group>"; };
 		DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 		6B52B38F1DA86A2900D632E1 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */,
 				6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */,
 				6B52B3801DA8676B00D632E1 /* Info.plist */,
 				6B52B3CA1DA9E72200D632E1 /* terms.txt */,
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B52B3A01DA86D8E00D632E1 /* MapStoryboard.storyboard in Resources */,
+				DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */,
 				6B52B3B81DA9323800D632E1 /* MonitoringInfoTableViewCell.xib in Resources */,
 				6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */,
 				6B52B39E1DA86D8600D632E1 /* IdentificationStoryboard.storyboard in Resources */,

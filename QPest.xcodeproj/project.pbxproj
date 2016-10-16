@@ -53,7 +53,6 @@
 		6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */; };
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
-		DD06DF421DAB006400BAC1A2 /* CameraStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */; };
 		DD335FE21DB3DB8B00E60952 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD335FE11DB3DB8A00E60952 /* opencv2.framework */; };
 		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
 		DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */ = {isa = PBXBuildFile; fileRef = DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */; };
@@ -111,7 +110,6 @@
 		6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMenuViewController.swift; sourceTree = "<group>"; };
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CameraStoryboard.storyboard; sourceTree = "<group>"; };
 		DD335FE11DB3DB8A00E60952 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
 		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDED5ABC1DB3DD77009DAF69 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
@@ -434,7 +432,6 @@
 			children = (
 				DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */,
 				DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */,
-				DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
 				6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */,
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
-				DD06DF421DAB006400BAC1A2 /* CameraStoryboard.storyboard in Resources */,
 				6B52B38B1DA869DD00D632E1 /* QPestTabBar.storyboard in Resources */,
 				6B52B39C1DA86D7000D632E1 /* MonotoringStoryboard.storyboard in Resources */,
 				6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */,

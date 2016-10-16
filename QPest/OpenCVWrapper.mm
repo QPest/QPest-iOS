@@ -14,25 +14,15 @@
 @implementation OpenCVWrapper
 
 + (UIImage *)resizeImage:(UIImage*)image newSize:(CGSize)newSize {
-    CGRect newRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height));
-    CGImageRef imageRef = image.CGImage;
+    // Begin context with size for image without alpha channel and
+    // with the current device scale factor (change for retina to non-retina)
+    UIGraphicsBeginImageContextWithOptions(newSize, YES, 0.0f);
     
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect newImageFrame = CGRectMake(0, 0, newSize.width, newSize.height);
+    // Draw the image in the frame automatically resizing it
+    [image drawInRect: newImageFrame];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     
-    // Set the quality level to use when rescaling
-    CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
-    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, newSize.height);
-    
-    CGContextConcatCTM(context, flipVertical);
-    // Draw into the context; this scales the image
-    CGContextDrawImage(context, newRect, imageRef);
-    
-    // Get the resized image from the context and a UIImage
-    CGImageRef newImageRef = CGBitmapContextCreateImage(context);
-    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
-    
-    CGImageRelease(newImageRef);
     UIGraphicsEndImageContext();
     
     return newImage;
@@ -49,7 +39,7 @@
         grayscale.copyTo(imageMat);
         
     } else {
-        // do nothing
+        // If already gray scale, do nothing
     }
     
     UIImage *grayScaleImage = MatToUIImage(imageMat);
@@ -91,16 +81,16 @@
     cascade.detectMultiScale(imageMat, objects, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
     
     for (int i = 0; i < objects.size(); i++) {
-        int width = objects[i].width;// * 0.5;
-        int height = objects[i].height;// * 0.5;
+        int width = objects[i].width + objects[i].x;
+        int height = objects[i].height + objects[i].y;
         
-        CGFloat x = objects[i].x + width;
-        CGFloat y = objects[i].y + height;
+        CGFloat x = objects[i].x;
+        CGFloat y = objects[i].y;
         
-        cv::Point center(x, y);
+        cv::Point topLeftPoint(x, y);
         cv::Size size(width,height);
-        cv::Scalar color = cv::Scalar(0, 50, 0);
-        cv::rectangle(imageMat, center, size, color, 2);
+        cv::Scalar color = cv::Scalar(0, 0, 255);
+        cv::rectangle(imageMat, topLeftPoint, size, color, 2);
         //cv::ellipse(imageMat, center, size, 0, 0, 360, color, 4, 8, 0);
     }
     

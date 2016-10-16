@@ -44,6 +44,8 @@
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
 		DD06DF421DAB006400BAC1A2 /* CameraStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */; };
+		DD335FE21DB3DB8B00E60952 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD335FE11DB3DB8A00E60952 /* opencv2.framework */; };
+		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
 		DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */; };
 		DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +90,10 @@
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CameraStoryboard.storyboard; sourceTree = "<group>"; };
+		DD335FE11DB3DB8A00E60952 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
+		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
+		DDED5ABC1DB3DD77009DAF69 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CameraManager.framework; path = Carthage/Build/iOS/CameraManager.framework; sourceTree = "<group>"; };
 		DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +105,7 @@
 			files = (
 				6B52B3BE1DA9708600D632E1 /* PaperOnboarding.framework in Frameworks */,
 				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
+				DD335FE21DB3DB8B00E60952 /* opencv2.framework in Frameworks */,
 				DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +133,7 @@
 		6B52B3731DA8676B00D632E1 /* QPest */ = {
 			isa = PBXGroup;
 			children = (
+				DDED5ABA1DB3DCE1009DAF69 /* Bridge */,
 				6B52B3D11DAA8C8900D632E1 /* Delegate and Util */,
 				6B52B3DB1DAA92C400D632E1 /* Model */,
 				6B52B38E1DA86A1F00D632E1 /* Initial Tab Bar */,
@@ -212,6 +220,7 @@
 		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD335FE11DB3DB8A00E60952 /* opencv2.framework */,
 				DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */,
 				6B52B3BC1DA9707000D632E1 /* PaperOnboarding.framework */,
 				6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */,
@@ -345,6 +354,16 @@
 			name = Camera;
 			sourceTree = "<group>";
 		};
+		DDED5ABA1DB3DCE1009DAF69 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				DDED5ABC1DB3DD77009DAF69 /* OpenCVWrapper.h */,
+				DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */,
+				DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */,
+			);
+			name = Bridge;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +398,7 @@
 					6B52B3701DA8676B00D632E1 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = K82WMR44W3;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -457,6 +477,7 @@
 				6B52B3961DA86AB300D632E1 /* CustomTabAnimatedTransitioning.swift in Sources */,
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
+				DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */,
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
 				DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */,
@@ -582,15 +603,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = K82WMR44W3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/QPest",
 				);
 				INFOPLIST_FILE = QPest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HenriqueDutra.QPest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QPest/QPest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -599,15 +624,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = K82WMR44W3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/QPest",
 				);
 				INFOPLIST_FILE = QPest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HenriqueDutra.QPest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QPest/QPest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

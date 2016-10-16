@@ -11,6 +11,9 @@
 
 @interface OpenCVWrapper : NSObject
 
+// Resize UIImage
++ (UIImage *) resizeImage: (UIImage *) image newSize:(CGSize) newSize;
+
 // Convert image to grayscale
 + (UIImage *) rgbToGrayScaleFromImage: (UIImage *) image;
 

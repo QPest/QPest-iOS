@@ -109,12 +109,118 @@
                     <view key="view" contentMode="scaleToFill" id="s7y-jy-0Xz">
                         <rect key="frame" x="0.0" y="64" width="384" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome da praga" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ApJ-RX-doe" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="icP-3z-clU"/>
+                                    <constraint firstAttribute="width" constant="359" id="vtj-07-w53"/>
+                                </constraints>
+                                <color key="textColor" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.23529411764705882" green="0.66274509803921566" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quantidade" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Nl-GO-k8h" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="359" id="2MI-dx-TxT"/>
+                                    <constraint firstAttribute="height" constant="66" id="tfY-FH-5HT"/>
+                                </constraints>
+                                <color key="textColor" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.23529411764705882" green="0.66274509803921566" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTP-Yl-TxB">
+                                <color key="backgroundColor" red="0.81788148271276595" green="0.81788148271276595" blue="0.81788148271276595" alpha="0.66236100460122704" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Mu8-9m-zSu"/>
+                                    <constraint firstAttribute="width" constant="384" id="fsA-GE-Zse"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dku-D4-Z0i">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="HVP-qb-4Mt"/>
+                                    <constraint firstAttribute="height" constant="30" id="vsx-b8-Yez"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Confirmar">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Avenir-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="didClickConfirmation:" destination="oj2-c0-OyU" eventType="touchUpInside" id="QP4-JI-WZ9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzY-24-91z">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TcV-im-fqr"/>
+                                    <constraint firstAttribute="width" constant="326" id="rJm-a7-CR0"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Adicionar Monitoramento Manual">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="19" name="Avenir-Heavy"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5Nl-GO-k8h" secondAttribute="trailing" constant="12" id="0jR-p0-Nsq"/>
+                            <constraint firstItem="XP0-SJ-SIQ" firstAttribute="top" secondItem="dku-D4-Z0i" secondAttribute="bottom" constant="74" id="3qw-hL-vEV"/>
+                            <constraint firstItem="dku-D4-Z0i" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leadingMargin" constant="136" id="AJp-q4-jL1"/>
+                            <constraint firstItem="XP0-SJ-SIQ" firstAttribute="top" secondItem="aTP-Yl-TxB" secondAttribute="bottom" constant="118" id="KGN-5e-Ree"/>
+                            <constraint firstItem="EzY-24-91z" firstAttribute="top" secondItem="uCt-dy-y7Q" secondAttribute="bottom" constant="20" id="R67-Ab-kI4"/>
+                            <constraint firstItem="aTP-Yl-TxB" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leading" id="SnF-GU-q3Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EzY-24-91z" secondAttribute="trailing" constant="13" id="Twa-ou-bar"/>
+                            <constraint firstAttribute="trailing" secondItem="ApJ-RX-doe" secondAttribute="trailing" constant="12" id="VAw-LU-JJl"/>
+                            <constraint firstItem="5Nl-GO-k8h" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leading" constant="13" id="YqO-HS-jcN"/>
+                            <constraint firstItem="EzY-24-91z" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leadingMargin" constant="13" id="bbk-0z-Yhj"/>
+                            <constraint firstAttribute="trailing" secondItem="aTP-Yl-TxB" secondAttribute="trailing" id="eLx-IY-wne"/>
+                            <constraint firstItem="5Nl-GO-k8h" firstAttribute="top" secondItem="ApJ-RX-doe" secondAttribute="bottom" constant="8" id="fT6-j5-DqK"/>
+                            <constraint firstItem="ApJ-RX-doe" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leading" constant="13" id="pkq-rN-Bx5"/>
+                            <constraint firstItem="ApJ-RX-doe" firstAttribute="top" secondItem="uCt-dy-y7Q" secondAttribute="bottom" constant="80" id="qWV-ps-WcI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dku-D4-Z0i" secondAttribute="trailing" constant="135" id="sQS-5g-Qz4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pragueTextField" destination="ApJ-RX-doe" id="9wf-BS-Xig"/>
+                        <outlet property="quantityTextField" destination="5Nl-GO-k8h" id="8CV-Zz-l50"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8CW-Qw-ksp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="296"/>
+            <point key="canvasLocation" x="657.60000000000002" y="295.50224887556226"/>
         </scene>
         <!--Monitoring Notification View Controller-->
         <scene sceneID="3W7-fo-Pqs">

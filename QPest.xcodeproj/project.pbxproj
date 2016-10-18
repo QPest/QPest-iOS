@@ -45,6 +45,8 @@
 		6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */; };
 		6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */; };
 		6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */; };
+		6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */; };
+		6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringImageTableViewCell.swift; sourceTree = "<group>"; };
 		6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringImageTableViewCell.xib; sourceTree = "<group>"; };
 		6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringAddNewLogViewController.swift; sourceTree = "<group>"; };
+		6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
+		6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			files = (
 				6B52B3BE1DA9708600D632E1 /* PaperOnboarding.framework in Frameworks */,
 				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
+				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */,
 				6B52B3BC1DA9707000D632E1 /* PaperOnboarding.framework */,
 				6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */,
 			);
@@ -242,6 +248,7 @@
 			children = (
 				6B7073091DB64544005ABB31 /* Custom Text Field */,
 				6B52B3991DA86B4D00D632E1 /* UIColor+Util.swift */,
+				6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */,
 				6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */,
 				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
 			);
@@ -451,6 +458,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/PaperOnboarding.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TextFieldEffects.framework",
 			);
 			outputPaths = (
 			);
@@ -470,6 +478,7 @@
 				6B52B3A91DA87A2900D632E1 /* IdentificationMainTableViewCell.swift in Sources */,
 				6B52B3A21DA86DDB00D632E1 /* MapMainViewController.swift in Sources */,
 				6B52B38D1DA86A1900D632E1 /* QPestTabBarController.swift in Sources */,
+				6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */,
 				6B52B3A41DA86DE300D632E1 /* IdentificationMainViewController.swift in Sources */,
 				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
 				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,

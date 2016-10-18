@@ -14,13 +14,17 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     
     let monitoringTitle = "Monitoramento"
     var notificationIcon : String = String()
+    var addIcon : String = String()
     
     var notificationButton : UIBarButtonItem = UIBarButtonItem()
+    var addButton : UIBarButtonItem = UIBarButtonItem()
     
     var tableViewOrder : [Int] = []
     var tableViewInfo : [MonitoringLog] = []
     
     var monitoringIndexController : Int = 0
+    
+    var logSelected : MonitoringLog = MonitoringLog()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +47,10 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     private func setupNotifications(){
     
         self.notificationIcon = "notificationOn"
+        self.addIcon = "addIcon"
         
         self.setupNotificationButton()
+        self.setupAddIcon()
     }
     
     private func setupNotificationButton(){
@@ -64,6 +70,22 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
   
     }
     
+    private func setupAddIcon(){
+        
+        let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
+        let button = UIButton(frame: rect)
+        button.addTarget(self, action: #selector(MonitoringMainViewController.didClickAdd), for: .touchUpInside)
+        button.setImage(UIImage(named: self.addIcon), for: .normal)
+        self.addButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = self.addButton
+        
+    }
+    
+    func didClickAdd(){
+        
+        self.performSegue(withIdentifier: "goAdd", sender: nil)
+        
+    }
     func getLogs(){
     
         MonitoringLogDataSource.defaultLogDataSource.reload()
@@ -113,7 +135,9 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Ao selecionar a tabela
+
+        self.logSelected = self.tableViewInfo[indexPath.row]
+        self.performSegue(withIdentifier: "goSingle", sender: nil)
     }
     
     func generateCellForHeader(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
@@ -136,18 +160,24 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         cell.monitoringTitle.text = newLog.pragueName
         cell.monitoringCount.text = String(newLog.pragueQuantity)
         
-        if newLog.isPrague{
+        if newLog.isNaturalEnemy{
         
-            cell.tagView.backgroundColor = ColorPalette.defaultPalette.pragueTableViewColor
+            cell.tagView.backgroundColor = ColorPalette.defaultPalette.naturalEnemyTableViewColor
         }
         else{
         
-            cell.tagView.backgroundColor = ColorPalette.defaultPalette.naturalEnemyTableViewColor
+            cell.tagView.backgroundColor = ColorPalette.defaultPalette.pragueTableViewColor
 
         }
         
         return cell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goSingle"){
+            let destination = segue.destination as! MonitoringSingleViewController
+            destination.currentLog = self.logSelected
+        }
+    }
 
 }

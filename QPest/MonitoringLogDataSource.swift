@@ -54,9 +54,9 @@ class MonitoringLogDataSource: NSObject {
         logThree.pragueQuantity = 3
         logThree.pragueName = "Euschistus"
         
-        logThree.isPrague = true
+        logThree.isNaturalEnemy = true
         logThree.pragueQuantity = 3
-        logThree.pragueName = "Euschistus"
+        logThree.pragueName = "Inimigo Natural"
         
         logFour.isPrague = true
         logFour.pragueQuantity = 3
@@ -66,6 +66,8 @@ class MonitoringLogDataSource: NSObject {
         logTwo.dateFormatted = "16:32"
         logThree.dateFormatted = "16:32"
         logFour.dateFormatted = "16:32"
+        
+        
         
         self.monitoringLogs.append(logOne)
         self.monitoringLogs.append(logTwo)

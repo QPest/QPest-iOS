@@ -41,6 +41,10 @@
 		6B52B3DF1DAA946A00D632E1 /* IdentificationManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */; };
 		6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */; };
 		6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */; };
+		6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */; };
+		6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */; };
+		6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */; };
+		6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationManualViewController.swift; sourceTree = "<group>"; };
 		6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSingleViewController.swift; sourceTree = "<group>"; };
+		6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringImageTableViewCell.swift; sourceTree = "<group>"; };
+		6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringImageTableViewCell.xib; sourceTree = "<group>"; };
+		6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringAddNewLogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +161,8 @@
 			children = (
 				6B52B39B1DA86D7000D632E1 /* MonotoringStoryboard.storyboard */,
 				6B52B3CD1DAA8C0400D632E1 /* Main */,
+				6B7073081DB643D3005ABB31 /* Add New */,
+				6B7072FE1DB5D257005ABB31 /* MonitoringSingleViewController */,
 				6B52B3CE1DAA8C1E00D632E1 /* Notification */,
 			);
 			name = Monitoring;
@@ -230,6 +240,7 @@
 		6B52B3CC1DAA8BC200D632E1 /* FrontEnd Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6B7073091DB64544005ABB31 /* Custom Text Field */,
 				6B52B3991DA86B4D00D632E1 /* UIColor+Util.swift */,
 				6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */,
 				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
@@ -321,6 +332,39 @@
 			name = Manual;
 			sourceTree = "<group>";
 		};
+		6B7072FE1DB5D257005ABB31 /* MonitoringSingleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */,
+				6B7073051DB5D499005ABB31 /* Image */,
+			);
+			name = MonitoringSingleViewController;
+			sourceTree = "<group>";
+		};
+		6B7073051DB5D499005ABB31 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */,
+				6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		6B7073081DB643D3005ABB31 /* Add New */ = {
+			isa = PBXGroup;
+			children = (
+				6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */,
+			);
+			name = "Add New";
+			sourceTree = "<group>";
+		};
+		6B7073091DB64544005ABB31 /* Custom Text Field */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom Text Field";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +432,7 @@
 				6B52B39E1DA86D8600D632E1 /* IdentificationStoryboard.storyboard in Resources */,
 				6B52B3CB1DA9E72200D632E1 /* terms.txt in Resources */,
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
+				6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */,
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
 				6B52B38B1DA869DD00D632E1 /* QPestTabBar.storyboard in Resources */,
 				6B52B39C1DA86D7000D632E1 /* MonotoringStoryboard.storyboard in Resources */,
@@ -426,6 +471,8 @@
 				6B52B3A21DA86DDB00D632E1 /* MapMainViewController.swift in Sources */,
 				6B52B38D1DA86A1900D632E1 /* QPestTabBarController.swift in Sources */,
 				6B52B3A41DA86DE300D632E1 /* IdentificationMainViewController.swift in Sources */,
+				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
+				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,
 				6B52B3961DA86AB300D632E1 /* CustomTabAnimatedTransitioning.swift in Sources */,
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
@@ -433,6 +480,7 @@
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
 				6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */,
+				6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
 				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,

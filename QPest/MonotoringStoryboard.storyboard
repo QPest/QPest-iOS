@@ -58,11 +58,63 @@
                     <connections>
                         <outlet property="tableView" destination="vbz-vs-c1Y" id="r37-4L-Q73"/>
                         <segue destination="Ie3-aR-u9I" kind="presentation" identifier="goNotificationView" id="zbd-AM-lZM"/>
+                        <segue destination="saO-fX-PUF" kind="show" identifier="goSingle" id="2bp-Il-eNq"/>
+                        <segue destination="oj2-c0-OyU" kind="show" identifier="goAdd" id="cNg-6I-o9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMa-zB-KMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-40" y="-376.46176911544228"/>
+        </scene>
+        <!--Monitoring Single View Controller-->
+        <scene sceneID="REJ-mg-74U">
+            <objects>
+                <viewController id="saO-fX-PUF" customClass="MonitoringSingleViewController" customModule="QPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jiq-aa-jf8"/>
+                        <viewControllerLayoutGuide type="bottom" id="l4e-Zo-ZTJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YEd-gY-BHe">
+                        <rect key="frame" x="0.0" y="64" width="384" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="36w-US-oMU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l4e-Zo-ZTJ" firstAttribute="top" secondItem="36w-US-oMU" secondAttribute="bottom" id="OOD-nP-yPe"/>
+                            <constraint firstItem="36w-US-oMU" firstAttribute="top" secondItem="YEd-gY-BHe" secondAttribute="top" id="V9d-vy-H59"/>
+                            <constraint firstAttribute="trailing" secondItem="36w-US-oMU" secondAttribute="trailing" id="gxS-A1-034"/>
+                            <constraint firstItem="36w-US-oMU" firstAttribute="leading" secondItem="YEd-gY-BHe" secondAttribute="leading" id="xEY-5t-Xht"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="36w-US-oMU" id="NLV-wi-4qe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAg-da-Pbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47.200000000000003" y="295.50224887556226"/>
+        </scene>
+        <!--Monitoring Add New Log View Controller-->
+        <scene sceneID="frK-kP-fCm">
+            <objects>
+                <viewController id="oj2-c0-OyU" customClass="MonitoringAddNewLogViewController" customModule="QPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uCt-dy-y7Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="XP0-SJ-SIQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s7y-jy-0Xz">
+                        <rect key="frame" x="0.0" y="64" width="384" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8CW-Qw-ksp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="296"/>
         </scene>
         <!--Monitoring Notification View Controller-->
         <scene sceneID="3W7-fo-Pqs">

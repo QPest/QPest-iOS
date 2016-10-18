@@ -14,11 +14,10 @@ class IdentificationMenuViewController: UIViewController, CircleMenuDelegate {
     
     
     let items: [(icon: String, color: UIColor)] = [
-        ("close", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
-        ("close", UIColor(red:0.22, green:0.74, blue:0, alpha:1)),
-        ("close", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
-        ("close", UIColor(red:0.51, green:0.15, blue:1, alpha:1)),
-        ("close", UIColor(red:1, green:0.39, blue:0, alpha:1)),
+        ("action", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
+        ("bug", UIColor(red:0.22, green:0.74, blue:0, alpha:1)),
+        ("info", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
+        ("survey", UIColor(red:0.51, green:0.15, blue:1, alpha:1)),
         ]
     
     override func viewDidLoad() {
@@ -36,7 +35,7 @@ class IdentificationMenuViewController: UIViewController, CircleMenuDelegate {
     private func configureCircleMenuButton(){
     
                 let button = CircleMenu(
-                    frame: CGRect(x: self.view.frame.width / 2 , y: self.view.frame.height / 2, width: 66, height: 66),
+                    frame: CGRect(x: self.view.frame.width / 2, y: self.view.frame.height / 2 + self.view.frame.height / 5, width: 66, height: 66),
                     normalIcon:"identificationMenu",
                     selectedIcon:"close",
                     buttonsCount: 4,
@@ -45,7 +44,7 @@ class IdentificationMenuViewController: UIViewController, CircleMenuDelegate {
                 button.backgroundColor = UIColor.lightGray
                 button.delegate = self
                 button.layer.cornerRadius = button.frame.size.width / 2.0
-                button.center = CGPoint(x: self.view.frame.width / 2 , y:  self.view.frame.height / 2)
+                button.center = CGPoint(x: self.view.frame.width / 2 , y:  self.view.frame.height / 2 + self.view.frame.height / 12)
 
                 view.addSubview(button)
         

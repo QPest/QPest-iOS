@@ -47,6 +47,7 @@
 		6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */; };
 		6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */; };
 		6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */; };
+		6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073131DB65627005ABB31 /* MapConfigurationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringAddNewLogViewController.swift; sourceTree = "<group>"; };
 		6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
 		6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
+		6B7073131DB65627005ABB31 /* MapConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapConfigurationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				6B52B39F1DA86D8E00D632E1 /* MapStoryboard.storyboard */,
 				6B52B3D01DAA8C4C00D632E1 /* Main */,
+				6B7073121DB6560E005ABB31 /* Configuration */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -372,6 +375,14 @@
 			name = "Custom Text Field";
 			sourceTree = "<group>";
 		};
+		6B7073121DB6560E005ABB31 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				6B7073131DB65627005ABB31 /* MapConfigurationViewController.swift */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -483,6 +494,7 @@
 				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
 				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,
 				6B52B3961DA86AB300D632E1 /* CustomTabAnimatedTransitioning.swift in Sources */,
+				6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */,
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,

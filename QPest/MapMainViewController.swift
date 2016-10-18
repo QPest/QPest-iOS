@@ -17,6 +17,8 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     var locationCoordinate = CLLocation(latitude: 37.785834, longitude: -122.406417)
     let regionRadius: CLLocationDistance = 1000
 
+    var configurationButton : UIBarButtonItem = UIBarButtonItem()
+    let configurationIcon = "configIcon"
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -26,9 +28,27 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         // Do any additional setup after loading the view.
         self.setuplocation()
         self.setupNavigationBar()
+        self.setupConfigurationIcon()
     
-        //self.centerMapOnLocation(location: self.locationCoordinate)
+        self.centerMapOnLocation(location: self.locationCoordinate)
 
+    }
+    
+    private func setupConfigurationIcon(){
+        
+        let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
+        let button = UIButton(frame: rect)
+        button.addTarget(self, action: #selector(MonitoringMainViewController.didClickNotification), for: .touchUpInside)
+        button.setImage(UIImage(named: self.configurationIcon), for: .normal)
+        self.configurationButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = self.configurationButton
+        
+    }
+    
+    func didClickNotification(){
+        
+        self.performSegue(withIdentifier: "goConfigurationView", sender: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,6 +71,8 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.startUpdatingLocation()
     }
     
+    @IBAction func didClickCenterMap(_ sender: AnyObject) {
+    }
   
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate

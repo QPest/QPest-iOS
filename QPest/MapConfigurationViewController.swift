@@ -11,10 +11,11 @@ import UIKit
 class MapConfigurationViewController: UIViewController {
     
     @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var slider: UISlider!
-
     @IBOutlet weak var sliderLabel: UILabel!
+    
+    var range : Int = 0
+    var type : Int = 0
     
     var mapType : Int = 0
     
@@ -22,6 +23,7 @@ class MapConfigurationViewController: UIViewController {
         super.viewDidLoad()
 
         self.getCurrentMapType()
+        self.getCurrentMapRange()
         
         self.setupNavigationBar()
         self.setupInitialValues()
@@ -35,7 +37,13 @@ class MapConfigurationViewController: UIViewController {
     
     func getCurrentMapType(){
     
-        self.mapType = 2
+        self.mapType = ConfigurationStandards.defaultStandards.typeOfPrefferedMap
+    }
+    
+    func getCurrentMapRange(){
+    
+        self.range = ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange
+
     }
     
     func setupNavigationBar(){
@@ -45,28 +53,43 @@ class MapConfigurationViewController: UIViewController {
     
     func setupInitialValues(){
         
-        self.changeSliderLabel()
+        self.changeSliderValue(value: self.range)
+        self.changeSliderLabel(value: String(Int(self.slider.value)))
         self.changeSegmentControl()
         
     }
     
     private func changeSegmentControl(){
-    
         self.mapTypeSegmentedControl.selectedSegmentIndex = self.mapType
     }
 
-    private func changeSliderLabel(){
+    private func changeSliderLabel(value: String){
+        self.sliderLabel.text = value
+    }
     
-        self.sliderLabel.text = String(Int(self.slider.value))
-
+    private func changeSliderValue(value: Int){
+        self.slider.value = Float(value)
     }
 
     @IBAction func sliderDidChange(_ sender: AnyObject) {
-        self.changeSliderLabel()
+        self.changeSliderLabel(value: String(Int(self.slider.value)))
+        self.didChangeMapRange()
     }
 
     @IBAction func typeDidChange(_ sender: AnyObject) {
-        
+
+        self.didChangeMapType()
+
     }
 
+    func didChangeMapType(){
+    
+        ConfigurationStandards.defaultStandards.changeMapType(value: self.mapTypeSegmentedControl.selectedSegmentIndex)
+    }
+    
+    func didChangeMapRange(){
+        
+        ConfigurationStandards.defaultStandards.changeMapRange(value: Int(self.slider.value))
+    }
+    
 }

@@ -12,6 +12,7 @@ import CoreLocation
 
 class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     
+    @IBOutlet weak var textFeedbackLabel: UILabel!
     @IBOutlet weak var overlayButton: UIButton!
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var mapView: MKMapView!
@@ -19,7 +20,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     let mapTitle = "Meu Terreno"
     let locationManager = CLLocationManager()
     var locationCoordinate = CLLocation(latitude: 0, longitude: 0)
-    let regionRadius: CLLocationDistance = 1000
+    var regionRadius: CLLocationDistance = 1000
     
     var configurationButton : UIBarButtonItem = UIBarButtonItem()
     var actionToLocateButton : UIBarButtonItem = UIBarButtonItem()
@@ -28,28 +29,53 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     
     var needingUpdate : Bool = true
     
+    let feedbackText : String = "Texto explicando como alterar"
+    
+    var isInEditingMode : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dismissOverlayView()
-        self.configureButtonAppearance()
+        self.setupInitialView()
         
         self.setuplocation()
-        self.setupNavigationBar()
-        self.setupConfigurationIcon()
-        self.setupActionToLocate()
-    
+        self.loadMap()
+        
         self.centerMapOnLocation(location: self.locationCoordinate)
 
     }
     
-    func configureButtonAppearance(){
-    
-        self.overlayButton.layer.cornerRadius = 5
-    
+    override func viewDidAppear(_ animated: Bool) {
+      self.loadMap()
     }
     
+    func loadMap(){
+    
+        self.setupRegionRadius()
+        self.setupMapType()
+        self.centerMapOnLocation(location: self.locationCoordinate)
+    }
+    
+    private func setupInitialView(){
+    
+        self.setupNavigationBar()
+
+        self.dismissOverlayView()
+        self.configureButtonAppearance()
+        
+        self.setupConfigurationIcon()
+        self.setupActionToLocate()
+        
+        self.setupInitialText()
+    }
+    
+    func setupInitialText(){
+        self.textFeedbackLabel.text = self.feedbackText
+    }
+    
+    func configureButtonAppearance(){
+        self.overlayButton.layer.cornerRadius = 5
+    }
     
     func didClickActionToLocate(){
         
@@ -96,6 +122,15 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         self.navigationItem.title = self.mapTitle
     }
 
+    private func setupRegionRadius(){
+    
+         self.regionRadius = CLLocationDistance(ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange)
+    }
+    
+    private func setupMapType(){
+    
+    }
+
     private func setuplocation(){
     
         locationManager.requestAlwaysAuthorization()
@@ -104,6 +139,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        
     }
     
     @IBAction func didClickCenterMap(_ sender: AnyObject) {
@@ -139,6 +175,13 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     func beginEditing(){
     
         // Start editing, createing shapes, etc
+    
+        self.isInEditingMode = true
+    }
+    
+    func endEditing(){
+    
+        self.isInEditingMode = false
     }
     
     func showOverlayView(){

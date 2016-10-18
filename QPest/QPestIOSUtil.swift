@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class QPestIOSUtil: NSObject {
-    
+        
     class func viewControllerFromStoryboardWithIdentifier(name:String, identifier:NSString)->UIViewController?{
         
         let storyboard : UIStoryboard = UIStoryboard(name: name, bundle: nil)
@@ -38,6 +38,28 @@ class QPestIOSUtil: NSObject {
         }
         
         return UIViewController()
+        
+    }
+    
+    class func setInitialStandards(){
+        
+        let defaults = UserDefaults.standard
+        
+        defaults.set(0, forKey: ConfigurationStandards.defaultStandards.keyForMapType)
+        defaults.set(400, forKey: ConfigurationStandards.defaultStandards.keyForMapRange)
+        
+        ConfigurationStandards.defaultStandards.typeOfPrefferedMap = 0
+        ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange = 400
+        
+        
+    }
+    
+    class func checkInitialConfigurations(){
+    
+        let defaults = UserDefaults.standard
+    
+        ConfigurationStandards.defaultStandards.typeOfPrefferedMap = defaults.integer(forKey: ConfigurationStandards.defaultStandards.keyForMapType)
+        ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange = defaults.integer(forKey: ConfigurationStandards.defaultStandards.keyForMapRange)
         
     }
     

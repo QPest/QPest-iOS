@@ -55,7 +55,7 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc4-ME-seL">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texto explicando como alterar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-3S-eaL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texto explicando como alterar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-3S-eaL">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="334" id="6f2-kv-qBO"/>
                                             <constraint firstAttribute="height" constant="221" id="cnZ-HB-wlt"/>
@@ -143,6 +143,7 @@
                         <outlet property="mapView" destination="rPj-WQ-7jb" id="HBr-yz-4Wc"/>
                         <outlet property="overlayButton" destination="ZEa-KE-F5g" id="ax8-rI-2ku"/>
                         <outlet property="overlayView" destination="mc4-ME-seL" id="dKy-LQ-SOc"/>
+                        <outlet property="textFeedbackLabel" destination="Qkl-3S-eaL" id="fvB-9w-VNE"/>
                         <segue destination="zs5-dI-KEL" kind="show" identifier="goConfigurationView" id="lRN-aJ-chu"/>
                     </connections>
                 </viewController>

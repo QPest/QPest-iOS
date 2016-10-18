@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = QPestIOSUtil.getViewControllerToShow()
         
+        QPestIOSUtil.checkInitialConfigurations()
+        
         return true
     }
 

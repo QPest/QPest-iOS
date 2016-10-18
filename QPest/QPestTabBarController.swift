@@ -23,7 +23,7 @@ class QPestTabBarController: UITabBarController, CustomTabBarDataSource, CustomT
         // Do any additional setup after loading the view.
 
         self.tabBar.isHidden = true
-        self.selectedIndex = 0
+        self.selectedIndex = 1
         self.delegate = self
         
         let customTabBar = CustomTabBar(frame: self.tabBar.frame)

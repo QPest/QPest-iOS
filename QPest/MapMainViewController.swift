@@ -58,7 +58,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     private func setupInitialView(){
-    
+        
         self.setupNavigationBar()
 
         self.dismissOverlayView()
@@ -68,6 +68,8 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         self.setupActionToLocate()
         
         self.setupInitialText()
+
+        mapView.centerCoordinate = self.locationCoordinate.coordinate
     }
     
     func setupInitialText(){
@@ -207,5 +209,4 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         self.overlayView.isHidden = true
 
     }
-    
 }

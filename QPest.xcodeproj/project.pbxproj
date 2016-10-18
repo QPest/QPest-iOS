@@ -96,6 +96,7 @@
 		6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		6B7073131DB65627005ABB31 /* MapConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapConfigurationViewController.swift; sourceTree = "<group>"; };
 		6B7073151DB68A99005ABB31 /* ConfigurationStandards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationStandards.swift; sourceTree = "<group>"; };
+		6B7073171DB69E30005ABB31 /* QPest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QPest.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,7 @@
 		6B52B3731DA8676B00D632E1 /* QPest */ = {
 			isa = PBXGroup;
 			children = (
+				6B7073171DB69E30005ABB31 /* QPest.entitlements */,
 				6B52B3D11DAA8C8900D632E1 /* Delegate and Util */,
 				6B52B3DB1DAA92C400D632E1 /* Model */,
 				6B52B38E1DA86A1F00D632E1 /* Initial Tab Bar */,
@@ -421,6 +423,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5ZSN4629J8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -626,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QPest/QPest.entitlements;
 				DEVELOPMENT_TEAM = 5ZSN4629J8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -643,6 +651,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QPest/QPest.entitlements;
 				DEVELOPMENT_TEAM = 5ZSN4629J8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

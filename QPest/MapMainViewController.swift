@@ -11,34 +11,69 @@ import MapKit
 import CoreLocation
 
 class MapMainViewController: UIViewController, CLLocationManagerDelegate{
-
+    
+    @IBOutlet weak var overlayButton: UIButton!
+    @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var mapView: MKMapView!
+    
     let mapTitle = "Meu Terreno"
     let locationManager = CLLocationManager()
-    var locationCoordinate = CLLocation(latitude: 37.785834, longitude: -122.406417)
+    var locationCoordinate = CLLocation(latitude: 0, longitude: 0)
     let regionRadius: CLLocationDistance = 1000
-
-    var configurationButton : UIBarButtonItem = UIBarButtonItem()
-    let configurationIcon = "configIcon"
     
-    @IBOutlet weak var mapView: MKMapView!
+    var configurationButton : UIBarButtonItem = UIBarButtonItem()
+    var actionToLocateButton : UIBarButtonItem = UIBarButtonItem()
+    let configurationIcon = "configIcon"
+    let mapLocationIcon = "map-location"
+    
+    var needingUpdate : Bool = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        self.dismissOverlayView()
+        self.configureButtonAppearance()
+        
         self.setuplocation()
         self.setupNavigationBar()
         self.setupConfigurationIcon()
+        self.setupActionToLocate()
     
         self.centerMapOnLocation(location: self.locationCoordinate)
 
+    }
+    
+    func configureButtonAppearance(){
+    
+        self.overlayButton.layer.cornerRadius = 5
+    
+    }
+    
+    
+    func didClickActionToLocate(){
+        
+        self.showOverlayView()
+        self.beginEditing()
+        
+    }
+    
+    private func setupActionToLocate(){
+        
+        let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
+        let button = UIButton(frame: rect)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToLocate), for: .touchUpInside)
+        button.setImage(UIImage(named: self.mapLocationIcon), for: .normal)
+        self.actionToLocateButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = self.actionToLocateButton
+        
     }
     
     private func setupConfigurationIcon(){
         
         let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
         let button = UIButton(frame: rect)
-        button.addTarget(self, action: #selector(MonitoringMainViewController.didClickNotification), for: .touchUpInside)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickNotification), for: .touchUpInside)
         button.setImage(UIImage(named: self.configurationIcon), for: .normal)
         self.configurationButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = self.configurationButton
@@ -72,13 +107,26 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @IBAction func didClickCenterMap(_ sender: AnyObject) {
+    
+        self.needingUpdate = true
+//        self.centerMapOnLocation(location: self.locationCoordinate)
+    }
+    
+    @IBAction func didClickOverlayButton(_ sender: AnyObject) {
+        
+        self.dismissOverlayView()
     }
   
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-//        self.locationCoordinate.coordinate.latitude = locValue.latitude
         
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        let newCoordinate = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        self.locationCoordinate = newCoordinate
+        
+        if self.needingUpdate{
+            self.centerMapOnLocation(location: self.locationCoordinate)
+            self.needingUpdate = false
+        }
         
     }
     
@@ -87,4 +135,21 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+    
+    func beginEditing(){
+    
+        // Start editing, createing shapes, etc
+    }
+    
+    func showOverlayView(){
+    
+        self.overlayView.isHidden = false
+    }
+    
+    func dismissOverlayView(){
+    
+        self.overlayView.isHidden = true
+
+    }
+    
 }

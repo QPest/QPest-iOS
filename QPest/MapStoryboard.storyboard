@@ -53,12 +53,86 @@
                                     <action selector="didClickCenterMap:" destination="zlH-6U-Gh7" eventType="touchUpInside" id="NFP-eG-LPE"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc4-ME-seL">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texto explicando como alterar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-3S-eaL">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="334" id="6f2-kv-qBO"/>
+                                            <constraint firstAttribute="height" constant="221" id="cnZ-HB-wlt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEa-KE-F5g">
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.66274509803921566" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="a86-GL-Clh"/>
+                                            <constraint firstAttribute="width" constant="180" id="aqT-EG-G3m"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Entendido !">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="15" name="Avenir-Book"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="didClickOverlayButton:" destination="zlH-6U-Gh7" eventType="touchUpInside" id="rOO-E3-asc"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-location" translatesAutoresizingMaskIntoConstraints="NO" id="d7B-c6-7Sm">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="UJg-O4-7Fh"/>
+                                            <constraint firstAttribute="height" constant="75" id="b6S-d3-Uke"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnb-6Z-9Ke">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="237" id="QJK-ZB-p2t"/>
+                                            <constraint firstAttribute="height" constant="58" id="utr-IT-DaM"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Editar meu terreno">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="27" name="Noteworthy-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="d7B-c6-7Sm" firstAttribute="top" secondItem="mc4-ME-seL" secondAttribute="top" constant="39" id="4xJ-oD-dcE"/>
+                                    <constraint firstItem="ZEa-KE-F5g" firstAttribute="leading" secondItem="mc4-ME-seL" secondAttribute="leading" constant="102" id="Ef9-Zx-gGD"/>
+                                    <constraint firstAttribute="trailing" secondItem="d7B-c6-7Sm" secondAttribute="trailing" constant="154" id="H0P-kC-hNb"/>
+                                    <constraint firstItem="d7B-c6-7Sm" firstAttribute="leading" secondItem="mc4-ME-seL" secondAttribute="leading" constant="155" id="HBs-2E-npL"/>
+                                    <constraint firstItem="Lnb-6Z-9Ke" firstAttribute="top" secondItem="d7B-c6-7Sm" secondAttribute="bottom" constant="3" id="JUq-y2-Jg9"/>
+                                    <constraint firstItem="Qkl-3S-eaL" firstAttribute="leading" secondItem="mc4-ME-seL" secondAttribute="leading" constant="25" id="M2N-Rv-Aa2"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZEa-KE-F5g" secondAttribute="bottom" constant="69" id="TfP-Bp-ftt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZEa-KE-F5g" secondAttribute="trailing" constant="102" id="VfD-Vh-bCD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qkl-3S-eaL" secondAttribute="trailing" constant="25" id="gmJ-DM-9dx"/>
+                                    <constraint firstItem="Lnb-6Z-9Ke" firstAttribute="leading" secondItem="mc4-ME-seL" secondAttribute="leading" constant="74" id="j1Q-IY-uci"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lnb-6Z-9Ke" secondAttribute="trailing" constant="73" id="n8T-Ci-6Nz"/>
+                                    <constraint firstItem="Qkl-3S-eaL" firstAttribute="top" secondItem="Lnb-6Z-9Ke" secondAttribute="bottom" constant="21" id="xFP-PL-tKV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mc4-ME-seL" firstAttribute="leading" secondItem="JhP-qt-VFc" secondAttribute="leading" id="0gP-1u-csf"/>
                             <constraint firstAttribute="trailing" secondItem="rPj-WQ-7jb" secondAttribute="trailing" id="H2L-Ny-3vK"/>
+                            <constraint firstItem="dbj-KH-JIK" firstAttribute="top" secondItem="mc4-ME-seL" secondAttribute="bottom" id="IdN-0T-GT5"/>
                             <constraint firstItem="rPj-WQ-7jb" firstAttribute="leading" secondItem="JhP-qt-VFc" secondAttribute="leading" id="NXh-jV-NvL"/>
+                            <constraint firstAttribute="trailing" secondItem="mc4-ME-seL" secondAttribute="trailing" id="NZr-ab-IBx"/>
                             <constraint firstItem="dbj-KH-JIK" firstAttribute="top" secondItem="rPj-WQ-7jb" secondAttribute="bottom" id="RIR-es-oQI"/>
+                            <constraint firstItem="mc4-ME-seL" firstAttribute="top" secondItem="i1l-4o-hbs" secondAttribute="bottom" id="Se8-TG-kQt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lvf-bw-Zlc" secondAttribute="trailing" constant="1" id="egk-S2-82P"/>
                             <constraint firstItem="rPj-WQ-7jb" firstAttribute="top" secondItem="i1l-4o-hbs" secondAttribute="bottom" id="gLx-KQ-ZSB"/>
                             <constraint firstItem="dbj-KH-JIK" firstAttribute="top" secondItem="Lvf-bw-Zlc" secondAttribute="bottom" constant="58" id="qOT-Kp-51t"/>
@@ -67,6 +141,8 @@
                     <navigationItem key="navigationItem" id="MGV-Fv-7Yh"/>
                     <connections>
                         <outlet property="mapView" destination="rPj-WQ-7jb" id="HBr-yz-4Wc"/>
+                        <outlet property="overlayButton" destination="ZEa-KE-F5g" id="ax8-rI-2ku"/>
+                        <outlet property="overlayView" destination="mc4-ME-seL" id="dKy-LQ-SOc"/>
                         <segue destination="zs5-dI-KEL" kind="show" identifier="goConfigurationView" id="lRN-aJ-chu"/>
                     </connections>
                 </viewController>
@@ -187,5 +263,6 @@
     </scenes>
     <resources>
         <image name="centerMap" width="102" height="102"/>
+        <image name="map-location" width="55" height="54"/>
     </resources>
 </document>

@@ -195,7 +195,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="400" minValue="100" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="EmR-7I-1uN">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="400" minValue="100" maxValue="1500" translatesAutoresizingMaskIntoConstraints="NO" id="EmR-7I-1uN">
                                 <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="p3W-xp-Hvb"/>

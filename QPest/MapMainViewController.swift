@@ -21,6 +21,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     let locationManager = CLLocationManager()
     var locationCoordinate = CLLocation(latitude: 0, longitude: 0)
     var regionRadius: CLLocationDistance = 1000
+    var mapType : Int = 0
     
     var configurationButton : UIBarButtonItem = UIBarButtonItem()
     var actionToLocateButton : UIBarButtonItem = UIBarButtonItem()
@@ -129,6 +130,18 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     
     private func setupMapType(){
     
+        self.mapType = ConfigurationStandards.defaultStandards.typeOfPrefferedMap
+        
+        switch (self.mapType) {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .satellite
+        case 2:
+            mapView.mapType = .hybrid
+        default: // or case 2
+            mapView.mapType = .standard
+        }
     }
 
     private func setuplocation(){

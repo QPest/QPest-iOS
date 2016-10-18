@@ -17,10 +17,16 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     
     var notificationButton : UIBarButtonItem = UIBarButtonItem()
     
+    var tableViewOrder : [Int] = []
+    var tableViewInfo : [MonitoringLog] = []
+    
+    var monitoringIndexController : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.setupNavigationBar()
+        self.getLogs()
         self.setupTableView()
         self.setupNotifications()
     }
@@ -58,6 +64,14 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
   
     }
     
+    func getLogs(){
+    
+        MonitoringLogDataSource.defaultLogDataSource.reload()
+        self.tableViewOrder = MonitoringLogDataSource.defaultLogDataSource.getOrder()
+        self.tableViewInfo = MonitoringLogDataSource.defaultLogDataSource.getLogInfo()
+        
+    }
+    
     func setupTableView(){
         
         //Registrar celulas
@@ -81,12 +95,12 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.tableViewOrder.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if indexPath.row == 0{
+        if self.tableViewOrder[indexPath.row] == 1{
             return self.generateCellForHeader(tableview: tableView, index: indexPath as NSIndexPath)
         }
         else{
@@ -116,6 +130,21 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         
         cell.selectionStyle = .none
         
+        let newLog = self.tableViewInfo[index.row]
+        
+        cell.monitoringTime.text = newLog.dateFormatted
+        cell.monitoringTitle.text = newLog.pragueName
+        cell.monitoringCount.text = String(newLog.pragueQuantity)
+        
+        if newLog.isPrague{
+        
+            cell.tagView.backgroundColor = ColorPalette.defaultPalette.pragueTableViewColor
+        }
+        else{
+        
+            cell.tagView.backgroundColor = ColorPalette.defaultPalette.naturalEnemyTableViewColor
+
+        }
         
         return cell
     }

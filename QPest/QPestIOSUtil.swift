@@ -11,15 +11,14 @@ import UIKit
 
 class QPestIOSUtil: NSObject {
     
-    class func viewControllerFromStoryboardWithIdentifier(name:NSString, identifier:NSString)->UIViewController?{
-        if let storyboard : UIStoryboard = UIStoryboard(name: name as String, bundle: nil){
-            if(!(identifier.isEqual(to: ""))){
-                return storyboard.instantiateViewController(withIdentifier: identifier as String)
-            }else{
-                return storyboard.instantiateInitialViewController()!
-            }
+    class func viewControllerFromStoryboardWithIdentifier(name:String, identifier:NSString)->UIViewController?{
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: name, bundle: nil)
+        
+        if(!(identifier.isEqual(to: ""))){
+            return storyboard.instantiateViewController(withIdentifier: identifier as String)
         }else{
-            return nil
+            return storyboard.instantiateInitialViewController()!
         }
         
     }

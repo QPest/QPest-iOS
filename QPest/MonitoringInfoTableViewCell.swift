@@ -14,9 +14,8 @@ class MonitoringInfoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var monitoringTime: UILabel!
     @IBOutlet weak var monitoringTitle: UILabel!
-    @IBOutlet weak var monitoringDetails: UILabel!
-    
-    
+    @IBOutlet weak var monitoringCount: UILabel!
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

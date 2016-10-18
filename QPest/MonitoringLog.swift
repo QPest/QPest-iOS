@@ -17,4 +17,10 @@ class MonitoringLog: NSObject {
 
     var pragueQuantity : Int = Int()
     
+    var pragueName : String = String()
+    
+    var localization : String = String()
+
+    var dateFormatted : String = String()
+
 }

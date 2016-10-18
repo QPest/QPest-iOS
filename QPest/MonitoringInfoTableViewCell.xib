@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="375" height="69"/>
+                <frame key="frameInset" width="375" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-sx-DUg">
@@ -39,46 +39,7 @@
                                 <attributes>
                                     <color key="NSColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                     <font key="NSFont" size="15" name="Avenir-Book"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="15" maximumLineHeight="15" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                        <tabStops>
-                                            <textTab alignment="left" location="28">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="56">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="84">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="112">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="140">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="168">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="196">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="224">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="252">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="280">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="308">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="336">
-                                                <options/>
-                                            </textTab>
-                                        </tabStops>
-                                    </paragraphStyle>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="15" maximumLineHeight="15" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -153,7 +114,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="monitoringDetails" destination="Hva-rO-FNH" id="tgK-j7-sLT"/>
+                <outlet property="monitoringCount" destination="Hva-rO-FNH" id="o31-gE-7pJ"/>
                 <outlet property="monitoringTime" destination="2yW-BI-puM" id="njY-Gv-IwV"/>
                 <outlet property="monitoringTitle" destination="Pg7-ML-l94" id="I1c-S6-mrE"/>
                 <outlet property="tagView" destination="lrg-sx-DUg" id="Ad8-J9-vmE"/>

@@ -49,6 +49,8 @@
 		6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */; };
 		6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073131DB65627005ABB31 /* MapConfigurationViewController.swift */; };
 		6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073151DB68A99005ABB31 /* ConfigurationStandards.swift */; };
+		6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7073181DB6B711005ABB31 /* CircleMenu.framework */; };
+		6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		6B7073131DB65627005ABB31 /* MapConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapConfigurationViewController.swift; sourceTree = "<group>"; };
 		6B7073151DB68A99005ABB31 /* ConfigurationStandards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationStandards.swift; sourceTree = "<group>"; };
 		6B7073171DB69E30005ABB31 /* QPest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QPest.entitlements; sourceTree = "<group>"; };
+		6B7073181DB6B711005ABB31 /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
+		6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				6B52B3BE1DA9708600D632E1 /* PaperOnboarding.framework in Frameworks */,
 				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
 				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
+				6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +168,7 @@
 			children = (
 				6B52B39D1DA86D8600D632E1 /* IdentificationStoryboard.storyboard */,
 				6B52B3CF1DAA8C3700D632E1 /* Main */,
+				6B70731A1DB6B83C005ABB31 /* Menu */,
 				6B52B3DD1DAA945500D632E1 /* Manual */,
 			);
 			name = Identification;
@@ -222,6 +228,7 @@
 		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B7073181DB6B711005ABB31 /* CircleMenu.framework */,
 				6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */,
 				6B52B3BC1DA9707000D632E1 /* PaperOnboarding.framework */,
 				6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */,
@@ -388,6 +395,14 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
+		6B70731A1DB6B83C005ABB31 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -480,6 +495,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/PaperOnboarding.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TextFieldEffects.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CircleMenu.framework",
 			);
 			outputPaths = (
 			);
@@ -509,6 +525,7 @@
 				6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,
+				6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */,
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
 				6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 class IdentificationManualViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
 
         self.setupNavigationBar()

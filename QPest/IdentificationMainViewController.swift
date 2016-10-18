@@ -13,8 +13,8 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     let identificationTitle = "Identificação"
     var searchButton : UIBarButtonItem = UIBarButtonItem()
 
-    var titles : [String] = ["Tirar foto", "Escolher da biblioteca","Manual de Identificação"]
-    var images : [String] = ["camera", "photo-library", "manual"]
+    var titles : [String] = ["Tirar foto", "Escolher da biblioteca","Ações","Manual de Identificação"]
+    var images : [String] = ["camera", "photo-library","identificationMenu","manual"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,7 +25,6 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         
         self.setupNavigationBar()
         self.setupTableView()
-        self.setupHelp()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,21 +35,6 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     private func setupNavigationBar(){
         
         self.navigationItem.title = self.identificationTitle
-    }
-    
-    private func setupHelp(){
-        
-        let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
-        
-        let button = UIButton(frame: rect)
-        button.addTarget(self, action: #selector(IdentificationMainViewController.didClickHelp), for: .touchUpInside)
-        button.setImage(UIImage(named: "helpIcon"), for: .normal)
-        self.searchButton = UIBarButtonItem(customView: button)
-        self.navigationItem.rightBarButtonItem = self.searchButton
-    }
-    
-    func didClickHelp(){
-        
     }
     
     func setupTableView(){
@@ -82,7 +66,7 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 185
+        return 115
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -93,7 +77,10 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         else  if indexPath.row == 1{
             // Camera library selected
         }
-        else if indexPath.row == 2{
+        else  if indexPath.row == 2{
+            self.performSegue(withIdentifier: "goMenu", sender: nil)
+        }
+        else if indexPath.row == 3{
             self.performSegue(withIdentifier: "goManual", sender: nil)
         }
         

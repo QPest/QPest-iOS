@@ -30,6 +30,125 @@
             </objects>
             <point key="canvasLocation" x="-484" y="-257"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="vjw-rx-6a4">
+            <objects>
+                <viewController id="kqI-fK-QBn" customClass="CameraViewController" customModule="QPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aye-8N-18z"/>
+                        <viewControllerLayoutGuide type="bottom" id="WS9-CI-vdA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TZ0-kw-XQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6g-4R-c1x">
+                                <frame key="frameInset" minX="150" minY="572" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82589593487142243" green="0.83524428074475232" blue="0.85312500000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="kqI-fK-QBn" eventType="touchUpInside" id="BJH-Wi-VIE"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTN-df-w1T">
+                                <frame key="frameInset" width="375" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-SS-j46">
+                                        <frame key="frameInset" minX="8" minY="29" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Sair">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="leaveCamera:" destination="kqI-fK-QBn" eventType="touchUpInside" id="DTL-Nq-NQV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-BW-mHk">
+                                        <frame key="frameInset" minX="290" minY="29" width="77" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Flash: Auto">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeFlashValue:" destination="kqI-fK-QBn" eventType="touchUpInside" id="eqO-Kg-o99"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.61568627450980395" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipm-7D-6lM">
+                                <frame key="frameInset" minY="65" width="375" height="499"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="Z6g-4R-c1x" id="eaj-Rn-r6w"/>
+                        <outlet property="cameraView" destination="ipm-7D-6lM" id="17D-wp-i9G"/>
+                        <outlet property="flashButton" destination="lSG-BW-mHk" id="kvC-J4-eUb"/>
+                        <segue destination="qnV-7Q-6dx" kind="show" identifier="goImage" id="tLu-O5-sZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpH-4d-vUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240.80000000000001" y="478.11094452773619"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="pwa-TW-qIG">
+            <objects>
+                <viewController id="qnV-7Q-6dx" customClass="ImageViewController" customModule="QPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r34-9i-6xZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="C1A-nt-zIc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1F5-Re-vXV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BTk-0z-6Yy"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awv-n3-1HN">
+                                <state key="normal" title="Descartar"/>
+                                <connections>
+                                    <action selector="discardImage:" destination="qnV-7Q-6dx" eventType="touchUpInside" id="aQh-Gp-Ypb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzd-nX-gCS">
+                                <state key="normal" title="Identificar"/>
+                                <connections>
+                                    <action selector="identifyImage:" destination="qnV-7Q-6dx" eventType="touchUpInside" id="PO4-zg-dc5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BTk-0z-6Yy" firstAttribute="leading" secondItem="1F5-Re-vXV" secondAttribute="leading" id="Mfs-YP-QK4"/>
+                            <constraint firstItem="Awv-n3-1HN" firstAttribute="leading" secondItem="1F5-Re-vXV" secondAttribute="leadingMargin" id="Mlt-OA-VZd"/>
+                            <constraint firstItem="hzd-nX-gCS" firstAttribute="trailing" secondItem="1F5-Re-vXV" secondAttribute="trailingMargin" id="Vv6-8Y-pnr"/>
+                            <constraint firstAttribute="bottom" secondItem="Awv-n3-1HN" secondAttribute="bottom" constant="20" symbolic="YES" id="gCp-My-Pdt"/>
+                            <constraint firstItem="BTk-0z-6Yy" firstAttribute="top" secondItem="r34-9i-6xZ" secondAttribute="bottom" id="lQc-pg-XUG"/>
+                            <constraint firstAttribute="trailing" secondItem="BTk-0z-6Yy" secondAttribute="trailing" id="mnX-iG-YaG"/>
+                            <constraint firstItem="BTk-0z-6Yy" firstAttribute="bottom" secondItem="C1A-nt-zIc" secondAttribute="top" id="o91-uj-IhA"/>
+                            <constraint firstItem="Awv-n3-1HN" firstAttribute="baseline" secondItem="hzd-nX-gCS" secondAttribute="baseline" id="wtd-MD-piU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="discardButton" destination="Awv-n3-1HN" id="Qzi-Ge-yie"/>
+                        <outlet property="identifyButton" destination="hzd-nX-gCS" id="UNK-Cd-xwO"/>
+                        <outlet property="imageView" destination="BTk-0z-6Yy" id="V0U-hT-BI1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nv3-gg-wGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="478"/>
+        </scene>
         <!--Identification Main View Controller-->
         <scene sceneID="6zC-3d-2cb">
             <objects>
@@ -59,6 +178,7 @@
                         <outlet property="tableView" destination="7p0-2r-tht" id="MtF-Tk-fQX"/>
                         <segue destination="U0P-FZ-VO9" kind="show" identifier="goManual" id="gab-8b-7Og"/>
                         <segue destination="iiz-vp-v0X" kind="presentation" identifier="goMenu" id="NPy-hx-dtW"/>
+                        <segue destination="kqI-fK-QBn" kind="showDetail" identifier="goCamera" id="LxO-PF-2Hp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4V-Tw-mRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ow2-jK-8F9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="-258"/>
+            <point key="canvasLocation" x="988.79999999999995" y="-258.62068965517244"/>
         </scene>
         <!--Survey Main View Controller-->
         <scene sceneID="u3F-8o-kWc">
@@ -160,60 +280,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDc-vt-svh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="232.80000000000001" y="472.71364317841085"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="WsW-kz-wFg">
-            <objects>
-                <viewController id="KK6-6N-7N3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="z8a-1S-87s"/>
-                        <viewControllerLayoutGuide type="bottom" id="INK-Op-CY8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lSN-yU-E8m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J8F-We-h4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="235" y="1183"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="M4B-5S-l7A">
-            <objects>
-                <viewController id="YpM-A4-hkC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hQg-Ya-ouw"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Aw-rE-rsX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5Zd-p7-odn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ysy-L1-xb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="982" y="1182"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="qRZ-i6-n0y">
-            <objects>
-                <viewController id="qd9-Lf-BLV" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qN1-T9-QP9"/>
-                        <viewControllerLayoutGuide type="bottom" id="t76-IR-91Z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rFh-6i-rq0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KzO-zI-5xb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="982" y="473"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dec-YS-0gZ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="rCb-m9-66b">
+            <objects>
+                <viewController id="UZL-kO-HT7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G0b-vk-17F"/>
+                        <viewControllerLayoutGuide type="bottom" id="UQS-Qr-8V1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gtr-N7-3SM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUl-Bq-7OE"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fd7-ux-i6o">
+                                <state key="normal" title="Descartar"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzf-Ft-yMP">
+                                <state key="normal" title="Identificar"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dzf-Ft-yMP" firstAttribute="trailing" secondItem="Gtr-N7-3SM" secondAttribute="trailingMargin" id="82i-SL-cQy"/>
+                            <constraint firstAttribute="trailing" secondItem="wUl-Bq-7OE" secondAttribute="trailing" id="LtG-VB-Zq5"/>
+                            <constraint firstItem="Fd7-ux-i6o" firstAttribute="leading" secondItem="Gtr-N7-3SM" secondAttribute="leadingMargin" id="TkM-S8-F2r"/>
+                            <constraint firstItem="wUl-Bq-7OE" firstAttribute="bottom" secondItem="UQS-Qr-8V1" secondAttribute="top" id="UTn-ct-RRQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Fd7-ux-i6o" secondAttribute="bottom" constant="20" symbolic="YES" id="ar9-zC-Hp3"/>
+                            <constraint firstItem="Fd7-ux-i6o" firstAttribute="baseline" secondItem="Dzf-Ft-yMP" secondAttribute="baseline" id="hiA-lG-0fY"/>
+                            <constraint firstItem="wUl-Bq-7OE" firstAttribute="leading" secondItem="Gtr-N7-3SM" secondAttribute="leading" id="nOA-d0-8ug"/>
+                            <constraint firstItem="wUl-Bq-7OE" firstAttribute="top" secondItem="G0b-vk-17F" secondAttribute="bottom" id="oiR-OW-T29"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i2r-Hr-O9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980.79999999999995" y="484.40779610194909"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7So-If-wAj">
+            <objects>
+                <viewController id="Dec-YS-0gZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6CP-7L-shI"/>
+                        <viewControllerLayoutGuide type="bottom" id="1W2-mr-jZT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x3M-Sk-6Bv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVC-6f-BES">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKj-ac-6rq">
+                                <color key="backgroundColor" red="0.1073173769" green="0.14125099869999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Osk-qC-K24"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1W2-mr-jZT" firstAttribute="top" secondItem="zKj-ac-6rq" secondAttribute="bottom" constant="8" symbolic="YES" id="5m4-SN-2Zc"/>
+                            <constraint firstItem="zKj-ac-6rq" firstAttribute="centerX" secondItem="MVC-6f-BES" secondAttribute="centerX" id="LcD-82-wZU"/>
+                            <constraint firstItem="MVC-6f-BES" firstAttribute="leading" secondItem="x3M-Sk-6Bv" secondAttribute="leading" id="Rg3-26-pVs"/>
+                            <constraint firstAttribute="trailing" secondItem="MVC-6f-BES" secondAttribute="trailing" id="SMb-Pb-M5G"/>
+                            <constraint firstItem="1W2-mr-jZT" firstAttribute="top" secondItem="MVC-6f-BES" secondAttribute="bottom" constant="82" id="Wz7-5V-ke9"/>
+                            <constraint firstItem="zKj-ac-6rq" firstAttribute="top" secondItem="MVC-6f-BES" secondAttribute="bottom" constant="24" id="fb0-2Q-sci"/>
+                            <constraint firstItem="MVC-6f-BES" firstAttribute="top" secondItem="6CP-7L-shI" secondAttribute="bottom" constant="8" symbolic="YES" id="p7e-lP-yqR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ikt-Tx-ER2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241.59999999999999" y="485.30734632683664"/>
+        </scene>
+    </scenes>
+</document>

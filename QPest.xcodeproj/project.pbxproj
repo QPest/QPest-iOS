@@ -51,6 +51,11 @@
 		6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073151DB68A99005ABB31 /* ConfigurationStandards.swift */; };
 		6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7073181DB6B711005ABB31 /* CircleMenu.framework */; };
 		6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */; };
+		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
+		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
+		DD06DF421DAB006400BAC1A2 /* CameraStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */; };
+		DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */; };
+		DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +106,12 @@
 		6B7073171DB69E30005ABB31 /* QPest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QPest.entitlements; sourceTree = "<group>"; };
 		6B7073181DB6B711005ABB31 /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
 		6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMenuViewController.swift; sourceTree = "<group>"; };
+		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CameraStoryboard.storyboard; sourceTree = "<group>"; };
+		DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CameraManager.framework; path = Carthage/Build/iOS/CameraManager.framework; sourceTree = "<group>"; };
+		DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +123,7 @@
 				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
 				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
 				6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */,
+				DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +139,7 @@
 			);
 			sourceTree = "<group>";
 		};
+
 		6B52B3721DA8676B00D632E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +148,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+
 		6B52B3731DA8676B00D632E1 /* QPest */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +167,7 @@
 			path = QPest;
 			sourceTree = "<group>";
 		};
+
 		6B52B3861DA867CF00D632E1 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,10 +178,12 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
+
 		6B52B3871DA867D300D632E1 /* Identification */ = {
 			isa = PBXGroup;
 			children = (
 				6B52B39D1DA86D8600D632E1 /* IdentificationStoryboard.storyboard */,
+				DD06DF3A1DAAF46600BAC1A2 /* Camera */,
 				6B52B3CF1DAA8C3700D632E1 /* Main */,
 				6B70731A1DB6B83C005ABB31 /* Menu */,
 				6B52B3DD1DAA945500D632E1 /* Manual */,
@@ -174,6 +191,7 @@
 			name = Identification;
 			sourceTree = "<group>";
 		};
+
 		6B52B3881DA867DF00D632E1 /* Monitoring */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +204,7 @@
 			name = Monitoring;
 			sourceTree = "<group>";
 		};
+
 		6B52B38E1DA86A1F00D632E1 /* Initial Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +215,7 @@
 			name = "Initial Tab Bar";
 			sourceTree = "<group>";
 		};
+
 		6B52B38F1DA86A2900D632E1 /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +226,7 @@
 			name = Others;
 			sourceTree = "<group>";
 		};
+
 		6B52B3921DA86A7E00D632E1 /* Custom Tab Bar  */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +237,7 @@
 			name = "Custom Tab Bar ";
 			sourceTree = "<group>";
 		};
+
 		6B52B3AB1DA87A5C00D632E1 /* Main Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,17 +247,20 @@
 			name = "Main Table View Cell";
 			sourceTree = "<group>";
 		};
+
 		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6B7073181DB6B711005ABB31 /* CircleMenu.framework */,
 				6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */,
+				DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */,
 				6B52B3BC1DA9707000D632E1 /* PaperOnboarding.framework */,
 				6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+
 		6B52B3B91DA9323E00D632E1 /* Table View */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +272,7 @@
 			name = "Table View";
 			sourceTree = "<group>";
 		};
+
 		6B52B3C11DA9759100D632E1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +283,7 @@
 			name = Onboarding;
 			sourceTree = "<group>";
 		};
+
 		6B52B3CC1DAA8BC200D632E1 /* FrontEnd Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +296,7 @@
 			name = "FrontEnd Extensions";
 			sourceTree = "<group>";
 		};
+
 		6B52B3CD1DAA8C0400D632E1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,15 +314,18 @@
 			name = Notification;
 			sourceTree = "<group>";
 		};
+
 		6B52B3CF1DAA8C3700D632E1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				6B52B3A31DA86DE300D632E1 /* IdentificationMainViewController.swift */,
+				DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */,
 				6B52B3AB1DA87A5C00D632E1 /* Main Table View Cell */,
 			);
 			name = Main;
 			sourceTree = "<group>";
 		};
+
 		6B52B3D01DAA8C4C00D632E1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +334,7 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+
 		6B52B3D11DAA8C8900D632E1 /* Delegate and Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +345,7 @@
 			name = "Delegate and Util";
 			sourceTree = "<group>";
 		};
+
 		6B52B3D21DAA8CDD00D632E1 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +354,7 @@
 			name = Survey;
 			sourceTree = "<group>";
 		};
+
 		6B52B3D51DAA8D3C00D632E1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +372,7 @@
 			name = "Monitoring Model";
 			sourceTree = "<group>";
 		};
+
 		6B52B3DB1DAA92C400D632E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +381,7 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+
 		6B52B3DD1DAA945500D632E1 /* Manual */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +390,7 @@
 			name = Manual;
 			sourceTree = "<group>";
 		};
+
 		6B7072FE1DB5D257005ABB31 /* MonitoringSingleViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +400,7 @@
 			name = MonitoringSingleViewController;
 			sourceTree = "<group>";
 		};
+
 		6B7073051DB5D499005ABB31 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +410,7 @@
 			name = Image;
 			sourceTree = "<group>";
 		};
+
 		6B7073081DB643D3005ABB31 /* Add New */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +419,7 @@
 			name = "Add New";
 			sourceTree = "<group>";
 		};
+
 		6B7073091DB64544005ABB31 /* Custom Text Field */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +427,7 @@
 			name = "Custom Text Field";
 			sourceTree = "<group>";
 		};
+
 		6B7073121DB6560E005ABB31 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,12 +436,24 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
+
 		6B70731A1DB6B83C005ABB31 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+
+		DD06DF3A1DAAF46600BAC1A2 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */,
+				DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */,
+				DD06DF411DAB006400BAC1A2 /* CameraStoryboard.storyboard */,
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,7 +489,7 @@
 				TargetAttributes = {
 					6B52B3701DA8676B00D632E1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5ZSN4629J8;
+						DevelopmentTeam = K82WMR44W3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -477,6 +530,9 @@
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
 				6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */,
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
+
+				6B52B3B41DA9322A00D632E1 /* MonitoringHeaderTableViewCell.xib in Resources */,
+				DD06DF421DAB006400BAC1A2 /* CameraStoryboard.storyboard in Resources */,
 				6B52B38B1DA869DD00D632E1 /* QPestTabBar.storyboard in Resources */,
 				6B52B39C1DA86D7000D632E1 /* MonotoringStoryboard.storyboard in Resources */,
 				6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */,
@@ -496,6 +552,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PaperOnboarding.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TextFieldEffects.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CircleMenu.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CameraManager.framework",
 			);
 			outputPaths = (
 			);
@@ -519,6 +576,8 @@
 				6B52B3A41DA86DE300D632E1 /* IdentificationMainViewController.swift in Sources */,
 				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
 				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,
+				DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */,
+				DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */,
 				6B52B3961DA86AB300D632E1 /* CustomTabAnimatedTransitioning.swift in Sources */,
 				6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */,
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
@@ -528,6 +587,7 @@
 				6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */,
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
+				DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */,
 				6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */,
 				6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,

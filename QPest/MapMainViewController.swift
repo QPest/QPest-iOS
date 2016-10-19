@@ -33,7 +33,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     let configurationIcon = "configIcon"
     let mapLocationIcon = "map-location"
     
-    let feedbackText : String = "Texto explicando como alterar"
+    let feedbackText : String = "Para inserir os vertices do seu terreno toque na tela e segure para marcar um ponto. Continue marcando pontos até que tenha demarcado seu terreno. Por último clique em salvar."
     
     var isInEditingMode : Bool = false
     

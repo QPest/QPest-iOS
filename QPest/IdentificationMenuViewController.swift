@@ -13,8 +13,8 @@ class IdentificationMenuViewController: UIViewController, CircleMenuDelegate {
 
     let items: [(icon: String, color: UIColor)] = [
         ("action", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
-        ("bug", UIColor(red:0.22, green:0.74, blue:0, alpha:1)),
-        ("info", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
+        ("bug", UIColor.colorWithHexString(hex: "5FE39D")),
+        ("info", UIColor.colorWithHexString(hex: "e3625f")),
         ("survey", UIColor.colorWithHexString(hex: "FFC058"))
         ]
     

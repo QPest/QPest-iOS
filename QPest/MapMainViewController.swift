@@ -16,6 +16,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     @IBOutlet weak var overlayButton: UIButton!
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var exitEditing: UIButton!
     
     let mapTitle = "Meu Terreno"
     let locationManager = CLLocationManager()
@@ -31,8 +32,6 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     var actionToLocateButton : UIBarButtonItem = UIBarButtonItem()
     let configurationIcon = "configIcon"
     let mapLocationIcon = "map-location"
-    
-    var needingUpdate : Bool = true
     
     let feedbackText : String = "Texto explicando como alterar"
     
@@ -69,6 +68,8 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         self.setupInitialText()
         
+        self.exitEditing.isHidden = true
+        
         mapView.centerCoordinate = self.locationCoordinate.coordinate
         mapView.showsUserLocation = true
         mapView.userLocation.title = "Minha Localização"
@@ -102,17 +103,18 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
         let button = UIButton(frame: rect)
-        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToLocate), for: .touchUpInside)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToEnterOverlay), for: .touchUpInside)
         button.setImage(UIImage(named: self.mapLocationIcon), for: .normal)
         self.actionToLocateButton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = self.actionToLocateButton
     }
     
     private func setupActionToExitOverlay(){
-        let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
+        let rect = CGRect(x: 0, y: 0, width: 50, height: 32) // CGFloat, Double, Int
         let button = UIButton(frame: rect)
-        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToExitOverlay), for: .touchUpInside)
-        button.setImage(UIImage(named: "back"), for: .normal)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToSaveOverlay), for: .touchUpInside)
+        //button.setImage(UIImage(named: "back"), for: .normal)
+        button.setTitle("Salvar", for: .normal)
         self.actionToLocateButton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = self.actionToLocateButton
     }
@@ -167,19 +169,34 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         self.overlayButton.layer.cornerRadius = 5
     }
     
-    func didClickActionToLocate(){
+    func didClickActionToEnterOverlay(){
         
         self.showOverlayView()
         self.setupActionToExitOverlay()
-        
     }
     
-    func didClickActionToExitOverlay(){
+    func didClickActionToSaveOverlay(){
+        
+        self.setupActionToLocate()
+        self.endEditing(save: true)
+    }
+    
+    
+    @IBAction func didClickActionToExitOverlay(_ sender: UIButton) {
+        
+        self.setupActionToLocate()
+        self.endEditing(save: false)
+    }
+    
+    @IBAction func didClickCenterMap(_ sender: AnyObject) {
+        
+        self.centerMapOnLocation(location: self.locationCoordinate)
+    }
+    
+    @IBAction func didClickOverlayButton(_ sender: AnyObject) {
         
         self.dismissOverlayView()
-        self.setupActionToLocate()
-        self.endEditing()
-        
+        self.beginEditing()
     }
     
     func didClickNotification(){
@@ -237,27 +254,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             polygonView.alpha = 0.3
             return polygonView
         }
-        /*
-        if self.isInEditingMode {
-            if overlay is MKPolygon{
-                let polygonView = MKPolygonRenderer(overlay: overlay)
-                polygonView.strokeColor = UIColor.blue
-                polygonView.lineWidth = 0.5
-                
-                return polygonView
-            }
-        } else{
-            if areaCoordinates.count > 0 {
-                for overlay in areaCoordinates {
-                    let polygon = MKPolygonRenderer(overlay: overlay)
-                    polygon.strokeColor = UIColor.black
-                    polygon.fillColor = UIColor.blue
-                    
-                    return polygon
-                }
-            }
-        }
-         */
+        
         return MKPolygonRenderer()
     }
 
@@ -283,27 +280,11 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
     }
 
-    @IBAction func didClickCenterMap(_ sender: AnyObject) {
-    
-        self.needingUpdate = true
-    }
-    
-    @IBAction func didClickOverlayButton(_ sender: AnyObject) {
-        
-        self.dismissOverlayView()
-        self.beginEditing()
-    }
-  
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
         let newCoordinate = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
         self.locationCoordinate = newCoordinate
-        
-        if self.needingUpdate{
-            self.centerMapOnLocation(location: self.locationCoordinate)
-            self.needingUpdate = false
-        }
         
     }
     
@@ -373,40 +354,66 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         // Concatenation of the lower and upper hulls gives the convex hull.
         return (upper + lower)
     }
-    func beginEditing(){
+    
+    // MARK: Enter and leave editing logic
+    
+    private func beginEditing(){
     
         // Start editing, createing shapes, etc
     
         self.isInEditingMode = true
     }
     
-    func endEditing(){
+    private func endEditing(save: Bool){
         
-        if let polygon = self.polygon{
-            self.areaCoordinates.append(polygon)
+        if save {
+            self.savePolygonsArea()
+        } else{
+            if let polygon = self.polygon{
+                mapView.remove(polygon)
+            }
         }
+        
+        self.drawPolygonsArea()
+        self.removeAnnotations()
+        
+        self.isInEditingMode = false
+        
+        self.exitEditing.isHidden = true
+    }
+    
+    private func savePolygonsArea(){
+        if let polygon = self.polygon{
+            let currentPolygon = MKPolygon(points: polygon.points(), count: polygon.pointCount)
+            self.areaCoordinates.append(currentPolygon)
+            
+            mapView.remove(polygon)
+            self.polygon = nil
+        }
+    }
+    
+    private func drawPolygonsArea(){
         
         if areaCoordinates.count > 0 {
             for polygon in areaCoordinates{
                 mapView.add(polygon)
             }
         }
-        
-        for annotation in self.annotations{
-            mapView.removeAnnotation(annotation)
-        }
+    }
+    
+    private func removeAnnotations(){
+        mapView.removeAnnotations(self.annotations)
         
         self.annotations = []
-        
-        self.isInEditingMode = false
     }
     
-    func showOverlayView(){
+    private func showOverlayView(){
     
         self.overlayView.isHidden = false
+        self.exitEditing.isHidden = false
     }
     
-    func dismissOverlayView(){
+    private func dismissOverlayView(){
     
         self.overlayView.isHidden = true
 

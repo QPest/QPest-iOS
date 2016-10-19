@@ -42,9 +42,7 @@
                         <rect key="frame" x="0.0" y="64" width="384" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rPj-WQ-7jb">
-                                <frame key="frameInset" width="1000" height="1000"/>
-                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rPj-WQ-7jb"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvf-bw-Zlc">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="9FC-k9-Crf"/>
@@ -55,13 +53,20 @@
                                     <action selector="didClickCenterMap:" destination="zlH-6U-Gh7" eventType="touchUpInside" id="NFP-eG-LPE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ4-FB-wc2">
+                                <state key="normal" backgroundImage="editMap"/>
+                                <connections>
+                                    <action selector="didClickActionToExitOverlay:" destination="zlH-6U-Gh7" eventType="touchUpInside" id="iiR-dp-mkt"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc4-ME-seL">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texto explicando como alterar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-3S-eaL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-3S-eaL">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="334" id="6f2-kv-qBO"/>
                                             <constraint firstAttribute="height" constant="221" id="cnZ-HB-wlt"/>
                                         </constraints>
+                                        <string key="text">Para inserir os vetices do seu terreno toque na tela e segure para marcar um ponto. Continue marcando pontos até que tenha demarcado seu terreno. Por último clique em salvar.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -135,13 +140,18 @@
                             <constraint firstAttribute="trailing" secondItem="mc4-ME-seL" secondAttribute="trailing" id="NZr-ab-IBx"/>
                             <constraint firstItem="dbj-KH-JIK" firstAttribute="top" secondItem="rPj-WQ-7jb" secondAttribute="bottom" id="RIR-es-oQI"/>
                             <constraint firstItem="mc4-ME-seL" firstAttribute="top" secondItem="i1l-4o-hbs" secondAttribute="bottom" id="Se8-TG-kQt"/>
+                            <constraint firstItem="CZ4-FB-wc2" firstAttribute="leading" secondItem="JhP-qt-VFc" secondAttribute="leadingMargin" id="XNN-al-srh"/>
+                            <constraint firstItem="CZ4-FB-wc2" firstAttribute="height" secondItem="Lvf-bw-Zlc" secondAttribute="height" id="cl1-gH-Bs7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lvf-bw-Zlc" secondAttribute="trailing" constant="1" id="egk-S2-82P"/>
                             <constraint firstItem="rPj-WQ-7jb" firstAttribute="top" secondItem="i1l-4o-hbs" secondAttribute="bottom" id="gLx-KQ-ZSB"/>
                             <constraint firstItem="dbj-KH-JIK" firstAttribute="top" secondItem="Lvf-bw-Zlc" secondAttribute="bottom" constant="58" id="qOT-Kp-51t"/>
+                            <constraint firstItem="CZ4-FB-wc2" firstAttribute="centerY" secondItem="Lvf-bw-Zlc" secondAttribute="centerY" id="vKt-ZG-mhz"/>
+                            <constraint firstItem="CZ4-FB-wc2" firstAttribute="width" secondItem="Lvf-bw-Zlc" secondAttribute="width" id="vts-bL-ljb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MGV-Fv-7Yh"/>
                     <connections>
+                        <outlet property="exitEditing" destination="CZ4-FB-wc2" id="HIR-Ri-tay"/>
                         <outlet property="mapView" destination="rPj-WQ-7jb" id="HBr-yz-4Wc"/>
                         <outlet property="overlayButton" destination="ZEa-KE-F5g" id="ax8-rI-2ku"/>
                         <outlet property="overlayView" destination="mc4-ME-seL" id="dKy-LQ-SOc"/>
@@ -266,6 +276,7 @@
     </scenes>
     <resources>
         <image name="centerMap" width="102" height="102"/>
+        <image name="editMap" width="102" height="102"/>
         <image name="map-location" width="55" height="54"/>
     </resources>
 </document>

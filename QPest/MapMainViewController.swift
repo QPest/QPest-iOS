@@ -25,6 +25,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     var annotations = [MKPointAnnotation]()
     var polygon : MKPolygon?
+    var areaCoordinates = [MKPolygon]()
     
     var configurationButton : UIBarButtonItem = UIBarButtonItem()
     var actionToLocateButton : UIBarButtonItem = UIBarButtonItem()
@@ -107,6 +108,15 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         self.navigationItem.leftBarButtonItem = self.actionToLocateButton
     }
     
+    private func setupActionToExitOverlay(){
+        let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
+        let button = UIButton(frame: rect)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToExitOverlay), for: .touchUpInside)
+        button.setImage(UIImage(named: "back"), for: .normal)
+        self.actionToLocateButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = self.actionToLocateButton
+    }
+    
     private func setupConfigurationIcon(){
         
         let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
@@ -131,22 +141,24 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     func handleLongPress(_ gestureRecognize: UIGestureRecognizer){
-        
-        guard gestureRecognize.state == .began else {
-            return
+        if self.isInEditingMode {
+            guard gestureRecognize.state == .began else {
+                return
+            }
+            
+            let touchPoint = gestureRecognize.location(in: self.mapView)
+            let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+            
+            let currentAnnotation = MKPointAnnotation()
+            
+            currentAnnotation.title = "Point \(annotations.count)"
+            currentAnnotation.coordinate = touchMapCoordinate
+            mapView.addAnnotation(currentAnnotation)
+            
+            annotations.append(currentAnnotation)
+            
+            updateOverlay()
         }
-        
-        let touchPoint = gestureRecognize.location(in: self.mapView)
-        let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        
-        let currentAnnotation = MKPointAnnotation()
-        currentAnnotation.title = "Point \(annotations.count)"
-        currentAnnotation.coordinate = touchMapCoordinate
-        mapView.addAnnotation(currentAnnotation)
-        
-        annotations.append(currentAnnotation)
-        
-        updateOverlay()
     }
     
     // MARK: Buttons
@@ -158,7 +170,15 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     func didClickActionToLocate(){
         
         self.showOverlayView()
-        self.beginEditing()
+        self.setupActionToExitOverlay()
+        
+    }
+    
+    func didClickActionToExitOverlay(){
+        
+        self.dismissOverlayView()
+        self.setupActionToLocate()
+        self.endEditing()
         
     }
     
@@ -175,15 +195,69 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
 
     // MARK: Map help functions
     
+    func mapView(_ mapView: MKMapView,
+                 annotationView view: MKAnnotationView,
+                 didChange newState: MKAnnotationViewDragState,
+                 fromOldState oldState: MKAnnotationViewDragState) {
+        
+        switch newState {
+        case .starting:
+            view.dragState = .dragging
+            break
+        case .ending, .canceling:
+            view.dragState = .none
+            break
+        default:
+            break
+        }
+    }
+    
+    /*
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var v : MKAnnotationView! = nil
+        let ident = "bike"
+        v = mapView.dequeueReusableAnnotationView(withIdentifier: ident)
+        if v == nil {
+            v = MKAnnotationView(annotation: annotation, reuseIdentifier: ident)
+            //MyAnnotationView(annotation:annotation, reuseIdentifier:ident)
+        }
+        v.annotation = annotation
+        v.isDraggable = true
+        return v
+    }
+    
+    */
+    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolygon{
             let polygonView = MKPolygonRenderer(overlay: overlay)
-            polygonView.strokeColor = UIColor.blue
+            polygonView.strokeColor = UIColor.black
             polygonView.lineWidth = 0.5
-            
+            polygonView.fillColor = UIColor.green
+            polygonView.alpha = 0.3
             return polygonView
         }
-        
+        /*
+        if self.isInEditingMode {
+            if overlay is MKPolygon{
+                let polygonView = MKPolygonRenderer(overlay: overlay)
+                polygonView.strokeColor = UIColor.blue
+                polygonView.lineWidth = 0.5
+                
+                return polygonView
+            }
+        } else{
+            if areaCoordinates.count > 0 {
+                for overlay in areaCoordinates {
+                    let polygon = MKPolygonRenderer(overlay: overlay)
+                    polygon.strokeColor = UIColor.black
+                    polygon.fillColor = UIColor.blue
+                    
+                    return polygon
+                }
+            }
+        }
+         */
         return MKPolygonRenderer()
     }
 
@@ -217,6 +291,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     @IBAction func didClickOverlayButton(_ sender: AnyObject) {
         
         self.dismissOverlayView()
+        self.beginEditing()
     }
   
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -306,7 +381,22 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     func endEditing(){
-    
+        
+        if let polygon = self.polygon{
+            self.areaCoordinates.append(polygon)
+            
+            for polygon in areaCoordinates{
+                mapView.add(polygon)
+            }
+            
+            for annotation in self.annotations{
+                mapView.removeAnnotation(annotation)
+            }
+            
+            self.annotations = []
+            
+        }
+        
         self.isInEditingMode = false
     }
     

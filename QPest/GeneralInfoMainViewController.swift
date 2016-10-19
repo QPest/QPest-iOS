@@ -1,38 +1,40 @@
 //
-//  IdentificationMainViewController.swift
+//  GeneralInfoMainViewController.swift
 //  QPest
 //
-//  Created by Henrique Dutra on 07/10/16.
+//  Created by Henrique Dutra on 19/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
 
 import UIKit
 
-class IdentificationMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    let identificationTitle = "Identificação"
-    var searchButton : UIBarButtonItem = UIBarButtonItem()
+class GeneralInfoMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+
+    var backgroundColorPassed : UIColor = UIColor()
+
+    var titles : [String] = ["Gráfico Curvado", "Gráfico de Barra", "Gráfico de Pontos", "Exportar dados"]
+    var images : [String] = ["graphCurve", "graphBar","graphDot","export"]
+
+    var selectedGraph : Int = 0
     
     @IBOutlet weak var tableView: UITableView!
-    
-    // Table view data
-    var titles : [String] = ["Tirar foto", "Escolher da biblioteca","Ações","Manual de Identificação"]
-    var images : [String] = ["camera", "photo-library","identificationMenu","manual"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupNavigationBar()
+        self.view.backgroundColor = backgroundColorPassed
+        
         self.setupTableView()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    private func setupNavigationBar(){
-        self.navigationItem.title = self.identificationTitle
+
+    @IBAction func didClickBack(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func setupTableView(){
@@ -69,34 +71,46 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 0{
-            self.performSegue(withIdentifier: "goCamera", sender: nil)
 
+        if indexPath.row < 3{
+            self.selectedGraph = indexPath.row
+            self.performSegue(withIdentifier: "goGraph", sender: nil)
         }
-        else  if indexPath.row == 1{
-            // Camera library selected
+        else {
+            self.exportData()
         }
-        else  if indexPath.row == 2{
-            self.performSegue(withIdentifier: "goMenu", sender: nil)
-        }
-        else if indexPath.row == 3{
-            self.performSegue(withIdentifier: "goManual", sender: nil)
-        }
-        
     }
     
     func generateCell(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
         let cell = tableview.dequeueReusableCell(withIdentifier: IdentificationMainTableViewCell.reuseIdentifier, for: index as IndexPath) as! IdentificationMainTableViewCell
         
+        cell.backgroundColor = UIColor.clear
+
         cell.selectionStyle = .none
         
         let newTitle = self.titles[index.row]
         let newImage = self.images[index.row]
         
         cell.labelTitle.text = newTitle
+        cell.labelTitle.textColor = UIColor.white
+        
         cell.imageIcon.image = UIImage(named: newImage)
         
         return cell
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goGraph"){
+            let destination = segue.destination as! GraphViewController
+            destination.graphType = self.selectedGraph
+        }
+   
+    }
+    
+    func exportData(){
+    
+        
     }
     
 }

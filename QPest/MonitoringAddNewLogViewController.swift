@@ -31,7 +31,6 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func didClickConfirmation(_ sender: AnyObject) {
-    
         self.checkFields()
     }
     
@@ -44,6 +43,7 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
 
         var verification : Bool = false
         
+        // Validating if the fiels are formatted
         if let _ = Int(self.quantityTextField.text!) {
             if (self.pragueTextField.text != ""){
                 verification = true
@@ -65,8 +65,7 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func putMessage(){
-        
-        //
+        // Here will be created an alert view
     }
 
     private func createNewLog(){
@@ -81,10 +80,7 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
     }
     
     func dismissView(){
-    
        _ = self.navigationController?.popViewController(animated: true)
-
     }
-    
     
 }

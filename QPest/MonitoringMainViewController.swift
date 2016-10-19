@@ -13,6 +13,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     
     let monitoringTitle = "Monitoramento"
+    
     var notificationIcon : String = String()
     var addIcon : String = String()
     
@@ -26,6 +27,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     
     var logSelected : MonitoringLog = MonitoringLog()
     
+    //MARK: View did load
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -65,9 +67,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func didClickNotification(){
-        
         self.performSegue(withIdentifier: "goNotificationView", sender: nil)
-  
     }
     
     private func setupAddIcon(){
@@ -86,6 +86,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         self.performSegue(withIdentifier: "goAdd", sender: nil)
         
     }
+
     func getLogs(){
     
         MonitoringLogDataSource.defaultLogDataSource.reload()
@@ -178,6 +179,8 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         
         return cell
     }
+
+    // Preparing for next view controller
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goSingle"){

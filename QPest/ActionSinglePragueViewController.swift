@@ -1,30 +1,31 @@
 //
-//  MonitoringNotificationViewController.swift
+//  ActionSinglePragueViewController.swift
 //  QPest
 //
-//  Created by Henrique Dutra on 08/10/16.
+//  Created by Henrique Dutra on 19/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
 
 import UIKit
 
-class MonitoringNotificationViewController: UIViewController {
+class ActionSinglePragueViewController: UIViewController {
 
+    @IBOutlet weak var pragueTitle: UILabel!
+    var pragueSelcted : Prague = Prague()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.pragueTitle.text = pragueSelcted.name
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func dismissAction(_ sender: AnyObject) {
-    
+
+    @IBAction func didClickExit(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
-
 }
-

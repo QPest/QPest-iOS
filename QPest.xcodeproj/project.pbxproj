@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B49AD951DB7108B0079A242 /* GeneralInfoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49AD941DB7108B0079A242 /* GeneralInfoMainViewController.swift */; };
+		6B49AD971DB710E80079A242 /* MIPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49AD961DB710E80079A242 /* MIPMainViewController.swift */; };
+		6B49AD991DB710F50079A242 /* ActionMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49AD981DB710F50079A242 /* ActionMainViewController.swift */; };
+		6B49AD9B1DB730D30079A242 /* ScrollableGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49AD9A1DB730D30079A242 /* ScrollableGraphView.swift */; };
+		6B49AD9D1DB732A10079A242 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49AD9C1DB732A10079A242 /* GraphViewController.swift */; };
+		6B49AD9F1DB7DB130079A242 /* ActionSinglePragueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49AD9E1DB7DB130079A242 /* ActionSinglePragueViewController.swift */; };
+		6B49ADA31DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADA11DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift */; };
+		6B49ADA41DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B49ADA21DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib */; };
+		6B49ADA71DB7DFB40079A242 /* Prague.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADA61DB7DFB40079A242 /* Prague.swift */; };
+		6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADA81DB7DFC60079A242 /* PragueDataSource.swift */; };
+		6B49ADAB1DB7F0100079A242 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B49ADAA1DB7F0100079A242 /* opencv2.framework */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -55,7 +66,6 @@
 		DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */; };
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
-		DD335FE21DB3DB8B00E60952 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD335FE11DB3DB8A00E60952 /* opencv2.framework */; };
 		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
 		DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */ = {isa = PBXBuildFile; fileRef = DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */; };
 		DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */; };
@@ -63,6 +73,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B49AD941DB7108B0079A242 /* GeneralInfoMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfoMainViewController.swift; sourceTree = "<group>"; };
+		6B49AD961DB710E80079A242 /* MIPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIPMainViewController.swift; sourceTree = "<group>"; };
+		6B49AD981DB710F50079A242 /* ActionMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionMainViewController.swift; sourceTree = "<group>"; };
+		6B49AD9A1DB730D30079A242 /* ScrollableGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphView.swift; sourceTree = "<group>"; };
+		6B49AD9C1DB732A10079A242 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		6B49AD9E1DB7DB130079A242 /* ActionSinglePragueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSinglePragueViewController.swift; sourceTree = "<group>"; };
+		6B49ADA11DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionPragueHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		6B49ADA21DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionPragueHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		6B49ADA61DB7DFB40079A242 /* Prague.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prague.swift; sourceTree = "<group>"; };
+		6B49ADA81DB7DFC60079A242 /* PragueDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PragueDataSource.swift; sourceTree = "<group>"; };
+		6B49ADAA1DB7F0100079A242 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,7 +135,6 @@
 		DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Euschistus_cascade_stage8.xml; sourceTree = "<group>"; };
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DD335FE11DB3DB8A00E60952 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
 		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDED5ABC1DB3DD77009DAF69 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -129,10 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B52B3BE1DA9708600D632E1 /* PaperOnboarding.framework in Frameworks */,
+				6B49ADAB1DB7F0100079A242 /* opencv2.framework in Frameworks */,
 				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
 				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
 				6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */,
-				DD335FE21DB3DB8B00E60952 /* opencv2.framework in Frameworks */,
 				DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +160,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B49AD8E1DB70CC30079A242 /* Independent Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B49AD8F1DB70CDB0079A242 /* Action */,
+				6B49AD911DB70CEF0079A242 /* Info */,
+				6B49AD901DB70CEA0079A242 /* MIP */,
+				6B52B3D21DAA8CDD00D632E1 /* Survey */,
+			);
+			name = "Independent Controllers";
+			sourceTree = "<group>";
+		};
+		6B49AD8F1DB70CDB0079A242 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				6B49AD981DB710F50079A242 /* ActionMainViewController.swift */,
+				6B49AD9E1DB7DB130079A242 /* ActionSinglePragueViewController.swift */,
+				6B49ADA01DB7DCCC0079A242 /* TableView Cell */,
+			);
+			name = Action;
+			sourceTree = "<group>";
+		};
+		6B49AD901DB70CEA0079A242 /* MIP */ = {
+			isa = PBXGroup;
+			children = (
+				6B49AD961DB710E80079A242 /* MIPMainViewController.swift */,
+			);
+			name = MIP;
+			sourceTree = "<group>";
+		};
+		6B49AD911DB70CEF0079A242 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				6B49AD941DB7108B0079A242 /* GeneralInfoMainViewController.swift */,
+				6B49AD9C1DB732A10079A242 /* GraphViewController.swift */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		6B49ADA01DB7DCCC0079A242 /* TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B49ADA11DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift */,
+				6B49ADA21DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib */,
+			);
+			name = "TableView Cell";
+			sourceTree = "<group>";
+		};
+		6B49ADA51DB7DFA60079A242 /* Prague Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B49ADA61DB7DFB40079A242 /* Prague.swift */,
+				6B49ADA81DB7DFC60079A242 /* PragueDataSource.swift */,
+			);
+			name = "Prague Model";
+			sourceTree = "<group>";
+		};
 		6B52B3681DA8676B00D632E1 = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +244,7 @@
 				6B52B3881DA867DF00D632E1 /* Monitoring */,
 				6B52B3871DA867D300D632E1 /* Identification */,
 				6B52B3861DA867CF00D632E1 /* Map */,
-				6B52B3D21DAA8CDD00D632E1 /* Survey */,
+				6B49AD8E1DB70CC30079A242 /* Independent Controllers */,
 				6B52B3C11DA9759100D632E1 /* Onboarding */,
 				6B52B3CC1DAA8BC200D632E1 /* FrontEnd Extensions */,
 				6B52B38F1DA86A2900D632E1 /* Others */,
@@ -257,7 +333,7 @@
 			children = (
 				6B7073181DB6B711005ABB31 /* CircleMenu.framework */,
 				6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */,
-				DD335FE11DB3DB8A00E60952 /* opencv2.framework */,
+				6B49ADAA1DB7F0100079A242 /* opencv2.framework */,
 				DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */,
 				6B52B3BC1DA9707000D632E1 /* PaperOnboarding.framework */,
 				6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */,
@@ -294,6 +370,7 @@
 				6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */,
 				6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */,
 				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
+				6B49AD9A1DB730D30079A242 /* ScrollableGraphView.swift */,
 			);
 			name = "FrontEnd Extensions";
 			sourceTree = "<group>";
@@ -371,6 +448,7 @@
 		6B52B3DB1DAA92C400D632E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B49ADA51DB7DFA60079A242 /* Prague Model */,
 				6B52B3D61DAA90A700D632E1 /* Monitoring Model */,
 			);
 			name = Model;
@@ -493,8 +571,7 @@
 				TargetAttributes = {
 					6B52B3701DA8676B00D632E1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = K82WMR44W3;
-						LastSwiftMigration = 0800;
+						DevelopmentTeam = 5ZSN4629J8;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -527,6 +604,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B49ADA41DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib in Resources */,
 				6B52B3A01DA86D8E00D632E1 /* MapStoryboard.storyboard in Resources */,
 				DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */,
 				6B52B3B81DA9323800D632E1 /* MonitoringInfoTableViewCell.xib in Resources */,
@@ -575,17 +653,23 @@
 				6B52B3C51DA975DA00D632E1 /* QPestTermsViewController.swift in Sources */,
 				6B52B3A91DA87A2900D632E1 /* IdentificationMainTableViewCell.swift in Sources */,
 				6B52B3A21DA86DDB00D632E1 /* MapMainViewController.swift in Sources */,
+				6B49AD9F1DB7DB130079A242 /* ActionSinglePragueViewController.swift in Sources */,
 				6B52B38D1DA86A1900D632E1 /* QPestTabBarController.swift in Sources */,
 				6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */,
+				6B49AD951DB7108B0079A242 /* GeneralInfoMainViewController.swift in Sources */,
 				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
+				6B49AD9D1DB732A10079A242 /* GraphViewController.swift in Sources */,
 				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,
 				DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */,
+				6B49AD991DB710F50079A242 /* ActionMainViewController.swift in Sources */,
 				DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */,
 				6B52B3961DA86AB300D632E1 /* CustomTabAnimatedTransitioning.swift in Sources */,
+				6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */,
 				6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */,
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
 				6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
+				6B49ADA31DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift in Sources */,
 				DD0376761DB7988F00FF0B24 /* MapAnnotationViewController.swift in Sources */,
 				DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */,
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,
@@ -594,7 +678,10 @@
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
 				DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */,
+				6B49ADA71DB7DFB40079A242 /* Prague.swift in Sources */,
 				6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */,
+				6B49AD9B1DB730D30079A242 /* ScrollableGraphView.swift in Sources */,
+				6B49AD971DB710E80079A242 /* MIPMainViewController.swift in Sources */,
 				6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
 				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
@@ -718,15 +805,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = QPest/QPest.entitlements;
-				DEVELOPMENT_TEAM = K82WMR44W3;
+				DEVELOPMENT_TEAM = 5ZSN4629J8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/QPest",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = QPest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = QPest.QPest;
+				PRODUCT_BUNDLE_IDENTIFIER = Henrique.QPest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QPest/QPest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -740,15 +828,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = QPest/QPest.entitlements;
-				DEVELOPMENT_TEAM = K82WMR44W3;
+				DEVELOPMENT_TEAM = 5ZSN4629J8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/QPest",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = QPest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = QPest.QPest;
+				PRODUCT_BUNDLE_IDENTIFIER = Henrique.QPest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QPest/QPest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

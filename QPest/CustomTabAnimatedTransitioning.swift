@@ -2,9 +2,8 @@
 //  CustomTabAnimatedTransitioning.swift
 //  CustomTabBar
 //
-//  Created by Adam Bardon on 01/04/16.
-//  Copyright © 2016 Swift Joureny. All rights reserved.
-//
+//  Framework for custom tab bar architecture and animation
+
 
 import UIKit
 

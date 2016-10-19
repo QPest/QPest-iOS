@@ -100,7 +100,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     private func setupActionToLocate(){
-        
+
         let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
         let button = UIButton(frame: rect)
         button.addTarget(self, action: #selector(MapMainViewController.didClickActionToEnterOverlay), for: .touchUpInside)
@@ -362,6 +362,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         // Start editing, createing shapes, etc
     
         self.isInEditingMode = true
+        
     }
     
     private func endEditing(save: Bool){

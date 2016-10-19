@@ -23,11 +23,32 @@ class ImageViewController: UIViewController {
             self.imageView.image = validImage
         }
         
+        self.setupButtonsAppearance()
+        
+    }
+
+    private func setupButtonsAppearance(){
+        
+        self.identifyButton.layer.cornerRadius = 10
+        self.discardButton.layer.cornerRadius = 10
+        
+        self.identifyButton.layer.borderWidth = 1
+        self.discardButton.layer.borderWidth = 1
+        
+        self.identifyButton.layer.borderColor = UIColor.white.cgColor
+        self.discardButton.layer.borderColor = UIColor.white.cgColor
+        
+        self.identifyButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        self.discardButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+    }
+    
+
+    @IBAction func didClickBack(_ sender: AnyObject) {
+        self.dismissView()
     }
     
     @IBAction func discardImage(_ sender: UIButton) {
-        print("Discard image.")
-        self.dismiss(animated: true, completion: nil)
+        self.dismissView()
     }
 
     @IBAction func identifyImage(_ sender: UIButton) {
@@ -58,15 +79,8 @@ class ImageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func dismissView(){
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
+    
 }

@@ -18,6 +18,7 @@
 		6B49ADA71DB7DFB40079A242 /* Prague.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADA61DB7DFB40079A242 /* Prague.swift */; };
 		6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADA81DB7DFC60079A242 /* PragueDataSource.swift */; };
 		6B49ADAB1DB7F0100079A242 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B49ADAA1DB7F0100079A242 /* opencv2.framework */; };
+		6B49ADAD1DB802F90079A242 /* IdentificationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -84,6 +85,7 @@
 		6B49ADA61DB7DFB40079A242 /* Prague.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prague.swift; sourceTree = "<group>"; };
 		6B49ADA81DB7DFC60079A242 /* PragueDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PragueDataSource.swift; sourceTree = "<group>"; };
 		6B49ADAA1DB7F0100079A242 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationResultViewController.swift; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 			children = (
 				DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */,
 				DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */,
+				6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */,
 				6B49AD991DB710F50079A242 /* ActionMainViewController.swift in Sources */,
 				DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */,
+				6B49ADAD1DB802F90079A242 /* IdentificationResultViewController.swift in Sources */,
 				6B52B3961DA86AB300D632E1 /* CustomTabAnimatedTransitioning.swift in Sources */,
 				6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */,
 				6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */,

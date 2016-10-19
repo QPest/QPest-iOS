@@ -25,6 +25,30 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupCameraState()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+        cameraManager.resumeCaptureSession()
+    }
+    
+    
+    fileprivate func addCameraToView(){
+        _ = cameraManager.addPreviewLayerToView(cameraView, newCameraOutputMode: CameraOutputMode.stillImage)
+        cameraManager.showErrorBlock = { [weak self] (erTitle: String, erMessage: String) -> Void in
+            
+            let alertController = UIAlertController(title: erTitle, message: erMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (alertAction) -> Void in  }))
+            
+            self?.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    private func setupCameraState(){
+        
         cameraManager.showAccessPermissionPopupAutomatically = true
         
         let currentCameraState = cameraManager.currentCameraStatus()
@@ -44,24 +68,6 @@ class CameraViewController: UIViewController {
         cameraManager.writeFilesToPhoneLibrary = false
     }
     
-    fileprivate func addCameraToView(){
-        _ = cameraManager.addPreviewLayerToView(cameraView, newCameraOutputMode: CameraOutputMode.stillImage)
-        cameraManager.showErrorBlock = { [weak self] (erTitle: String, erMessage: String) -> Void in
-            
-            let alertController = UIAlertController(title: erTitle, message: erMessage, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (alertAction) -> Void in  }))
-            
-            self?.present(alertController, animated: true, completion: nil)
-        }
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.isHidden = true
-        cameraManager.resumeCaptureSession()
-    }
-    
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
         if (cameraManager.cameraOutputMode) == .stillImage {
             
@@ -73,16 +79,6 @@ class CameraViewController: UIViewController {
                     
                     self.image = imageCaptured
                     self.performSegue(withIdentifier: "goImage", sender: nil);
-                    
-                    /*
-                    let vc: ImageViewController? = self.storyboard?.instantiateViewController(withIdentifier: "ImageVC") as? ImageViewController
-                    if let validVC: ImageViewController = vc {
-                        if let capturedImage = imageCaptured {
-                            validVC.image = capturedImage
-                            self.navigationController?.pushViewController(validVC, animated: true)
-                        }
-                    }
-                    */
                 }
             })
         }
@@ -93,13 +89,13 @@ class CameraViewController: UIViewController {
         
         switch flashMode {
         case .auto:
-            flashButton.setTitle("Flash: Auto", for: .normal)
+            flashButton.setBackgroundImage(UIImage(named:"flashButtonAuto"), for: .normal)
             break
         case .off:
-            flashButton.setTitle("Flash: Off", for: .normal)
+            flashButton.setBackgroundImage(UIImage(named:"flashButtonOff"), for: .normal)
             break
         case .on:
-            flashButton.setTitle("Flash: On", for: .normal)
+            flashButton.setBackgroundImage(UIImage(named:"flashButtonOn"), for: .normal)
         }
         
     }

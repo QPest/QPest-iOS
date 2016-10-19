@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pragueHeader" rowHeight="54" id="KGk-i7-Jjw" customClass="ActionPragueHeaderTableViewCell" customModule="QPest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="353" height="53.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7Z-KR-FvP">
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" red="0.049700797872340427" green="0.04864409194528875" blue="0.034123290273556234" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="17" name="AvenirNext-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="myi-iD-ZvF">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="ZgP-b6-XoB"/>
+                            <constraint firstAttribute="height" constant="21" id="taw-a5-oQO"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="h7Z-KR-FvP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Had-tp-yfX"/>
+                    <constraint firstItem="h7Z-KR-FvP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="Yr9-oI-ANK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="myi-iD-ZvF" secondAttribute="bottom" constant="8.5" id="ZDK-Ck-LTq"/>
+                    <constraint firstItem="myi-iD-ZvF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="ZlP-Qa-YXA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="h7Z-KR-FvP" secondAttribute="bottom" constant="8.5" id="acA-UB-MwD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="myi-iD-ZvF" secondAttribute="trailing" constant="14" id="cx6-s1-ish"/>
+                    <constraint firstItem="h7Z-KR-FvP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="uen-qv-IrC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="pragueTitle" destination="h7Z-KR-FvP" id="Egd-j0-i23"/>
+            </connections>
+            <point key="canvasLocation" x="50.5" y="59"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow" width="30" height="52"/>
+    </resources>
+</document>

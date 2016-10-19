@@ -12,16 +12,15 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
 
     let identificationTitle = "Identificação"
     var searchButton : UIBarButtonItem = UIBarButtonItem()
-
-    var titles : [String] = ["Tirar foto", "Escolher da biblioteca","Ações","Manual de Identificação"]
-    var images : [String] = ["camera", "photo-library","identificationMenu","manual"]
     
     @IBOutlet weak var tableView: UITableView!
     
+    // Table view data
+    var titles : [String] = ["Tirar foto", "Escolher da biblioteca","Ações","Manual de Identificação"]
+    var images : [String] = ["camera", "photo-library","identificationMenu","manual"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         
         self.setupNavigationBar()
         self.setupTableView()
@@ -33,7 +32,6 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     }
     
     private func setupNavigationBar(){
-        
         self.navigationItem.title = self.identificationTitle
     }
     
@@ -72,10 +70,7 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0{
-            let vc: CameraViewController? = QPestIOSUtil.viewControllerFromStoryboardWithIdentifier(name: "CameraStoryboard", identifier: "") as? CameraViewController
-            //self.navigationController?.pushViewController(vc!, animated: true)
-            //self.show(vc!, sender: nil)
-            self.performSegue(withIdentifier: "goCamera", sender: nil)
+                self.performSegue(withIdentifier: "goCamera", sender: nil)
         }
         else  if indexPath.row == 1{
             // Camera library selected

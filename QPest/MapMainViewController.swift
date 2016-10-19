@@ -88,7 +88,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     private func setupActionToLocate(){
-        
+
         let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
         let button = UIButton(frame: rect)
         button.addTarget(self, action: #selector(MapMainViewController.didClickActionToLocate), for: .touchUpInside)

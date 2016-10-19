@@ -436,6 +436,63 @@
             </objects>
             <point key="canvasLocation" x="988.79999999999995" y="-258.62068965517244"/>
         </scene>
+        <!--Action Single Prague View Controller-->
+        <scene sceneID="ukL-1l-aZ8">
+            <objects>
+                <viewController id="Qfc-33-zaO" customClass="ActionSinglePragueViewController" customModule="QPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iYL-kw-qM0"/>
+                        <viewControllerLayoutGuide type="bottom" id="feh-HY-o9v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ZB-at-mru">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgD-MD-Akc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="S69-hl-w59"/>
+                                    <constraint firstAttribute="width" constant="30" id="e3B-tr-Q3k"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="close"/>
+                                <connections>
+                                    <action selector="didClickExit:" destination="Qfc-33-zaO" eventType="touchUpInside" id="Xcc-BC-4Ch"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8O-Ew-Ra5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="OSi-AN-iAy"/>
+                                    <constraint firstAttribute="width" constant="291" id="peV-4o-pPW"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Euschistus">
+                                        <attributes>
+                                            <color key="NSColor" red="0.067142382218844984" green="0.04864409194528875" blue="0.034123290273556234" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="trailing" secondItem="3ZB-at-mru" secondAttribute="trailingMargin" id="0uo-yc-0oH"/>
+                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="top" secondItem="iYL-kw-qM0" secondAttribute="bottom" id="EJj-UL-rxj"/>
+                            <constraint firstItem="PgD-MD-Akc" firstAttribute="leading" secondItem="3ZB-at-mru" secondAttribute="leadingMargin" id="LCi-b9-vcu"/>
+                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="leading" secondItem="PgD-MD-Akc" secondAttribute="trailing" constant="22" id="MGE-m8-KKF"/>
+                            <constraint firstItem="feh-HY-o9v" firstAttribute="top" secondItem="A8O-Ew-Ra5" secondAttribute="bottom" constant="616" id="cZV-rq-IyP"/>
+                            <constraint firstItem="PgD-MD-Akc" firstAttribute="top" secondItem="iYL-kw-qM0" secondAttribute="bottom" id="sew-Jh-45g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pragueTitle" destination="A8O-Ew-Ra5" id="1pE-nJ-HaV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v71-ON-R63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1946.4000000000001" y="472.71364317841085"/>
+        </scene>
         <!--Action Main View Controller-->
         <scene sceneID="0bk-at-Itg">
             <objects>
@@ -458,17 +515,66 @@
                                     <action selector="didClickBack:" destination="vvN-LQ-cuz" eventType="touchUpInside" id="wp3-h2-O1H"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqw-9q-aVE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="IWP-bu-n9Z"/>
+                                    <constraint firstAttribute="width" constant="304" id="Kpf-wq-5vr"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="AÇÃO COM INFORMAÇÃO">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="23" name="ChalkboardSE-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b4U-rC-P1k">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo4-jb-4J4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="1iZ-Bd-V2a"/>
+                                    <constraint firstAttribute="height" constant="57" id="dhQ-ll-efu"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Descubra mais sobre as pragas que podem atacar o seu terreno, e saiba a melhor forma de agir">
+                                        <attributes>
+                                            <color key="NSColor" red="0.9150598404255319" green="0.93393806990881456" blue="0.92138820288753798" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.18823529411764706" green="0.56862745098039214" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Sqw-9q-aVE" firstAttribute="top" secondItem="hjg-lB-FAV" secondAttribute="bottom" constant="-35" id="1NW-Nq-RUA"/>
+                            <constraint firstItem="b4U-rC-P1k" firstAttribute="top" secondItem="Sqw-9q-aVE" secondAttribute="bottom" constant="89" id="1iB-sl-r2D"/>
+                            <constraint firstItem="wh3-IA-Tg7" firstAttribute="top" secondItem="b4U-rC-P1k" secondAttribute="bottom" id="9sP-Km-kqd"/>
+                            <constraint firstItem="b4U-rC-P1k" firstAttribute="top" secondItem="xo4-jb-4J4" secondAttribute="bottom" constant="17" id="JKa-uh-nKu"/>
+                            <constraint firstAttribute="trailing" secondItem="b4U-rC-P1k" secondAttribute="trailing" id="O1d-Bx-1pl"/>
+                            <constraint firstItem="xo4-jb-4J4" firstAttribute="leading" secondItem="UNY-Kh-R5s" secondAttribute="leadingMargin" constant="11" id="QmM-wc-n4L"/>
                             <constraint firstItem="hjg-lB-FAV" firstAttribute="leading" secondItem="UNY-Kh-R5s" secondAttribute="leadingMargin" id="RNU-YL-Ejr"/>
+                            <constraint firstItem="Sqw-9q-aVE" firstAttribute="leading" secondItem="UNY-Kh-R5s" secondAttribute="leading" constant="55" id="XTB-nv-OGf"/>
+                            <constraint firstAttribute="trailing" secondItem="Sqw-9q-aVE" secondAttribute="trailing" constant="16" id="bmb-S8-Zkc"/>
                             <constraint firstItem="hjg-lB-FAV" firstAttribute="top" secondItem="Pe0-4Z-wi3" secondAttribute="bottom" constant="8" id="fDX-zz-oxZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xo4-jb-4J4" secondAttribute="trailing" constant="12" id="hml-pD-lwb"/>
+                            <constraint firstItem="b4U-rC-P1k" firstAttribute="leading" secondItem="UNY-Kh-R5s" secondAttribute="leading" id="m4h-iv-05q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="b4U-rC-P1k" id="asi-gi-qwD"/>
+                        <segue destination="Qfc-33-zaO" kind="presentation" identifier="goSinglePrague" id="9AS-o8-VfX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O0-NG-RaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1230" y="477"/>
+            <point key="canvasLocation" x="-1231.2" y="476.31184407796104"/>
         </scene>
         <!--Survey Main View Controller-->
         <scene sceneID="u3F-8o-kWc">
@@ -571,5 +677,6 @@
     <resources>
         <image name="MIPTitle" width="297" height="100"/>
         <image name="back" width="30" height="52"/>
+        <image name="close" width="38" height="37"/>
     </resources>
 </document>

@@ -5,6 +5,7 @@
 //  Created by Henrique Dutra on 18/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
+// Singleton used for standards throughout the project, like maps and monitoring logs
 
 import UIKit
 

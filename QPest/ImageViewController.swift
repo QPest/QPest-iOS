@@ -32,7 +32,7 @@ class ImageViewController: UIViewController {
 
     @IBAction func identifyImage(_ sender: UIButton) {
         // Path to the trained cascade for faces
-        let cascadePath = Bundle.main.path(forResource: "haarcascade_frontalface_alt_tree", ofType: "xml")
+        let cascadePath = Bundle.main.path(forResource: "Euschistus_cascade_stage8", ofType: "xml")
         
         // Set size to scale down the image taken and save process time
         let scale = 200 / (imageView.image?.size.width)!

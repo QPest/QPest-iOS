@@ -384,18 +384,19 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         if let polygon = self.polygon{
             self.areaCoordinates.append(polygon)
-            
+        }
+        
+        if areaCoordinates.count > 0 {
             for polygon in areaCoordinates{
                 mapView.add(polygon)
             }
-            
-            for annotation in self.annotations{
-                mapView.removeAnnotation(annotation)
-            }
-            
-            self.annotations = []
-            
         }
+        
+        for annotation in self.annotations{
+            mapView.removeAnnotation(annotation)
+        }
+        
+        self.annotations = []
         
         self.isInEditingMode = false
     }

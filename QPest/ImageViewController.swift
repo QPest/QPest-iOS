@@ -31,8 +31,26 @@ class ImageViewController: UIViewController {
     }
 
     @IBAction func identifyImage(_ sender: UIButton) {
+        // Path to the trained cascade for faces
+        let cascadePath = Bundle.main.path(forResource: "Euschistus_cascade_stage8", ofType: "xml")
         
-        print("Identify image.")
+        // Set size to scale down the image taken and save process time
+        let scale = 200 / (imageView.image?.size.width)!
+        let size = CGSize(width: 200, height: (imageView.image?.size.height)! * scale)
+        let imageCropped = OpenCVWrapper.resize(imageView.image, newSize: size)
+        
+        let imageDetect = OpenCVWrapper.detectCascade(imageCropped, withCascade: cascadePath)
+        //self.imageView.image = imageCropped
+        self.imageView.image = imageDetect
+        
+        // Try to detect object in image
+        let objectDetected = OpenCVWrapper.cascadeDetected(imageCropped, withCascade: cascadePath)
+        
+        if objectDetected {
+            print("Detected")
+        }else{
+            print("Not detected")
+        }
     }
     
     override func didReceiveMemoryWarning() {

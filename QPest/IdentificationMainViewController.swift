@@ -9,7 +9,7 @@
 import UIKit
 
 class IdentificationMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     let identificationTitle = "Identificação"
     var searchButton : UIBarButtonItem = UIBarButtonItem()
     
@@ -70,7 +70,8 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0{
-                self.performSegue(withIdentifier: "goCamera", sender: nil)
+            self.performSegue(withIdentifier: "goCamera", sender: nil)
+
         }
         else  if indexPath.row == 1{
             // Camera library selected

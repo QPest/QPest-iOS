@@ -20,12 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>QPest vai utilizar sua câmera para identificação de pragas.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string></string>
 	<key>NSLocationUsageDescription</key>
 	<string></string>
-	<key>NSCameraUsageDescription</key>
-	<string>QPest vai utilizar sua câmera para identificação de pragas.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>QPest vai utilizar sua biblioteca para processar a imagem capturada.</string>
 	<key>UILaunchStoryboardName</key>

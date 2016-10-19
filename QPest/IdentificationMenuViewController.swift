@@ -11,14 +11,14 @@ import CircleMenu
 
 class IdentificationMenuViewController: UIViewController, CircleMenuDelegate {
 
-    
-    
     let items: [(icon: String, color: UIColor)] = [
         ("action", UIColor(red:0.19, green:0.57, blue:1, alpha:1)),
         ("bug", UIColor(red:0.22, green:0.74, blue:0, alpha:1)),
         ("info", UIColor(red:0.96, green:0.23, blue:0.21, alpha:1)),
-        ("survey", UIColor(red:0.51, green:0.15, blue:1, alpha:1)),
+        ("survey", UIColor.colorWithHexString(hex: "FFC058"))
         ]
+    
+    var selectedIndex : Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,19 +57,40 @@ class IdentificationMenuViewController: UIViewController, CircleMenuDelegate {
     
     func didSelectMenuItem(index : Int){
     
+        self.selectedIndex = index
+    
         switch index {
         case 0:
-            self.performSegue(withIdentifier: "goSurvey", sender: nil)
+            self.performSegue(withIdentifier: "goAction", sender: nil)
         case 1:
-            self.performSegue(withIdentifier: "", sender: nil)
+            self.performSegue(withIdentifier: "goMIP", sender: nil)
         case 2:
-            self.performSegue(withIdentifier: "", sender: nil)
+            self.performSegue(withIdentifier: "goInfo", sender: nil)
         case 3:
-            self.performSegue(withIdentifier: "", sender: nil)
+            self.performSegue(withIdentifier: "goSurvey", sender: nil)
         default: break
     
         }
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goAction"){
+            let destination = segue.destination as! ActionMainViewController
+            destination.backgroundColorPassed = self.items[self.selectedIndex].color
+        }
+        else  if(segue.identifier == "goMIP"){
+            let destination = segue.destination as! MIPMainViewController
+            destination.backgroundColorPassed = self.items[self.selectedIndex].color
+        }
+        else  if(segue.identifier == "goInfo"){
+            let destination = segue.destination as! GeneralInfoMainViewController
+            destination.backgroundColorPassed = self.items[self.selectedIndex].color
+        }
+        else  if(segue.identifier == "goSurvey"){
+            let destination = segue.destination as! SurveyMainViewController
+            destination.backgroundColorPassed = self.items[self.selectedIndex].color
+        }
     }
     
     // MARK: <CircleMenuDelegate>

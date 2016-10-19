@@ -61,6 +61,8 @@ class QPestIOSUtil: NSObject {
         ConfigurationStandards.defaultStandards.typeOfPrefferedMap = defaults.integer(forKey: ConfigurationStandards.defaultStandards.keyForMapType)
         ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange = defaults.integer(forKey: ConfigurationStandards.defaultStandards.keyForMapRange)
         
+        // 
+        
     }
     
     //MARK:Checks if the user has agreed with terms of us

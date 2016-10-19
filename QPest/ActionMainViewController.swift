@@ -1,28 +1,27 @@
 //
-//  SurveyViewController.swift
+//  ActionMainViewController.swift
 //  QPest
 //
-//  Created by Henrique Dutra on 09/10/16.
+//  Created by Henrique Dutra on 19/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
 
 import UIKit
 
-class SurveyMainViewController: UIViewController {
+class ActionMainViewController: UIViewController {
 
     var backgroundColorPassed : UIColor = UIColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.backgroundColor = backgroundColorPassed
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func didClickBack(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)

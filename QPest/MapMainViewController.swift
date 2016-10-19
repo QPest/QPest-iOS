@@ -192,6 +192,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         // Start editing, createing shapes, etc
     
         self.isInEditingMode = true
+        
     }
     
     func endEditing(){

@@ -51,6 +51,7 @@
 		6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7073181DB6B711005ABB31 /* CircleMenu.framework */; };
 		6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */; };
 		DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */; };
+		DD0376761DB7988F00FF0B24 /* MapAnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */; };
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
 		DD335FE21DB3DB8B00E60952 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD335FE11DB3DB8A00E60952 /* opencv2.framework */; };
@@ -108,6 +109,7 @@
 		6B7073181DB6B711005ABB31 /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
 		6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMenuViewController.swift; sourceTree = "<group>"; };
 		DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMainViewController.swift; sourceTree = "<group>"; };
+		DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotationViewController.swift; sourceTree = "<group>"; };
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD335FE11DB3DB8A00E60952 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		6B52B3861DA867CF00D632E1 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				DD0376741DB7987A00FF0B24 /* Annotation */,
 				6B52B39F1DA86D8E00D632E1 /* MapStoryboard.storyboard */,
 				6B52B3D01DAA8C4C00D632E1 /* Main */,
 				6B7073121DB6560E005ABB31 /* Configuration */,
@@ -427,6 +430,14 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		DD0376741DB7987A00FF0B24 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */,
+			);
+			name = Annotation;
+			sourceTree = "<group>";
+		};
 		DD06DF3A1DAAF46600BAC1A2 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +582,7 @@
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
 				6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
+				DD0376761DB7988F00FF0B24 /* MapAnnotationViewController.swift in Sources */,
 				DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */,
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,
 				6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */,

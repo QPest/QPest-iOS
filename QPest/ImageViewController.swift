@@ -39,9 +39,9 @@ class ImageViewController: UIViewController {
         let size = CGSize(width: 200, height: (imageView.image?.size.height)! * scale)
         let imageCropped = OpenCVWrapper.resize(imageView.image, newSize: size)
         
-        //let imageDetect = OpenCVWrapper.detectCascade(imageCropped, withCascade: cascadePath)
+        let imageDetect = OpenCVWrapper.detectCascade(imageCropped, withCascade: cascadePath)
         //self.imageView.image = imageCropped
-        //self.imageView.image = imageDetect
+        self.imageView.image = imageDetect
         
         // Try to detect object in image
         let objectDetected = OpenCVWrapper.cascadeDetected(imageCropped, withCascade: cascadePath)

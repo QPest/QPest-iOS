@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapMainViewController: UIViewController, CLLocationManagerDelegate{
+class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     @IBOutlet weak var textFeedbackLabel: UILabel!
     @IBOutlet weak var overlayButton: UIButton!
@@ -22,6 +22,9 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
     var locationCoordinate = CLLocation(latitude: 0, longitude: 0)
     var regionRadius: CLLocationDistance = 1000
     var mapType : Int = 0
+    
+    var annotations = [MKPointAnnotation]()
+    var polygon : MKPolygon?
     
     var configurationButton : UIBarButtonItem = UIBarButtonItem()
     var actionToLocateButton : UIBarButtonItem = UIBarButtonItem()
@@ -43,24 +46,20 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         self.loadMap()
         
         self.centerMapOnLocation(location: self.locationCoordinate)
-
+        
+        self.addLongPressGesture()
     }
     
     override func viewDidAppear(_ animated: Bool) {
       self.loadMap()
     }
     
-    func loadMap(){
-    
-        self.setupRegionRadius()
-        self.setupMapType()
-        self.centerMapOnLocation(location: self.locationCoordinate)
-    }
+    // MARK: Setup methods
     
     private func setupInitialView(){
         
         self.setupNavigationBar()
-
+        
         self.dismissOverlayView()
         self.configureButtonAppearance()
         
@@ -68,23 +67,34 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         self.setupActionToLocate()
         
         self.setupInitialText()
-
+        
         mapView.centerCoordinate = self.locationCoordinate.coordinate
+        mapView.showsUserLocation = true
+        mapView.userLocation.title = "Minha Localização"
+        mapView.delegate = self
     }
     
-    func setupInitialText(){
-        self.textFeedbackLabel.text = self.feedbackText
-    }
-    
-    func configureButtonAppearance(){
-        self.overlayButton.layer.cornerRadius = 5
-    }
-    
-    func didClickActionToLocate(){
+    private func setuplocation(){
         
-        self.showOverlayView()
-        self.beginEditing()
+        locationManager.requestAlwaysAuthorization()
         
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func loadMap(){
+        
+        self.setupRegionRadius()
+        self.setupMapType()
+        self.centerMapOnLocation(location: self.locationCoordinate)
+    }
+    
+    private func setupNavigationBar(){
+        
+        self.navigationItem.title = self.mapTitle
     }
     
     private func setupActionToLocate(){
@@ -95,7 +105,6 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         button.setImage(UIImage(named: self.mapLocationIcon), for: .normal)
         self.actionToLocateButton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = self.actionToLocateButton
-        
     }
     
     private func setupConfigurationIcon(){
@@ -106,6 +115,50 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         button.setImage(UIImage(named: self.configurationIcon), for: .normal)
         self.configurationButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = self.configurationButton
+    }
+    
+    func setupInitialText(){
+        self.textFeedbackLabel.text = self.feedbackText
+    }
+    
+    // MARK: Gesture Recognizer
+    
+    func addLongPressGesture(){
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self,
+                                                               action: #selector(handleLongPress))
+        longPressRecognizer.minimumPressDuration = 0.25
+        mapView.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    func handleLongPress(_ gestureRecognize: UIGestureRecognizer){
+        
+        guard gestureRecognize.state == .began else {
+            return
+        }
+        
+        let touchPoint = gestureRecognize.location(in: self.mapView)
+        let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        
+        let currentAnnotation = MKPointAnnotation()
+        currentAnnotation.title = "Point \(annotations.count)"
+        currentAnnotation.coordinate = touchMapCoordinate
+        mapView.addAnnotation(currentAnnotation)
+        
+        annotations.append(currentAnnotation)
+        
+        updateOverlay()
+    }
+    
+    // MARK: Buttons
+    
+    func configureButtonAppearance(){
+        self.overlayButton.layer.cornerRadius = 5
+    }
+    
+    func didClickActionToLocate(){
+        
+        self.showOverlayView()
+        self.beginEditing()
         
     }
     
@@ -119,12 +172,22 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    // MARK: Map help functions
     
-    private func setupNavigationBar(){
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolygon{
+            let polygonView = MKPolygonRenderer(overlay: overlay)
+            polygonView.strokeColor = UIColor.blue
+            polygonView.lineWidth = 0.5
+            
+            return polygonView
+        }
         
-        self.navigationItem.title = self.mapTitle
+        return MKPolygonRenderer()
     }
 
+    
     private func setupRegionRadius(){
     
          self.regionRadius = CLLocationDistance(ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange)
@@ -146,21 +209,9 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
 
-    private func setuplocation(){
-    
-        locationManager.requestAlwaysAuthorization()
-
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
-    }
-    
     @IBAction func didClickCenterMap(_ sender: AnyObject) {
     
         self.needingUpdate = true
-//        self.centerMapOnLocation(location: self.locationCoordinate)
     }
     
     @IBAction func didClickOverlayButton(_ sender: AnyObject) {
@@ -187,6 +238,66 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate{
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    func updateOverlay(){
+        if let polygon = self.polygon{
+            mapView.remove(polygon)
+        }
+        
+        self.polygon = nil
+        
+        if self.annotations.count >= 3 {
+            let coordinates = annotations.map({ $0.coordinate })
+            
+            var hull = sortConvex(coordinates)
+            
+            let polygon = MKPolygon(coordinates: &hull, count: hull.count)
+            mapView.add(polygon)
+            
+            self.polygon = polygon
+            
+        } else{
+            print("Not enough vertex to draw a polygon")
+        }
+        
+    }
+    
+    func sortConvex(_ input: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D] {
+        
+        func cross(P: CLLocationCoordinate2D,
+                   A: CLLocationCoordinate2D,
+                   B: CLLocationCoordinate2D) -> Double{
+            let part1 = (A.longitude - P.longitude) * (B.latitude - P.latitude)
+            let part2 = (A.latitude - P.latitude) * (B.longitude - P.longitude)
+            
+            return part1 - part2
+        }
+        
+        let points = input.sorted(by: {$0.longitude == $1.longitude ? $0.latitude < $1.latitude : $0.longitude < $1.longitude})
+        
+        var lower : [CLLocationCoordinate2D] = []
+        for p in points {
+            while lower.count >= 2 && cross(P: lower[lower.count-2], A: lower[lower.count-1], B: p) <= 0 {
+                lower.removeLast()
+            }
+            lower.append(p)
+        }
+        
+        // Build upper hull
+        var upper: [CLLocationCoordinate2D] = []
+        for p in points.reversed() {
+            while upper.count >= 2 && cross(P: upper[upper.count-2], A: upper[upper.count-1], B: p) <= 0 {
+                upper.removeLast()
+            }
+            upper.append(p)
+        }
+        
+        // Last point of upper list is omitted because it is repeated at the
+        // beginning of the lower list.
+        upper.removeLast()
+        
+        // Concatenation of the lower and upper hulls gives the convex hull.
+        return (upper + lower)
+    }
     func beginEditing(){
     
         // Start editing, createing shapes, etc

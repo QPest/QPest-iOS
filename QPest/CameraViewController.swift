@@ -11,6 +11,8 @@ import CameraManager
 
 class CameraViewController: UIViewController {
     
+    //UIImagePickerControllerDelegate
+    
     // MARK: - Constant
 
     @IBOutlet weak var cameraView: UIView!
@@ -101,6 +103,7 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func leaveCamera(_ sender: UIButton) {
+   
         self.dismiss(animated: true, completion: nil)
     }
     

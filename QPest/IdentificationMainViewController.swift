@@ -9,10 +9,10 @@
 import UIKit
 
 class IdentificationMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     let identificationTitle = "Identificação"
     var searchButton : UIBarButtonItem = UIBarButtonItem()
-
+    
     var titles : [String] = ["Tirar foto", "Escolher da biblioteca","Ações","Manual de Identificação"]
     var images : [String] = ["camera", "photo-library","identificationMenu","manual"]
     

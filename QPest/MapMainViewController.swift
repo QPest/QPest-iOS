@@ -18,9 +18,9 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var exitEditing: UIButton!
     
-    let mapTitle = "Meu Terreno"
-    let locationManager = CLLocationManager()
-    var locationCoordinate = CLLocation(latitude: 0, longitude: 0)
+    let mapTitle : String = "Meu Terreno"
+    let locationManager : CLLocationManager = CLLocationManager()
+    var locationCoordinate : CLLocation = CLLocation(latitude: 0, longitude: 0)
     var regionRadius: CLLocationDistance = 1000
     var mapType : Int = 0
     
@@ -30,10 +30,10 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     var configurationButton : UIBarButtonItem = UIBarButtonItem()
     var actionToLocateButton : UIBarButtonItem = UIBarButtonItem()
-    let configurationIcon = "configIcon"
-    let mapLocationIcon = "map-location"
+    let configurationIcon : String = "configIcon"
+    let mapLocationIcon : String = "map-location"
     
-    let feedbackText : String = "Texto explicando como alterar"
+    let feedbackText : String = "Para inserir os vértices do seu talhão toque na tela e segure para marcar um ponto. Continue marcando pontos até que tenha demarcado seu talhão. Por último clique em salvar. Caso necessário repita o processo."
     
     var isInEditingMode : Bool = false
     
@@ -249,7 +249,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if overlay is MKPolygon{
             let polygonView = MKPolygonRenderer(overlay: overlay)
             polygonView.strokeColor = UIColor.black
-            polygonView.lineWidth = 0.5
+            polygonView.lineWidth = 0.8
             polygonView.fillColor = UIColor.green
             polygonView.alpha = 0.3
             return polygonView

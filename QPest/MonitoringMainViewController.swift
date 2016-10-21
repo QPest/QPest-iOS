@@ -35,6 +35,13 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         self.getLogs()
         self.setupTableView()
         self.setupNotifications()
+        
+        // callback to show message that new log was saved
+        //NotificationCenter.default.addObserver(self, selector: #selector(MonitoringMainViewController.didSaveNewLog), name: "didSaveNewLog", object: nil)
+       
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(didSaveNewLog), name: Notification.Name("didSaveNewLog"), object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +94,11 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         
     }
 
+    func didSaveNewLog(){
+    
+         _ = SweetAlert().showAlert("Sucesso!", subTitle: "Monitoramento salvo", style: AlertStyle.success)
+    }
+    
     func getLogs(){
     
         MonitoringLogDataSource.defaultLogDataSource.reload()
@@ -190,3 +202,4 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
 
 }
+

@@ -20,6 +20,7 @@
 		6B49ADAB1DB7F0100079A242 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B49ADAA1DB7F0100079A242 /* opencv2.framework */; };
 		6B49ADAD1DB802F90079A242 /* IdentificationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */; };
 		6B49ADB01DB953FE0079A242 /* PaperSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B49ADAE1DB953FE0079A242 /* PaperSwitch.framework */; };
+		6B49ADB31DB9B97D0079A242 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADB21DB9B97D0079A242 /* SweetAlert.swift */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -89,6 +90,7 @@
 		6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationResultViewController.swift; sourceTree = "<group>"; };
 		6B49ADAE1DB953FE0079A242 /* PaperSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperSwitch.framework; path = Carthage/Build/iOS/PaperSwitch.framework; sourceTree = "<group>"; };
 		6B49ADAF1DB953FE0079A242 /* Segmentio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Segmentio.framework; path = Carthage/Build/iOS/Segmentio.framework; sourceTree = "<group>"; };
+		6B49ADB21DB9B97D0079A242 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -373,12 +375,13 @@
 		6B52B3CC1DAA8BC200D632E1 /* FrontEnd Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6B7073091DB64544005ABB31 /* Custom Text Field */,
+				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
 				6B52B3991DA86B4D00D632E1 /* UIColor+Util.swift */,
 				6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */,
 				6B52B3AC1DA920F300D632E1 /* ColorPalette.swift */,
-				6B52B37B1DA8676B00D632E1 /* Assets.xcassets */,
 				6B49AD9A1DB730D30079A242 /* ScrollableGraphView.swift */,
+				6B49ADB21DB9B97D0079A242 /* SweetAlert.swift */,
+				6B7073091DB64544005ABB31 /* Custom Text Field */,
 			);
 			name = "FrontEnd Extensions";
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				6B49AD9B1DB730D30079A242 /* ScrollableGraphView.swift in Sources */,
 				6B49AD971DB710E80079A242 /* MIPMainViewController.swift in Sources */,
 				6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */,
+				6B49ADB31DB9B97D0079A242 /* SweetAlert.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
 				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,

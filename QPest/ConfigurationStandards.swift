@@ -15,9 +15,11 @@ class ConfigurationStandards: NSObject {
 
     let keyForMapType : String = "QPestMapType"
     let keyForMapRange : String = "QPestMapRange"
+    let keyForMapGround : String = "QPestMapGround"
     
     var typeOfPrefferedMap : Int = 0
     var valueOfPrefferedMapRange : Int = 0
+    var prefferedVisualizationOfGround : Bool = true
     
     func changeMapType(value : Int){
     
@@ -34,6 +36,15 @@ class ConfigurationStandards: NSObject {
 
         self.valueOfPrefferedMapRange = value
         defaults.set(value, forKey: ConfigurationStandards.defaultStandards.keyForMapRange)
+        
+    }
+    
+    func changeMapGround(value : Bool){
+        
+        let defaults = UserDefaults.standard
+        
+        self.prefferedVisualizationOfGround = value
+        defaults.set(value, forKey: ConfigurationStandards.defaultStandards.keyForMapGround)
         
     }
     

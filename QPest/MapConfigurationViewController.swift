@@ -15,21 +15,20 @@ class MapConfigurationViewController: UIViewController {
     @IBOutlet weak var phone1ImageView: UIImageView!
     @IBOutlet weak var paperSwitch1: RAMPaperSwitch!
     
-    
     @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var sliderLabel: UILabel!
     
     var range : Int = 0
     var type : Int = 0
+    var ground : Bool = true
     
     var mapType : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.getCurrentMapType()
-        self.getCurrentMapRange()
+        self.getConfigurationStandardsForMap()
         
         self.setupNavigationBar()
         self.setupInitialValues()
@@ -43,15 +42,11 @@ class MapConfigurationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getCurrentMapType(){
+    private func getConfigurationStandardsForMap(){
     
         self.mapType = ConfigurationStandards.defaultStandards.typeOfPrefferedMap
-    }
-    
-    func getCurrentMapRange(){
-    
         self.range = ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange
-
+        self.ground = ConfigurationStandards.defaultStandards.prefferedVisualizationOfGround
     }
     
     func setupNavigationBar(){
@@ -100,8 +95,14 @@ class MapConfigurationViewController: UIViewController {
         ConfigurationStandards.defaultStandards.changeMapRange(value: Int(self.slider.value))
     }
     
+    func didChangeMapGround(){
+        
+        ConfigurationStandards.defaultStandards.changeMapGround(value: self.paperSwitch1.isOn)
+    }
+    
    private func setupPaperSwitch() {
     
+        self.paperSwitch1.isOn = self.ground
         self.paperSwitch1.animationDidStartClosure = {(onAnimation: Bool) in
             
             self.animateLabel(self.connectContactsLabel, onAnimation: onAnimation, duration: self.paperSwitch1.duration)
@@ -113,6 +114,7 @@ class MapConfigurationViewController: UIViewController {
     private func animateLabel(_ label: UILabel, onAnimation: Bool, duration: TimeInterval) {
         UIView.transition(with: label, duration: duration, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
             label.textColor = onAnimation ? UIColor.white : UIColor.colorWithHexString(hex: "3CA95C")
+            self.didChangeMapGround()
             }, completion:nil)
     }
     

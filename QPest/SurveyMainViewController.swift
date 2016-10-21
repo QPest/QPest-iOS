@@ -102,7 +102,6 @@ class SurveyMainViewController: UIViewController,UITableViewDataSource, UITableV
         return cell
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goSurvey"){
             let destination = segue.destination as! SurveyFlowViewController

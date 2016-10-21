@@ -12,6 +12,8 @@ class ImageViewController: UIViewController {
 
     var image : UIImage?
     
+    var imageWasDetected : Bool = Bool()
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var discardButton: UIButton!
     @IBOutlet weak var identifyButton: UIButton!
@@ -24,7 +26,7 @@ class ImageViewController: UIViewController {
         }
         
         self.setupButtonsAppearance()
-        
+
     }
 
     private func setupButtonsAppearance(){
@@ -69,11 +71,15 @@ class ImageViewController: UIViewController {
         
         if objectDetected {
             print("Detected")
+            self.imageWasDetected = true
         }else{
             print("Not detected")
+            self.imageWasDetected = false
         }
+        
+        self.goToResults()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,4 +89,17 @@ class ImageViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func goToResults(){
+        self.performSegue(withIdentifier: "goResults", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goResults"){
+            let destination = segue.destination as! IdentificationResultViewController
+            destination.didIdentifyImage = self.imageWasDetected
+            destination.imageRecieved = self.imageView.image!
+        }
+        
+    }
+        
 }

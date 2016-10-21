@@ -61,7 +61,6 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
 
             let nc = NotificationCenter.default
             nc.post(name: Notification.Name("didSaveNewLog"), object: nil)
-
         }
         else{
             self.putMessage()

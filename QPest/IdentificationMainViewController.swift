@@ -35,6 +35,11 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         self.navigationItem.title = self.identificationTitle
     }
     
+    
+    @IBAction func unwindToVC(segue: UIStoryboardSegue) {
+        
+    }
+    
     func setupTableView(){
         
         //Registrar celulas

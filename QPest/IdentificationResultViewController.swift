@@ -10,18 +10,38 @@ import UIKit
 
 class IdentificationResultViewController: UIViewController {
 
+    @IBOutlet weak var imageTaken: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var imageRecieved : UIImage = UIImage()
+    
     var didIdentifyImage : Bool = Bool()
     var pragueIdentified : Prague!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.configueView()
+        self.decision()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
+    func configueView(){
+        self.imageTaken.image = self.imageRecieved
+    }
     
+    func createNewLog(){
+    
+       // let newPrague = Prague()
+       // let newMonitoringLog = MonitoringLog()
+        
+    }
+    
+    func decision(){
+    
+    }
 }

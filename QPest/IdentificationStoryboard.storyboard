@@ -539,12 +539,64 @@
                     <view key="view" contentMode="scaleToFill" id="EAd-NP-e0d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perc1" translatesAutoresizingMaskIntoConstraints="NO" id="koa-uP-gjn">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="305" id="ebj-MG-hJo"/>
+                                    <constraint firstAttribute="width" constant="375" id="ljF-1E-TRz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9U7-qd-e3O">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="6F9-ed-A3M"/>
+                                    <constraint firstAttribute="height" constant="35" id="hO2-Cw-Gho"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="exitCameraButton"/>
+                                <connections>
+                                    <segue destination="v0E-MX-ex7" kind="unwind" unwindAction="unwindToVCWithSegue:" id="YIy-56-mg1"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hn0-kz-zhU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="r5J-r8-aPR"/>
+                                    <constraint firstAttribute="height" constant="361" id="rzz-8L-gv0"/>
+                                </constraints>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3zt-YX-COh">
+                                <frame key="frameInset" minY="265" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="q0b-4L-FZw">
+                                        <frame key="frameInset" minX="177" minY="5" width="20" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.15548076923076923" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hn0-kz-zhU" firstAttribute="top" secondItem="koa-uP-gjn" secondAttribute="bottom" constant="1" id="9hz-hQ-zgT"/>
+                            <constraint firstItem="Hn0-kz-zhU" firstAttribute="leading" secondItem="EAd-NP-e0d" secondAttribute="leading" id="E1s-0H-K6c"/>
+                            <constraint firstAttribute="trailing" secondItem="Hn0-kz-zhU" secondAttribute="trailing" id="OJa-eu-pjc"/>
+                            <constraint firstItem="koa-uP-gjn" firstAttribute="top" secondItem="EAd-NP-e0d" secondAttribute="top" id="XVM-H1-wS0"/>
+                            <constraint firstItem="9U7-qd-e3O" firstAttribute="top" secondItem="EAd-NP-e0d" secondAttribute="top" constant="18" id="cxO-8h-sOO"/>
+                            <constraint firstItem="koa-uP-gjn" firstAttribute="leading" secondItem="EAd-NP-e0d" secondAttribute="leading" id="gYZ-Dn-qFa"/>
+                            <constraint firstAttribute="trailing" secondItem="koa-uP-gjn" secondAttribute="trailing" id="hqv-4Y-cM5"/>
+                            <constraint firstItem="9U7-qd-e3O" firstAttribute="leading" secondItem="EAd-NP-e0d" secondAttribute="leading" constant="14" id="sU5-0H-hFq"/>
+                            <constraint firstItem="fL8-iZ-S3z" firstAttribute="top" secondItem="Hn0-kz-zhU" secondAttribute="bottom" id="v3z-F0-Oq9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageTaken" destination="koa-uP-gjn" id="gw5-Je-cg7"/>
+                        <outlet property="tableView" destination="Hn0-kz-zhU" id="vfU-PZ-pr1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkW-7j-lNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="v0E-MX-ex7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="473"/>
+            <point key="canvasLocation" x="1712.8" y="472.71364317841085"/>
         </scene>
         <!--Identification Main View Controller-->
         <scene sceneID="6zC-3d-2cb">
@@ -884,5 +936,6 @@
         <image name="cameraButton" width="114" height="114"/>
         <image name="exitCameraButton" width="55" height="54"/>
         <image name="flashButtonAuto" width="54" height="54"/>
+        <image name="perc1" width="3024" height="3024"/>
     </resources>
 </document>

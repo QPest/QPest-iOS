@@ -213,7 +213,7 @@
                                     <segment title="Satélite"/>
                                     <segment title="Híbrido"/>
                                 </segments>
-                                <color key="tintColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.23529411764705882" green="0.66274509803921566" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="typeDidChange:" destination="zs5-dI-KEL" eventType="valueChanged" id="MBh-r3-0jK"/>
                                 </connections>
@@ -264,7 +264,7 @@
                                     <constraint firstAttribute="trailing" secondItem="GOY-iT-I0S" secondAttribute="trailing" constant="79" id="3hr-rt-w7g"/>
                                     <constraint firstAttribute="width" constant="384" id="5ax-TU-bdG"/>
                                     <constraint firstItem="qao-f4-X5Z" firstAttribute="leading" secondItem="ZyW-lL-V6v" secondAttribute="leading" constant="104" id="Aec-AP-7ky"/>
-                                    <constraint firstAttribute="bottom" secondItem="iEc-6C-h9Q" secondAttribute="bottom" constant="69" id="Gcp-gm-oZE"/>
+                                    <constraint firstAttribute="bottom" secondItem="iEc-6C-h9Q" secondAttribute="bottom" constant="84" id="Gcp-gm-oZE"/>
                                     <constraint firstItem="COc-e3-bn0" firstAttribute="leading" secondItem="KJa-1Z-5x3" secondAttribute="trailing" constant="15" id="Gxg-5M-DcY"/>
                                     <constraint firstAttribute="trailing" secondItem="iEc-6C-h9Q" secondAttribute="trailing" constant="107" id="Lck-JE-fkr"/>
                                     <constraint firstItem="GOY-iT-I0S" firstAttribute="top" secondItem="qao-f4-X5Z" secondAttribute="bottom" constant="8" id="Lxn-mV-vUo"/>
@@ -272,7 +272,7 @@
                                     <constraint firstItem="qao-f4-X5Z" firstAttribute="top" secondItem="ZyW-lL-V6v" secondAttribute="top" constant="54" id="ed3-fP-SLu"/>
                                     <constraint firstItem="COc-e3-bn0" firstAttribute="top" secondItem="GOY-iT-I0S" secondAttribute="bottom" constant="20" id="iRj-6t-Kdf"/>
                                     <constraint firstItem="iEc-6C-h9Q" firstAttribute="leading" secondItem="COc-e3-bn0" secondAttribute="trailing" constant="60" id="iYO-tt-5pI"/>
-                                    <constraint firstAttribute="height" constant="252" id="vcS-ia-7de"/>
+                                    <constraint firstAttribute="height" constant="267" id="vcS-ia-7de"/>
                                     <constraint firstItem="GOY-iT-I0S" firstAttribute="leading" secondItem="ZyW-lL-V6v" secondAttribute="leading" constant="71" id="zQ9-jS-Tt8"/>
                                 </constraints>
                             </view>

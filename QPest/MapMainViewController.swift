@@ -51,7 +51,17 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     override func viewDidAppear(_ animated: Bool) {
-      self.loadMap()
+        let mapConfigViewGround = ConfigurationStandards.defaultStandards.prefferedVisualizationOfGround
+        
+        if mapConfigViewGround {
+            drawPolygonsArea()
+        } else {
+            
+            if self.isInEditingMode == false {
+                removePolygonsArea()
+            }
+        }
+        self.loadMap()
     }
     
     // MARK: Setup methods
@@ -94,6 +104,27 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         self.centerMapOnLocation(location: self.locationCoordinate)
     }
     
+    private func setupRegionRadius(){
+        
+        self.regionRadius = CLLocationDistance(ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange)
+    }
+    
+    private func setupMapType(){
+        
+        self.mapType = ConfigurationStandards.defaultStandards.typeOfPrefferedMap
+        
+        switch (self.mapType) {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .satellite
+        case 2:
+            mapView.mapType = .hybrid
+        default: // or case 2
+            mapView.mapType = .standard
+        }
+    }
+    
     private func setupNavigationBar(){
         
         self.navigationItem.title = self.mapTitle
@@ -109,12 +140,20 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         self.navigationItem.leftBarButtonItem = self.actionToLocateButton
     }
     
+    private func setupActionToSaveTerrain(){
+        let rect = CGRect(x: 0, y: 0, width: 50, height: 32) // CGFloat, Double, Int
+        let button = UIButton(frame: rect)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToSaveTerrain), for: .touchUpInside)
+        button.setTitle("Salvar", for: .normal)
+        self.actionToLocateButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = self.actionToLocateButton
+    }
+    
     private func setupActionToExitOverlay(){
         let rect = CGRect(x: 0, y: 0, width: 50, height: 32) // CGFloat, Double, Int
         let button = UIButton(frame: rect)
-        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToSaveOverlay), for: .touchUpInside)
-        //button.setImage(UIImage(named: "back"), for: .normal)
-        button.setTitle("Salvar", for: .normal)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickActionToExitOverlay(_:)), for: .touchUpInside)
+        button.setTitle("Sair", for: .normal)
         self.actionToLocateButton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = self.actionToLocateButton
     }
@@ -123,7 +162,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         let rect = CGRect(x: 0, y: 0, width: 32, height: 32) // CGFloat, Double, Int
         let button = UIButton(frame: rect)
-        button.addTarget(self, action: #selector(MapMainViewController.didClickNotification), for: .touchUpInside)
+        button.addTarget(self, action: #selector(MapMainViewController.didClickConfiguration), for: .touchUpInside)
         button.setImage(UIImage(named: self.configurationIcon), for: .normal)
         self.configurationButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = self.configurationButton
@@ -143,6 +182,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     func handleLongPress(_ gestureRecognize: UIGestureRecognizer){
+        
         if self.isInEditingMode {
             guard gestureRecognize.state == .began else {
                 return
@@ -153,7 +193,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             
             let currentAnnotation = MKPointAnnotation()
             
-            currentAnnotation.title = "Point \(annotations.count)"
+            currentAnnotation.title = "Vértice \(annotations.count)"
             currentAnnotation.coordinate = touchMapCoordinate
             mapView.addAnnotation(currentAnnotation)
             
@@ -172,10 +212,15 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     func didClickActionToEnterOverlay(){
         
         self.showOverlayView()
-        self.setupActionToExitOverlay()
+        setupActionToExitOverlay()
     }
     
-    func didClickActionToSaveOverlay(){
+    /*func didClickActionToExitOverlay(){
+        
+        self.showOverlayView()
+    }*/
+    
+    func didClickActionToSaveTerrain(){
         
         self.setupActionToLocate()
         self.endEditing(save: true)
@@ -185,6 +230,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     @IBAction func didClickActionToExitOverlay(_ sender: UIButton) {
         
         self.setupActionToLocate()
+        self.dismissOverlayView()
         self.endEditing(save: false)
     }
     
@@ -197,9 +243,10 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         self.dismissOverlayView()
         self.beginEditing()
+        self.setupActionToSaveTerrain()
     }
     
-    func didClickNotification(){
+    func didClickConfiguration(){
         
         self.performSegue(withIdentifier: "goConfigurationView", sender: nil)
         
@@ -207,7 +254,6 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: Map help functions
@@ -246,6 +292,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     */
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
         if overlay is MKPolygon{
             let polygonView = MKPolygonRenderer(overlay: overlay)
             polygonView.strokeColor = UIColor.black
@@ -256,28 +303,6 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
         
         return MKPolygonRenderer()
-    }
-
-    
-    private func setupRegionRadius(){
-    
-         self.regionRadius = CLLocationDistance(ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange)
-    }
-    
-    private func setupMapType(){
-    
-        self.mapType = ConfigurationStandards.defaultStandards.typeOfPrefferedMap
-        
-        switch (self.mapType) {
-        case 0:
-            mapView.mapType = .standard
-        case 1:
-            mapView.mapType = .satellite
-        case 2:
-            mapView.mapType = .hybrid
-        default: // or case 2
-            mapView.mapType = .standard
-        }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -360,9 +385,13 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     private func beginEditing(){
     
         // Start editing, createing shapes, etc
-    
-        self.isInEditingMode = true
+        let mapConfigViewGround = ConfigurationStandards.defaultStandards.prefferedVisualizationOfGround
+        print ("Edit \(mapConfigViewGround)")
+        if mapConfigViewGround == false {
+            drawPolygonsArea()
+        }
         
+        self.isInEditingMode = true
     }
     
     private func endEditing(save: Bool){
@@ -375,7 +404,14 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             }
         }
         
-        self.drawPolygonsArea()
+        let mapConfigViewGround = ConfigurationStandards.defaultStandards.prefferedVisualizationOfGround
+        
+        if mapConfigViewGround {
+            self.drawPolygonsArea()
+        } else {
+          self.removePolygonsArea()
+        }
+        
         self.removeAnnotations()
         
         self.isInEditingMode = false
@@ -395,9 +431,17 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     private func drawPolygonsArea(){
         
-        if areaCoordinates.count > 0 {
+        if (areaCoordinates.count > 0) {
             for polygon in areaCoordinates{
                 mapView.add(polygon)
+            }
+        }
+    }
+    
+    private func removePolygonsArea(){
+        if (areaCoordinates.count > 0) {
+            for polygon in areaCoordinates{
+                mapView.remove(polygon)
             }
         }
     }

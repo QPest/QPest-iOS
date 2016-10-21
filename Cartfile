@@ -2,3 +2,4 @@ github "Ramotion/paper-onboarding"
 github "raulriera/TextFieldEffects"
 github "Ramotion/circle-menu"
 github "imaginary-cloud/CameraManager" >= 3.0
+github "Ramotion/paper-switch"

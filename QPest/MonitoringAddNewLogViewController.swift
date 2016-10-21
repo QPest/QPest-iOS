@@ -58,6 +58,10 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
     
         if value {
             self.createNewLog()
+
+            let nc = NotificationCenter.default
+            nc.post(name: Notification.Name("didSaveNewLog"), object: nil)
+
         }
         else{
             self.putMessage()
@@ -65,7 +69,9 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func putMessage(){
-        // Here will be created an alert view
+
+        _ = SweetAlert().showAlert("Erro!", subTitle: "1 ou mais campos com erro", style: AlertStyle.none)
+        
     }
 
     private func createNewLog(){

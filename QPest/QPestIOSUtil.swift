@@ -51,12 +51,14 @@ class QPestIOSUtil: NSObject {
         
         defaults.set(0, forKey: ConfigurationStandards.defaultStandards.keyForMapType)
         defaults.set(400, forKey: ConfigurationStandards.defaultStandards.keyForMapRange)
+        defaults.set(true, forKey: ConfigurationStandards.defaultStandards.keyForMapGround)
         
         ConfigurationStandards.defaultStandards.typeOfPrefferedMap = 0
         ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange = 400
-        
+        ConfigurationStandards.defaultStandards.prefferedVisualizationOfGround = true
         
     }
+    
     // Checking local data,
     class func checkInitialConfigurations(){
     
@@ -64,6 +66,7 @@ class QPestIOSUtil: NSObject {
     
         ConfigurationStandards.defaultStandards.typeOfPrefferedMap = defaults.integer(forKey: ConfigurationStandards.defaultStandards.keyForMapType)
         ConfigurationStandards.defaultStandards.valueOfPrefferedMapRange = defaults.integer(forKey: ConfigurationStandards.defaultStandards.keyForMapRange)
+           ConfigurationStandards.defaultStandards.prefferedVisualizationOfGround = defaults.bool(forKey: ConfigurationStandards.defaultStandards.keyForMapGround)
         
     }
     

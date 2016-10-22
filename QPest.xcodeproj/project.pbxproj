@@ -317,8 +317,8 @@
 		6B52B3861DA867CF00D632E1 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				DD0376741DB7987A00FF0B24 /* Annotation */,
 				6B52B39F1DA86D8E00D632E1 /* MapStoryboard.storyboard */,
+				DD0376741DB7987A00FF0B24 /* Annotation */,
 				6B52B3D01DAA8C4C00D632E1 /* Main */,
 				6B7073121DB6560E005ABB31 /* Configuration */,
 			);

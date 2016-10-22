@@ -10,6 +10,9 @@ import UIKit
 
 class ResultsInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var imageIcon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

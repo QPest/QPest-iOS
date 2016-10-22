@@ -10,6 +10,11 @@ import UIKit
 
 class ResultsHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageResult: UIImageView!
+  
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var info: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

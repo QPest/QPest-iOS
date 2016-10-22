@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class ResultsQuantityTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var quantityTextField: MadokaTextField!
+    @IBOutlet weak var info: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

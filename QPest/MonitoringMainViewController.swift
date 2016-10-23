@@ -176,7 +176,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         let newLog = self.tableViewInfo[index.row]
         
         cell.monitoringTime.text = newLog.dateFormatted
-        cell.monitoringTitle.text = newLog.pragueName
+        cell.monitoringTitle.text = newLog.prague.name
         cell.monitoringCount.text = String(newLog.pragueQuantity)
         
         if newLog.isNaturalEnemy{

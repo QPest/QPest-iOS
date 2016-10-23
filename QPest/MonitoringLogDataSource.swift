@@ -25,7 +25,7 @@ class MonitoringLogDataSource: NSObject {
     }
     
     func addLog(log : MonitoringLog){
-    
+        self.monitoringLogs.append(log)
     }
     
     func deleteLog(index : Int){
@@ -45,30 +45,28 @@ class MonitoringLogDataSource: NSObject {
     
         logOne.isPrague = true
         logOne.pragueQuantity = 3
-        logOne.pragueName = "Euschistus"
+        logOne.prague.name = "Euschistus"
         
         logTwo.isPrague = true
         logTwo.pragueQuantity = 3
-        logTwo.pragueName = "Euschistus"
+        logTwo.prague.name = "Euschistus"
         
         logThree.isPrague = true
         logThree.pragueQuantity = 3
-        logThree.pragueName = "Euschistus"
+        logThree.prague.name = "Euschistus"
         
         logThree.isNaturalEnemy = true
         logThree.pragueQuantity = 3
-        logThree.pragueName = "Inimigo Natural"
+        logThree.prague.name = "Inimigo Natural"
         
         logFour.isPrague = true
         logFour.pragueQuantity = 3
-        logFour.pragueName = "Euschistus"
+        logFour.prague.name = "Euschistus"
         
         logOne.dateFormatted = "16:32"
         logTwo.dateFormatted = "16:32"
         logThree.dateFormatted = "16:32"
         logFour.dateFormatted = "16:32"
-        
-        
         
         self.monitoringLogs.append(logOne)
         self.monitoringLogs.append(logTwo)
@@ -86,7 +84,6 @@ class MonitoringLogDataSource: NSObject {
         newInfo.append(self.monitoringLogs[2])
         newInfo.append(self.monitoringLogs[3])
 
-        
         return newInfo
     
     }

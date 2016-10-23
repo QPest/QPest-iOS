@@ -78,8 +78,10 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
         let newLog = MonitoringLog()
 
         newLog.date = Date()
-        newLog.pragueName = self.pragueTextField.text!
+        newLog.prague.name = self.pragueTextField.text!
         newLog.pragueQuantity = self.quantity
+        
+        MonitoringLogDataSource.defaultLogDataSource.addLog(log: newLog)
         
         self.dismissView()
     }

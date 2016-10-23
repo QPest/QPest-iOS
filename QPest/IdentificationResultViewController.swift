@@ -34,12 +34,16 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
 
         self.setupKeyboardSettings()
 
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func didClickExit(_ sender: AnyObject) {
+  
+        self.createNewLog()
     }
   
     func configueView(){
@@ -58,8 +62,8 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     func createNewLog(){
     
        // let newPrague = Prague()
-       // let newMonitoringLog = MonitoringLog()
-        
+        let newMonitoringLog = MonitoringLog()
+        MonitoringLogDataSource.defaultLogDataSource.addLog(log: newMonitoringLog)
     }
     
     func decision(){

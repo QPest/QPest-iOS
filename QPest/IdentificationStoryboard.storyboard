@@ -560,6 +560,39 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hn0-kz-zhU">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-0c-BEg">
+                                <frame key="frameInset" minX="132" minY="259" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Decisões">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didClickDecision:" destination="EqW-7y-x9T" eventType="touchUpInside" id="o6m-zj-d4P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5J-T9-BCg">
+                                <frame key="frameInset" minX="14" minY="259" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Tirar outra foto">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="v0E-MX-ex7" kind="unwind" unwindAction="unwindToVCNumber2WithSegue:" id="pbw-jh-dLK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGw-3S-rCw">
+                                <frame key="frameInset" minX="249" minY="259" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Continuar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="v0E-MX-ex7" kind="unwind" unwindAction="unwindToVCWithSegue:" id="4c1-IZ-6Az"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -575,14 +608,52 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="fGw-3S-rCw" id="YR6-c9-lDH"/>
+                        <outlet property="decisionButton" destination="xiY-0c-BEg" id="Xb0-a9-WCW"/>
                         <outlet property="imageTaken" destination="koa-uP-gjn" id="gw5-Je-cg7"/>
                         <outlet property="tableView" destination="Hn0-kz-zhU" id="vfU-PZ-pr1"/>
+                        <outlet property="takeOtherImageButton" destination="L5J-T9-BCg" id="bOB-wy-kDC"/>
+                        <segue destination="ZpS-yl-y7T" kind="presentation" identifier="goDecision" id="QtY-ZL-Bbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkW-7j-lNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="v0E-MX-ex7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1712.8" y="472.71364317841085"/>
+        </scene>
+        <!--Decision View Controller-->
+        <scene sceneID="r0c-p2-NVe">
+            <objects>
+                <viewController id="ZpS-yl-y7T" customClass="DecisionViewController" customModule="QPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Id1-z2-Rf6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ep9-J7-HWj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w5T-d0-ptQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H69-ta-7xQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="SQd-DN-Xs4"/>
+                                    <constraint firstAttribute="width" constant="41" id="tZm-Jn-8H6"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="exitCameraButton"/>
+                                <connections>
+                                    <action selector="didClickExit:" destination="EqW-7y-x9T" eventType="touchUpInside" id="3ey-ve-7B6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H69-ta-7xQ" firstAttribute="top" secondItem="Id1-z2-Rf6" secondAttribute="bottom" id="NMQ-w8-dnw"/>
+                            <constraint firstItem="H69-ta-7xQ" firstAttribute="leading" secondItem="w5T-d0-ptQ" secondAttribute="leadingMargin" id="c8c-Sr-leM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7E7-PM-jWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2436" y="473"/>
         </scene>
         <!--Identification Main View Controller-->
         <scene sceneID="6zC-3d-2cb">

@@ -16,7 +16,7 @@
                 <frame key="frameInset" width="384" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iSl-u9-wR1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bug" translatesAutoresizingMaskIntoConstraints="NO" id="iSl-u9-wR1">
                         <constraints>
                             <constraint firstAttribute="width" constant="38" id="yo7-dg-2VV"/>
                             <constraint firstAttribute="height" constant="38" id="z8p-RI-jzy"/>
@@ -30,7 +30,7 @@
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
-                                    <font key="NSFont" size="17" name="Helvetica-Light"/>
+                                    <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -53,4 +53,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bug" width="30" height="40"/>
+    </resources>
 </document>

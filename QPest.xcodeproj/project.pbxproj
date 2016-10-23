@@ -67,6 +67,7 @@
 		6B5C4F2E1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C4F2C1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib */; };
 		6B5C4F311DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4F2F1DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift */; };
 		6B5C4F321DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C4F301DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib */; };
+		6B5C4F351DBC4FAB004E0D86 /* DecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4F341DBC4FAB004E0D86 /* DecisionViewController.swift */; };
 		6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */; };
 		6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */; };
 		6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */; };
@@ -154,6 +155,7 @@
 		6B5C4F2C1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsQuantityTableViewCell.xib; path = ../ResultsQuantityTableViewCell.xib; sourceTree = "<group>"; };
 		6B5C4F2F1DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationManulTableViewCell.swift; sourceTree = "<group>"; };
 		6B5C4F301DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IdentificationManulTableViewCell.xib; sourceTree = "<group>"; };
+		6B5C4F341DBC4FAB004E0D86 /* DecisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionViewController.swift; sourceTree = "<group>"; };
 		6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSingleViewController.swift; sourceTree = "<group>"; };
@@ -333,8 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				6B52B39D1DA86D8600D632E1 /* IdentificationStoryboard.storyboard */,
-				DD06DF3A1DAAF46600BAC1A2 /* Camera */,
 				6B52B3CF1DAA8C3700D632E1 /* Main */,
+				DD06DF3A1DAAF46600BAC1A2 /* Camera */,
 				6B70731A1DB6B83C005ABB31 /* Menu */,
 				6B52B3DD1DAA945500D632E1 /* Manual */,
 			);
@@ -567,6 +569,14 @@
 			name = Results;
 			sourceTree = "<group>";
 		};
+		6B5C4F331DBC4F98004E0D86 /* Decision */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C4F341DBC4FAB004E0D86 /* DecisionViewController.swift */,
+			);
+			name = Decision;
+			sourceTree = "<group>";
+		};
 		6B7072FE1DB5D257005ABB31 /* MonitoringSingleViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +639,7 @@
 			children = (
 				6B5C4F1B1DBAA724004E0D86 /* Camera */,
 				6B5C4F1C1DBAA729004E0D86 /* Results */,
+				6B5C4F331DBC4F98004E0D86 /* Decision */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -795,6 +806,7 @@
 				6B49ADB61DB9BE8C0079A242 /* Survey.swift in Sources */,
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
+				6B5C4F351DBC4FAB004E0D86 /* DecisionViewController.swift in Sources */,
 				DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */,
 				6B49ADA71DB7DFB40079A242 /* Prague.swift in Sources */,
 				6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */,

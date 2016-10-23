@@ -14,6 +14,9 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     @IBOutlet weak var imageTaken: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var decisionButton: UIButton!
+    @IBOutlet weak var takeOtherImageButton: UIButton!
     var quantityTextField : MadokaTextField!
     
     var imageRecieved : UIImage = UIImage()
@@ -26,7 +29,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // self.didIdentifyImage = true
+        //self.didIdentifyImage = true
         
         self.configueView()
         self.decision()
@@ -48,6 +51,35 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
   
     func configueView(){
         self.imageTaken.image = self.imageRecieved
+        
+        self.configueButtons()
+    }
+    @IBAction func didClickDecision(_ sender: AnyObject) {
+        
+        self.performSegue(withIdentifier: "goDecision", sender: nil)
+    }
+    
+    func configueButtons(){
+    
+        self.continueButton.layer.cornerRadius = 10
+        self.decisionButton.layer.cornerRadius = 10
+        self.takeOtherImageButton.layer.cornerRadius = 10
+        
+        self.continueButton.layer.borderWidth = 1
+        self.decisionButton.layer.borderWidth = 1
+        self.takeOtherImageButton.layer.borderWidth = 1
+        
+        self.continueButton.layer.borderWidth = 1
+        self.decisionButton.layer.borderWidth = 1
+        self.takeOtherImageButton.layer.borderWidth = 1
+        
+        self.continueButton.layer.borderColor = UIColor.white.cgColor
+        self.decisionButton.layer.borderColor = UIColor.white.cgColor
+        self.takeOtherImageButton.layer.borderColor = UIColor.white.cgColor
+        
+        self.continueButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        self.decisionButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        self.takeOtherImageButton.backgroundColor = UIColor.black.withAlphaComponent(0.1)
     }
     
     func setupKeyboardSettings(){
@@ -74,6 +106,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         else{
             self.tableCount = 1
             self.view.backgroundColor = UIColor.colorWithHexString(hex: "A93C3C")
+            self.decisionButton.isHidden = true
         }
     }
     
@@ -91,9 +124,9 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         self.tableView.dataSource = self
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.tableFooterView = UIView()
+        self.tableView.separatorColor = UIColor.clear
         
         if self.didIdentifyImage == false{
-            self.tableView.separatorColor = UIColor.clear
             self.tableView.isScrollEnabled = false
         }
         
@@ -156,10 +189,11 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     func generateCellForInfo(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
         let cell = tableview.dequeueReusableCell(withIdentifier: ResultsInfoTableViewCell.reuseIdentifier, for: index as IndexPath) as! ResultsInfoTableViewCell
         
-        cell.backgroundColor = UIColor.white
+        cell.backgroundColor = UIColor.colorWithHexString(hex: "4DCB72")
         cell.selectionStyle = .none
         
         cell.label.text = "Nome da praga : Euschistus "
+        cell.label.textColor = UIColor.white
         
         return cell
     }

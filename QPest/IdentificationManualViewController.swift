@@ -34,7 +34,6 @@ class IdentificationManualViewController: UIViewController, UITableViewDataSourc
         
     }
     
-    
     func setupTableView(){
         
         //Registrar celulas

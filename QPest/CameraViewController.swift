@@ -48,6 +48,10 @@ class CameraViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToVCNumber2(segue: UIStoryboardSegue) {
+        
+    }
+    
     private func setupCameraState(){
         
         cameraManager.showAccessPermissionPopupAutomatically = true

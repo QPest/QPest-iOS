@@ -164,7 +164,6 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         
         cell.selectionStyle = .none
         
-        
         return cell
     }
     

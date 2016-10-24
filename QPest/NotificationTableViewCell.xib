@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationCell" rowHeight="90" id="KGk-i7-Jjw" customClass="NotificationTableViewCell" customModule="QPest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM8-FO-SpL">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="LDS-8M-UD5"/>
+                            <constraint firstAttribute="width" constant="284" id="m4v-O2-XaF"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="17" name="AvenirNext-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08G-VQ-oMY">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="284" id="qW3-el-kU6"/>
+                            <constraint firstAttribute="height" constant="45" id="vR7-q4-6lE"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="Avenir-Book"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YM8-FO-SpL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="3jh-sg-aOw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="YM8-FO-SpL" secondAttribute="trailing" constant="10" id="48l-Qj-w4F"/>
+                    <constraint firstItem="08G-VQ-oMY" firstAttribute="top" secondItem="YM8-FO-SpL" secondAttribute="bottom" constant="8" id="J54-FN-gkl"/>
+                    <constraint firstAttribute="trailing" secondItem="08G-VQ-oMY" secondAttribute="trailing" constant="18" id="MPc-UA-LVw"/>
+                    <constraint firstItem="YM8-FO-SpL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="UdO-u7-N9X"/>
+                    <constraint firstItem="08G-VQ-oMY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="paq-mX-m3Y"/>
+                    <constraint firstAttribute="bottom" secondItem="08G-VQ-oMY" secondAttribute="bottom" constant="7.5" id="s6G-CV-5TR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="08G-VQ-oMY" id="yVN-he-IZU"/>
+                <outlet property="titleLabel" destination="YM8-FO-SpL" id="e5a-dI-gK1"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="77"/>
+        </tableViewCell>
+    </objects>
+</document>

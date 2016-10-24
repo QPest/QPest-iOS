@@ -1,21 +1,17 @@
 //
-//  MonitoringInfoTableViewCell.swift
+//  MonitoringEmptyTableViewCell.swift
 //  QPest
 //
-//  Created by Henrique Dutra on 08/10/16.
+//  Created by Henrique Dutra on 24/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
 
 import UIKit
 
-class MonitoringInfoTableViewCell: UITableViewCell {
+class MonitoringEmptyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var tagView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var monitoringTime: UILabel!
-    @IBOutlet weak var monitoringTitle: UILabel!
-    @IBOutlet weak var monitoringCount: UILabel!
-        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,10 +22,11 @@ class MonitoringInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     class var reuseIdentifier: String {
         get {
-            return "monitoringCell"
+            return "noNewsCell"
         }
     }
 }
+

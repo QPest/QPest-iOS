@@ -29,6 +29,12 @@
 		6B49ADC51DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADC31DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift */; };
 		6B49ADC61DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B49ADC41DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib */; };
 		6B4C85E71DBD9C4400637547 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85E61DBD9C4400637547 /* ExportViewController.swift */; };
+		6B4C85EA1DBE82C700637547 /* MonitoringEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85E81DBE82C700637547 /* MonitoringEmptyTableViewCell.swift */; };
+		6B4C85EB1DBE82C700637547 /* MonitoringEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85E91DBE82C700637547 /* MonitoringEmptyTableViewCell.xib */; };
+		6B4C85EE1DBE870B00637547 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85EC1DBE870B00637547 /* NotificationTableViewCell.swift */; };
+		6B4C85EF1DBE870B00637547 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */; };
+		6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F11DBE881A00637547 /* QPestNotification.swift */; };
+		6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F31DBE884400637547 /* NotificationDataSource.swift */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -116,6 +122,12 @@
 		6B49ADC31DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6B49ADC41DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurveyHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6B4C85E61DBD9C4400637547 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
+		6B4C85E81DBE82C700637547 /* MonitoringEmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		6B4C85E91DBE82C700637547 /* MonitoringEmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringEmptyTableViewCell.xib; sourceTree = "<group>"; };
+		6B4C85EC1DBE870B00637547 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		6B4C85F11DBE881A00637547 /* QPestNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestNotification.swift; sourceTree = "<group>"; };
+		6B4C85F31DBE884400637547 /* NotificationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDataSource.swift; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -295,6 +307,15 @@
 			name = Export;
 			sourceTree = "<group>";
 		};
+		6B4C85F01DBE880200637547 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6B4C85F11DBE881A00637547 /* QPestNotification.swift */,
+				6B4C85F31DBE884400637547 /* NotificationDataSource.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
 		6B52B3681DA8676B00D632E1 = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +450,8 @@
 				6B52B3B61DA9323800D632E1 /* MonitoringInfoTableViewCell.xib */,
 				6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */,
 				6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */,
+				6B4C85E81DBE82C700637547 /* MonitoringEmptyTableViewCell.swift */,
+				6B4C85E91DBE82C700637547 /* MonitoringEmptyTableViewCell.xib */,
 			);
 			name = "Table View";
 			sourceTree = "<group>";
@@ -470,6 +493,8 @@
 			isa = PBXGroup;
 			children = (
 				6B52B3BA1DA941EA00D632E1 /* MonitoringNotificationViewController.swift */,
+				6B4C85EC1DBE870B00637547 /* NotificationTableViewCell.swift */,
+				6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */,
 			);
 			name = Notification;
 			sourceTree = "<group>";
@@ -532,6 +557,7 @@
 		6B52B3DB1DAA92C400D632E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B4C85F01DBE880200637547 /* Notification */,
 				6B49ADB41DB9BDFA0079A242 /* Survey */,
 				6B49ADA51DB7DFA60079A242 /* Prague Model */,
 				6B52B3D61DAA90A700D632E1 /* Monitoring Model */,
@@ -732,6 +758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B49ADA41DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib in Resources */,
+				6B4C85EB1DBE82C700637547 /* MonitoringEmptyTableViewCell.xib in Resources */,
 				6B52B3A01DA86D8E00D632E1 /* MapStoryboard.storyboard in Resources */,
 				DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */,
 				6B52B3B81DA9323800D632E1 /* MonitoringInfoTableViewCell.xib in Resources */,
@@ -744,6 +771,7 @@
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
 				6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */,
 				6B5C4F2E1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib in Resources */,
+				6B4C85EF1DBE870B00637547 /* NotificationTableViewCell.xib in Resources */,
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
 				6B52B38B1DA869DD00D632E1 /* QPestTabBar.storyboard in Resources */,
 				6B52B39C1DA86D7000D632E1 /* MonotoringStoryboard.storyboard in Resources */,
@@ -792,8 +820,10 @@
 				6B52B38D1DA86A1900D632E1 /* QPestTabBarController.swift in Sources */,
 				6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */,
 				6B49AD951DB7108B0079A242 /* GeneralInfoMainViewController.swift in Sources */,
+				6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */,
 				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
 				6B49ADBF1DB9C5010079A242 /* SurveyFlowViewController.swift in Sources */,
+				6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */,
 				6B49AD9D1DB732A10079A242 /* GraphViewController.swift in Sources */,
 				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,
 				DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */,
@@ -804,6 +834,7 @@
 				6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */,
 				6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */,
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
+				6B4C85EE1DBE870B00637547 /* NotificationTableViewCell.swift in Sources */,
 				6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
 				6B49ADA31DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift in Sources */,
@@ -812,6 +843,7 @@
 				DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */,
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,
 				6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */,
+				6B4C85EA1DBE82C700637547 /* MonitoringEmptyTableViewCell.swift in Sources */,
 				6B49ADBC1DB9BFDD0079A242 /* SurveyDataSource.swift in Sources */,
 				DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */,
 				6B49ADB61DB9BE8C0079A242 /* Survey.swift in Sources */,

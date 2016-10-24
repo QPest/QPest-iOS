@@ -13,6 +13,8 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
 
     var graphType : Int = 0
+    var data : [Double] = []
+    var labels : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,10 @@ class GraphViewController: UIViewController {
 
     func configureGraph(){
         
-        let data: [Double] = [4, 8, 15, 16, 23, 42, 5, 22, 20, 12]
-        let labels = ["Dia 1", "Dia 2", "Dia 3", "Dia 4", "Dia 5", "Dia 6","Dia 7","Dia 8","Dia 9","Dia 10"]
+        self.getData()
         
         let rect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        
+
         var graphView = ScrollableGraphView(frame: rect)
         
         switch self.graphType {
@@ -55,9 +56,28 @@ class GraphViewController: UIViewController {
     
         }
         
-        graphView.set(data: data, withLabels: labels)
+        graphView.set(data: self.data, withLabels: self.labels)
 
         self.view.addSubview(graphView)
+        
+    }
+    
+    func getData(){
+    
+        var index : Int = 1
+        
+        for newLog in MonitoringLogDataSource.defaultLogDataSource.monitoringLogs{
+        
+            data.append(Double(newLog.pragueQuantity))
+            labels.append("Log #" + String(index))
+            
+            index = index + 1
+        }
+        
+        if self.data.count == 0{
+            data.append(0)
+            labels.append("Sem dados")
+        }
         
     }
     

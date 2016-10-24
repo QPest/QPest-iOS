@@ -44,23 +44,23 @@ class MonitoringLogDataSource: NSObject {
         let logFour = MonitoringLog()
     
         logOne.isPrague = true
-        logOne.pragueQuantity = 3
+        logOne.pragueQuantity = 6
         logOne.prague.name = "Euschistus"
         
         logTwo.isPrague = true
-        logTwo.pragueQuantity = 3
+        logTwo.pragueQuantity = 13
         logTwo.prague.name = "Euschistus"
         
         logThree.isPrague = true
-        logThree.pragueQuantity = 3
+        logThree.pragueQuantity = 21
         logThree.prague.name = "Euschistus"
         
         logThree.isNaturalEnemy = true
-        logThree.pragueQuantity = 3
+        logThree.pragueQuantity = 1
         logThree.prague.name = "Inimigo Natural"
         
         logFour.isPrague = true
-        logFour.pragueQuantity = 3
+        logFour.pragueQuantity = 2
         logFour.prague.name = "Euschistus"
         
         logOne.dateFormatted = "16:32"

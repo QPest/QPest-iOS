@@ -17,7 +17,6 @@
 		6B49ADA41DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B49ADA21DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib */; };
 		6B49ADA71DB7DFB40079A242 /* Prague.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADA61DB7DFB40079A242 /* Prague.swift */; };
 		6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADA81DB7DFC60079A242 /* PragueDataSource.swift */; };
-		6B49ADAB1DB7F0100079A242 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B49ADAA1DB7F0100079A242 /* opencv2.framework */; };
 		6B49ADAD1DB802F90079A242 /* IdentificationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */; };
 		6B49ADB01DB953FE0079A242 /* PaperSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B49ADAE1DB953FE0079A242 /* PaperSwitch.framework */; };
 		6B49ADB31DB9B97D0079A242 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADB21DB9B97D0079A242 /* SweetAlert.swift */; };
@@ -90,6 +89,7 @@
 		DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */; };
 		DD0376761DB7988F00FF0B24 /* MapAnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */; };
 		DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */; };
+		DD03767A1DBA2CD900FF0B24 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0376791DBA2CD900FF0B24 /* opencv2.framework */; };
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
 		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
@@ -109,7 +109,6 @@
 		6B49ADA21DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionPragueHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6B49ADA61DB7DFB40079A242 /* Prague.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prague.swift; sourceTree = "<group>"; };
 		6B49ADA81DB7DFC60079A242 /* PragueDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PragueDataSource.swift; sourceTree = "<group>"; };
-		6B49ADAA1DB7F0100079A242 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationResultViewController.swift; sourceTree = "<group>"; };
 		6B49ADAE1DB953FE0079A242 /* PaperSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperSwitch.framework; path = Carthage/Build/iOS/PaperSwitch.framework; sourceTree = "<group>"; };
 		6B49ADAF1DB953FE0079A242 /* Segmentio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Segmentio.framework; path = Carthage/Build/iOS/Segmentio.framework; sourceTree = "<group>"; };
@@ -186,6 +185,7 @@
 		DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMainViewController.swift; sourceTree = "<group>"; };
 		DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotationViewController.swift; sourceTree = "<group>"; };
 		DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Euschistus_cascade_stage8.xml; sourceTree = "<group>"; };
+		DD0376791DBA2CD900FF0B24 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B52B3BE1DA9708600D632E1 /* PaperOnboarding.framework in Frameworks */,
-				6B49ADAB1DB7F0100079A242 /* opencv2.framework in Frameworks */,
+				DD03767A1DBA2CD900FF0B24 /* opencv2.framework in Frameworks */,
 				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
 				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
 				6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */,
@@ -344,8 +344,8 @@
 				6B52B3881DA867DF00D632E1 /* Monitoring */,
 				6B52B3871DA867D300D632E1 /* Identification */,
 				6B52B3861DA867CF00D632E1 /* Map */,
-				6B49AD8E1DB70CC30079A242 /* Action Controllers */,
 				6B52B3C11DA9759100D632E1 /* Onboarding */,
+				6B49AD8E1DB70CC30079A242 /* Action Controllers */,
 				6B52B3CC1DAA8BC200D632E1 /* FrontEnd Extensions */,
 				6B52B38F1DA86A2900D632E1 /* Others */,
 			);
@@ -435,7 +435,7 @@
 				6B49ADAF1DB953FE0079A242 /* Segmentio.framework */,
 				6B7073181DB6B711005ABB31 /* CircleMenu.framework */,
 				6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */,
-				6B49ADAA1DB7F0100079A242 /* opencv2.framework */,
+				DD0376791DBA2CD900FF0B24 /* opencv2.framework */,
 				DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */,
 				6B52B3BC1DA9707000D632E1 /* PaperOnboarding.framework */,
 				6B52B3AF1DA922C400D632E1 /* CoreLocation.framework */,
@@ -724,7 +724,7 @@
 				TargetAttributes = {
 					6B52B3701DA8676B00D632E1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5ZSN4629J8;
+						DevelopmentTeam = K82WMR44W3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -984,7 +984,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = QPest/QPest.entitlements;
-				DEVELOPMENT_TEAM = 5ZSN4629J8;
+				DEVELOPMENT_TEAM = K82WMR44W3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -993,7 +993,7 @@
 				);
 				INFOPLIST_FILE = QPest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Henrique.QPest;
+				PRODUCT_BUNDLE_IDENTIFIER = QPest.QPest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QPest/QPest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1007,7 +1007,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = QPest/QPest.entitlements;
-				DEVELOPMENT_TEAM = 5ZSN4629J8;
+				DEVELOPMENT_TEAM = K82WMR44W3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1016,7 +1016,7 @@
 				);
 				INFOPLIST_FILE = QPest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Henrique.QPest;
+				PRODUCT_BUNDLE_IDENTIFIER = QPest.QPest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "QPest/QPest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

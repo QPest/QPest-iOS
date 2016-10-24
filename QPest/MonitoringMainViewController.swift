@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class MonitoringMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -108,19 +109,16 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         
         for newDate in self.monitoringDates{
             
-            self.tableViewOrder.append(("Date", MonitoringLog()))
+            let newMonitoringLog : MonitoringLog = MonitoringLog()
+            newMonitoringLog.date = newDate
+            self.tableViewOrder.append(("Date", newMonitoringLog))
             
             for newLog in self.monitoringLogs {
             
-                // logica de comparar datas
-                let calendar = Calendar.current
-                
-                let hour = calendar.component(.hour, from: newDate)
-                let minutes = calendar.component(.minute, from: newDate)
-                let seconds = calendar.component(.second, from: newDate)
-                print("hours = \(hour):\(minutes):\(seconds)")
-                
-                self.tableViewOrder.append(("Log", newLog))
+                if newLog.date.day == newDate.day{
+                    self.tableViewOrder.append(("Log", newLog))
+                }
+               
             }
         }
         
@@ -145,6 +143,42 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         self.tableView.tableFooterView = UIView()
         self.tableView.isScrollEnabled = true
         
+    }
+    
+    func getMonthName(month : Int) -> String{
+    
+        var newMonth : String = ""
+        
+        switch month {
+        case 1:
+            newMonth = "Janeiro"
+        case 2:
+            newMonth = "Fevereiro"
+        case 3:
+            newMonth = "Março"
+        case 4:
+            newMonth = "Abril"
+        case 5:
+            newMonth = "Maio"
+        case 6:
+            newMonth = "Junho"
+        case 7:
+            newMonth = "Julho"
+        case 8:
+            newMonth = "Agosto"
+        case 9:
+            newMonth = "Setembro"
+        case 10:
+            newMonth = "Outubro"
+        case 11:
+            newMonth = "November"
+        case 12:
+            newMonth = "December"
+        default:
+            break
+        }
+        
+        return newMonth
     }
     
     //MARK: UITableViewDelegate
@@ -184,6 +218,11 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableview.dequeueReusableCell(withIdentifier: MonitoringHeaderTableViewCell.reuseIdentifier, for: index as IndexPath) as! MonitoringHeaderTableViewCell
         
         cell.selectionStyle = .none
+        
+        let newLog =  self.tableViewOrder[index.row].1
+        let newDate = newLog.date
+        
+        cell.dateTitle.text = String(newDate.day) + " de " + self.getMonthName(month: newDate.month)
         
         return cell
     }

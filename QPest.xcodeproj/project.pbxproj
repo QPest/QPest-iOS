@@ -34,6 +34,7 @@
 		6B4C85EF1DBE870B00637547 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */; };
 		6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F11DBE881A00637547 /* QPestNotification.swift */; };
 		6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F31DBE884400637547 /* NotificationDataSource.swift */; };
+		6B4C85F61DBEAD4600637547 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4C85F51DBEAD4600637547 /* SwiftDate.framework */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -127,6 +128,7 @@
 		6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		6B4C85F11DBE881A00637547 /* QPestNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestNotification.swift; sourceTree = "<group>"; };
 		6B4C85F31DBE884400637547 /* NotificationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDataSource.swift; sourceTree = "<group>"; };
+		6B4C85F51DBEAD4600637547 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				6B52B3B01DA922C500D632E1 /* CoreLocation.framework in Frameworks */,
 				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
 				6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */,
+				6B4C85F61DBEAD4600637547 /* SwiftDate.framework in Frameworks */,
 				DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */,
 				6B49ADB01DB953FE0079A242 /* PaperSwitch.framework in Frameworks */,
 			);
@@ -431,6 +434,7 @@
 		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B4C85F51DBEAD4600637547 /* SwiftDate.framework */,
 				6B49ADAE1DB953FE0079A242 /* PaperSwitch.framework */,
 				6B49ADAF1DB953FE0079A242 /* Segmentio.framework */,
 				6B7073181DB6B711005ABB31 /* CircleMenu.framework */,
@@ -796,6 +800,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/CircleMenu.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CameraManager.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PaperSwitch.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
 			);
 			outputPaths = (
 			);

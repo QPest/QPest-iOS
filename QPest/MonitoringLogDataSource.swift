@@ -8,6 +8,7 @@
 // Data source to explor moniroting logs
 
 import UIKit
+import SwiftDate
 
 class MonitoringLogDataSource: NSObject {
 
@@ -61,7 +62,8 @@ class MonitoringLogDataSource: NSObject {
         logFour.isPrague = true
         logFour.pragueQuantity = 2
         logFour.prague.name = "Euschistus"
-        logFour.date = Date()
+        logFour.date = Date() - 1.day
+
 
         logOne.dateFormatted = "16:32"
         logTwo.dateFormatted = "16:32"
@@ -74,6 +76,7 @@ class MonitoringLogDataSource: NSObject {
         self.monitoringLogs.append(logFour)
         
         self.monitoringDates.append(Date())
+        self.monitoringDates.append(Date() - 1.day)
     }
     
     func getLogInfo() -> [MonitoringLog]{

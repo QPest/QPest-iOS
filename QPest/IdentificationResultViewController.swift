@@ -13,11 +13,12 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
 
     @IBOutlet weak var imageTaken: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    
+    var imageWasChosenFromLibrary : Bool = false
+    var quantityTextField : MadokaTextField!
+
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var decisionButton: UIButton!
     @IBOutlet weak var takeOtherImageButton: UIButton!
-    var quantityTextField : MadokaTextField!
     
     var imageRecieved : UIImage = UIImage()
     var didIdentifyImage : Bool = Bool()
@@ -107,6 +108,10 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
             self.tableCount = 1
             self.view.backgroundColor = UIColor.colorWithHexString(hex: "A93C3C")
             self.decisionButton.isHidden = true
+        }
+        
+        if imageWasChosenFromLibrary {
+            self.takeOtherImageButton.isHidden = true
         }
     }
     

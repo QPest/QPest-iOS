@@ -685,6 +685,7 @@
                         <segue destination="U0P-FZ-VO9" kind="show" identifier="goManual" id="gab-8b-7Og"/>
                         <segue destination="iiz-vp-v0X" kind="presentation" identifier="goMenu" id="NPy-hx-dtW"/>
                         <segue destination="kqI-fK-QBn" kind="showDetail" identifier="goCamera" id="LxO-PF-2Hp"/>
+                        <segue destination="qnV-7Q-6dx" kind="presentation" identifier="goImageViewController" id="clG-34-YcZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4V-Tw-mRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1008,4 +1009,7 @@
         <image name="exitCameraButton" width="55" height="54"/>
         <image name="flashButtonAuto" width="54" height="54"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="clG-34-YcZ"/>
+    </inferredMetricsTieBreakers>
 </document>

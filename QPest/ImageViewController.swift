@@ -11,8 +11,8 @@ import UIKit
 class ImageViewController: UIViewController {
 
     var image : UIImage?
-    
     var imageWasDetected : Bool = Bool()
+    var imageWasChosenFromLibrary : Bool = false
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var discardButton: UIButton!
@@ -98,6 +98,7 @@ class ImageViewController: UIViewController {
             let destination = segue.destination as! IdentificationResultViewController
             destination.didIdentifyImage = self.imageWasDetected
             destination.imageRecieved = self.imageView.image!
+            destination.imageWasChosenFromLibrary = self.imageWasChosenFromLibrary
         }
         
     }

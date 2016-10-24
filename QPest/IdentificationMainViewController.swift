@@ -8,10 +8,12 @@
 
 import UIKit
 
-class IdentificationMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class IdentificationMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let identificationTitle = "Identificação"
     var searchButton : UIBarButtonItem = UIBarButtonItem()
+    
+    var pickedImage : UIImage = UIImage()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,9 +37,36 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         self.navigationItem.title = self.identificationTitle
     }
     
-    
     @IBAction func unwindToVC(segue: UIStoryboardSegue) {
         
+    }
+    
+    func didCSelectCameraLibrary(){
+    
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+     
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.pickedImage = pickedImage
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        self.didGetImage()
+    }
+    
+    func didGetImage(){
+    
+        self.performSegue(withIdentifier: "goImageViewController", sender: nil)
     }
     
     func setupTableView(){
@@ -80,6 +109,7 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         }
         else  if indexPath.row == 1{
             // Camera library selected
+            self.didCSelectCameraLibrary()
         }
         else  if indexPath.row == 2{
             self.performSegue(withIdentifier: "goMenu", sender: nil)
@@ -101,7 +131,17 @@ class IdentificationMainViewController: UIViewController, UITableViewDataSource,
         cell.labelTitle.text = newTitle
         cell.imageIcon.image = UIImage(named: newImage)
         
+        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goImageViewController"){
+            let destination = segue.destination as! ImageViewController
+            destination.image = self.pickedImage
+            destination.imageWasChosenFromLibrary = true
+        }
+        
     }
     
 }

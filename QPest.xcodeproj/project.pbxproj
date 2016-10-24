@@ -28,6 +28,7 @@
 		6B49ADBF1DB9C5010079A242 /* SurveyFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADBE1DB9C5010079A242 /* SurveyFlowViewController.swift */; };
 		6B49ADC51DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADC31DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift */; };
 		6B49ADC61DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B49ADC41DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib */; };
+		6B4C85E71DBD9C4400637547 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85E61DBD9C4400637547 /* ExportViewController.swift */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -114,6 +115,7 @@
 		6B49ADBE1DB9C5010079A242 /* SurveyFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyFlowViewController.swift; sourceTree = "<group>"; };
 		6B49ADC31DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6B49ADC41DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurveyHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		6B4C85E61DBD9C4400637547 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				6B49AD911DB70CEF0079A242 /* Info */,
 				6B49AD901DB70CEA0079A242 /* MIP */,
 				6B52B3D21DAA8CDD00D632E1 /* Survey */,
+				6B4C85E51DBD9C3200637547 /* Export */,
 			);
 			name = "Action Controllers";
 			sourceTree = "<group>";
@@ -282,6 +285,14 @@
 				6B49ADC41DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib */,
 			);
 			name = "Table View Survey";
+			sourceTree = "<group>";
+		};
+		6B4C85E51DBD9C3200637547 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				6B4C85E61DBD9C4400637547 /* ExportViewController.swift */,
+			);
+			name = Export;
 			sourceTree = "<group>";
 		};
 		6B52B3681DA8676B00D632E1 = {
@@ -817,6 +828,7 @@
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
 				6B5C4F211DBAA751004E0D86 /* ResultsInfoTableViewCell.swift in Sources */,
 				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
+				6B4C85E71DBD9C4400637547 /* ExportViewController.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,
 				6B52B3941DA86AAB00D632E1 /* CustomTabBarItem.swift in Sources */,
 				6B49ADB81DB9BEA70079A242 /* Question.swift in Sources */,

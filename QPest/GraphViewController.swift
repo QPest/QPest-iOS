@@ -18,7 +18,6 @@ class GraphViewController: UIViewController {
         super.viewDidLoad()
         
         self.configureGraph()
-        
         self.view.bringSubview(toFront: self.backButton)
 
     }

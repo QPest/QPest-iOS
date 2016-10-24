@@ -12,6 +12,7 @@ import MessageUI
 class ExportViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var exportButton: UIButton!
     
     var options : [String] = ["CSV", "Texto"]
     
@@ -19,6 +20,7 @@ class ExportViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
 
         self.configurePicker()
+        self.configureButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +34,16 @@ class ExportViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBAction func didClickExport(_ sender: AnyObject) {
         self.exportData()
+    }
+    
+    func configureButton(){
+    
+        self.exportButton.layer.cornerRadius = 8
+        self.exportButton.layer.borderWidth = 2
+        self.exportButton.layer.borderColor = UIColor.white.cgColor
+        self.exportButton.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        
+        
     }
     
     func configurePicker(){

@@ -10,11 +10,13 @@ import UIKit
 import PaperOnboarding
 
 class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataSource, PaperOnboardingDelegate{
-
+    
+    @IBOutlet weak var leftArrows: UIImageView!
+    @IBOutlet weak var rightArrows: UIImageView!
     @IBOutlet weak var continueButton: UIButton!
     
+    let duration = 1.1
     var colors : [UIColor] = []
-
     var onboarding = PaperOnboarding(itemsCount: 5)
 
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         self.setupColors()
         self.setupOnboarding()
         self.setupContinueButton()
+        self.configureArrows()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,6 +39,38 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         self.continueButton.layer.cornerRadius = 8
         self.continueButton.isHidden = true
         
+    }
+    
+    func fadeIn(finished: Bool) {
+        UIView.animate(withDuration: self.duration, delay: 0, options: [.curveEaseInOut], animations: { self.leftArrows.alpha = 1
+            self.rightArrows.alpha = 1
+            } , completion: self.fadeOut)
+
+}
+    
+    func fadeOut(finished: Bool) {
+        UIView.animate(withDuration: self.duration, delay: 0, options: [.curveEaseInOut], animations: { self.leftArrows.alpha = 0.3
+            self.rightArrows.alpha = 0.3
+            } , completion: self.fadeIn)
+        
+
+    }
+
+    func configureArrows(){
+        
+        // rotating left arrow accordingly
+        self.leftArrows.transform = CGAffineTransform(rotationAngle: (180.0 * CGFloat(M_PI)) / 180.0)
+        
+        // bringing arrows to front
+        self.view.bringSubview(toFront: self.leftArrows)
+        self.view.bringSubview(toFront: self.rightArrows)
+        
+        // setting inital hidden values
+        self.leftArrows.isHidden = true
+        self.rightArrows.isHidden = false
+        
+        // staring animations
+        self.fadeOut(finished: true)
     }
     
     private func setupColors(){
@@ -65,7 +100,30 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         }
 
     }
+
+    private func manageArrows(indexValue : Int){
     
+        switch indexValue {
+        case 0:
+            self.leftArrows.isHidden = true
+            self.rightArrows.isHidden = false
+        case 1:
+            self.leftArrows.isHidden = false
+            self.rightArrows.isHidden = false
+        case 2:
+            self.leftArrows.isHidden = false
+            self.rightArrows.isHidden = false
+        case 3:
+            self.leftArrows.isHidden = false
+            self.rightArrows.isHidden = false
+        case 4:
+            self.leftArrows.isHidden = false
+            self.rightArrows.isHidden = true
+        default:
+            break
+        }
+        
+    }
 
     func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
      
@@ -93,6 +151,8 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         if self.onboarding.currentIndex == 4{
             self.continueButton.isHidden = false
         }
+        
+        self.manageArrows(indexValue: onboarding.currentIndex)
     }
     
     func onboardingItemsCount() -> Int {

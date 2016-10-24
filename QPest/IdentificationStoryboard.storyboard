@@ -164,20 +164,6 @@
                                     <action selector="didClickExit:" destination="bnF-sV-fTs" eventType="touchUpInside" id="I0A-1m-d3y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bn-Le-Rak">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5tk-d1-AuC"/>
-                                    <constraint firstAttribute="width" constant="229" id="uR6-zm-AVH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Exportar">
-                                    <color key="titleColor" red="0.8901960784313725" green="0.38431372549019605" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="didClickExport:" destination="bnF-sV-fTs" eventType="touchUpInside" id="iia-Md-eLj"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ee-iX-Pyi">
                                 <color key="backgroundColor" red="0.96693212342306323" green="1" blue="0.97280643756564533" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -187,7 +173,7 @@
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA3-iu-w0z">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Qbc-VB-QeT"/>
+                                    <constraint firstAttribute="height" constant="77" id="Qbc-VB-QeT"/>
                                     <constraint firstAttribute="width" constant="375" id="tGz-eY-xdZ"/>
                                 </constraints>
                                 <attributedString key="attributedText">
@@ -195,13 +181,27 @@
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="0.97280643756564533" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="NSColor" red="0.9986665314119294" green="1" blue="0.97670762523437715" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="24" name="Avenir-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bn-Le-Rak">
+                                <color key="backgroundColor" red="0.67450980392156867" green="0.29803921568627451" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5tk-d1-AuC"/>
+                                    <constraint firstAttribute="width" constant="229" id="uR6-zm-AVH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Exportar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didClickExport:" destination="bnF-sV-fTs" eventType="touchUpInside" id="iia-Md-eLj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.38431372549019605" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -210,15 +210,16 @@
                             <constraint firstAttribute="trailing" secondItem="JA3-iu-w0z" secondAttribute="trailing" id="Gi3-TZ-Isk"/>
                             <constraint firstAttribute="trailing" secondItem="2ee-iX-Pyi" secondAttribute="trailing" id="JFL-i8-nIB"/>
                             <constraint firstItem="JA3-iu-w0z" firstAttribute="leading" secondItem="P5c-oL-77y" secondAttribute="leading" id="QRB-BM-Cty"/>
-                            <constraint firstItem="JA3-iu-w0z" firstAttribute="top" secondItem="po3-Zt-MEr" secondAttribute="bottom" constant="119" id="VyD-xF-nXo"/>
-                            <constraint firstItem="Vd6-Rh-p9s" firstAttribute="top" secondItem="5Bn-Le-Rak" secondAttribute="bottom" constant="60" id="WJt-FI-tcm"/>
+                            <constraint firstItem="JA3-iu-w0z" firstAttribute="top" secondItem="po3-Zt-MEr" secondAttribute="bottom" constant="28" id="VyD-xF-nXo"/>
+                            <constraint firstItem="Vd6-Rh-p9s" firstAttribute="top" secondItem="5Bn-Le-Rak" secondAttribute="bottom" constant="156" id="WJt-FI-tcm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Bn-Le-Rak" secondAttribute="trailing" constant="57" id="hLr-vG-0ie"/>
-                            <constraint firstItem="2ee-iX-Pyi" firstAttribute="top" secondItem="po3-Zt-MEr" secondAttribute="bottom" constant="171" id="nTW-zB-Ayz"/>
+                            <constraint firstItem="2ee-iX-Pyi" firstAttribute="top" secondItem="po3-Zt-MEr" secondAttribute="bottom" constant="101" id="nTW-zB-Ayz"/>
                             <constraint firstItem="po3-Zt-MEr" firstAttribute="leading" secondItem="P5c-oL-77y" secondAttribute="leadingMargin" id="qmS-RM-I3T"/>
                             <constraint firstItem="po3-Zt-MEr" firstAttribute="top" secondItem="3RJ-Mi-vW6" secondAttribute="bottom" constant="8" id="swa-9o-KQ3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="exportButton" destination="5Bn-Le-Rak" id="cZD-gv-ZwI"/>
                         <outlet property="pickerView" destination="2ee-iX-Pyi" id="Eyw-a8-L8U"/>
                     </connections>
                 </viewController>

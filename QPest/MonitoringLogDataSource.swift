@@ -14,7 +14,7 @@ class MonitoringLogDataSource: NSObject {
     static let defaultLogDataSource = MonitoringLogDataSource()
 
     var monitoringLogs : [MonitoringLog] = []
-    var order : [Int] = []
+    var monitoringDates : [Date] = []
     
     override init(){
 
@@ -46,23 +46,23 @@ class MonitoringLogDataSource: NSObject {
         logOne.isPrague = true
         logOne.pragueQuantity = 6
         logOne.prague.name = "Euschistus"
+        logOne.date = Date()
         
         logTwo.isPrague = true
         logTwo.pragueQuantity = 13
         logTwo.prague.name = "Euschistus"
-        
-        logThree.isPrague = true
-        logThree.pragueQuantity = 21
-        logThree.prague.name = "Euschistus"
-        
+        logTwo.date = Date()
+
         logThree.isNaturalEnemy = true
         logThree.pragueQuantity = 1
         logThree.prague.name = "Inimigo Natural"
-        
+        logThree.date = Date()
+
         logFour.isPrague = true
         logFour.pragueQuantity = 2
         logFour.prague.name = "Euschistus"
-        
+        logFour.date = Date()
+
         logOne.dateFormatted = "16:32"
         logTwo.dateFormatted = "16:32"
         logThree.dateFormatted = "16:32"
@@ -72,33 +72,16 @@ class MonitoringLogDataSource: NSObject {
         self.monitoringLogs.append(logTwo)
         self.monitoringLogs.append(logThree)
         self.monitoringLogs.append(logFour)
+        
+        self.monitoringDates.append(Date())
     }
     
     func getLogInfo() -> [MonitoringLog]{
-    
-        var newInfo : [MonitoringLog] = []
-        
-        newInfo.append(MonitoringLog())
-        newInfo.append(self.monitoringLogs[0])
-        newInfo.append(self.monitoringLogs[1])
-        newInfo.append(self.monitoringLogs[2])
-        newInfo.append(self.monitoringLogs[3])
-
-        return newInfo
-    
+        return self.monitoringLogs
     }
     
-    func getOrder() -> [Int]{
-    
-        self.makeOrder()
-        
-        return self.order
-    
+    func getLogDates() -> [Date]{
+        return self.monitoringDates
     }
     
-    private func makeOrder(){
-    
-        self.order = [1,2,2,2,2]
-        
-    }
 }

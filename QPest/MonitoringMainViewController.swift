@@ -20,12 +20,13 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     var notificationButton : UIBarButtonItem = UIBarButtonItem()
     var addButton : UIBarButtonItem = UIBarButtonItem()
     
-    var tableViewOrder : [Int] = []
-    var tableViewInfo : [MonitoringLog] = []
-    
     var monitoringIndexController : Int = 0
     
     var logSelected : MonitoringLog = MonitoringLog()
+    
+    var tableViewOrder : [(String, MonitoringLog)] = []
+    var monitoringLogs : [MonitoringLog] = []
+    var monitoringDates : [Date] = []
     
     //MARK: View did load
     override func viewDidLoad() {
@@ -33,12 +34,11 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     
         self.setupNavigationBar()
         self.getLogs()
+        self.setupTableOrder()
         self.setupTableView()
         self.setupNotifications()
         
         // callback to show message that new log was saved
-        //NotificationCenter.default.addObserver(self, selector: #selector(MonitoringMainViewController.didSaveNewLog), name: "didSaveNewLog", object: nil)
-       
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(didSaveNewLog), name: Notification.Name("didSaveNewLog"), object: nil)
 
@@ -89,22 +89,44 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func didClickAdd(){
-        
         self.performSegue(withIdentifier: "goAdd", sender: nil)
-        
     }
 
     func didSaveNewLog(){
-    
          _ = SweetAlert().showAlert("Sucesso!", subTitle: "Monitoramento salvo", style: AlertStyle.success)
     }
     
     func getLogs(){
     
         MonitoringLogDataSource.defaultLogDataSource.reload()
-        self.tableViewOrder = MonitoringLogDataSource.defaultLogDataSource.getOrder()
-        self.tableViewInfo = MonitoringLogDataSource.defaultLogDataSource.getLogInfo()
+    
+        self.monitoringLogs =  MonitoringLogDataSource.defaultLogDataSource.getLogInfo()
+        self.monitoringDates = MonitoringLogDataSource.defaultLogDataSource.getLogDates()
+    }
+    
+    func setupTableOrder(){
         
+        for newDate in self.monitoringDates{
+            
+            self.tableViewOrder.append(("Date", MonitoringLog()))
+            
+            for newLog in self.monitoringLogs {
+            
+                // logica de comparar datas
+                let calendar = Calendar.current
+                
+                let hour = calendar.component(.hour, from: newDate)
+                let minutes = calendar.component(.minute, from: newDate)
+                let seconds = calendar.component(.second, from: newDate)
+                print("hours = \(hour):\(minutes):\(seconds)")
+                
+                self.tableViewOrder.append(("Log", newLog))
+            }
+        }
+        
+        if self.tableViewOrder.count == 0{
+            self.tableViewOrder.append(("Empty", MonitoringLog()))
+        }
     }
     
     func setupTableView(){
@@ -113,6 +135,8 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         self.tableView.register(UINib(nibName: "MonitoringInfoTableViewCell", bundle: nil), forCellReuseIdentifier: MonitoringInfoTableViewCell.reuseIdentifier)
 
         self.tableView.register(UINib(nibName: "MonitoringHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: MonitoringHeaderTableViewCell.reuseIdentifier)
+
+        self.tableView.register(UINib(nibName: "MonitoringEmptyTableViewCell", bundle: nil), forCellReuseIdentifier: MonitoringEmptyTableViewCell.reuseIdentifier)
         
         //TableView
         self.tableView.delegate = self
@@ -130,13 +154,16 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tableViewOrder.count
+            return self.tableViewOrder.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if self.tableViewOrder[indexPath.row] == 1{
+        if self.tableViewOrder[indexPath.row].0 == "Date"{
             return self.generateCellForHeader(tableview: tableView, index: indexPath as NSIndexPath)
+        }
+        else if self.tableViewOrder[indexPath.row].0 == "Empty"{
+            return self.generateCellForEmpty(tableview: tableView, index: indexPath as NSIndexPath)
         }
         else{
             return self.generateCellForIdentidifcation(tableview: tableView, index: indexPath as NSIndexPath)
@@ -144,18 +171,12 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    
-        if self.tableViewOrder[indexPath.row] == 1{
-            return 120
-        }
-        else{
-            return 70
-        }
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        self.logSelected = self.tableViewInfo[indexPath.row]
+        self.logSelected = self.tableViewOrder[indexPath.row].1
         self.performSegue(withIdentifier: "goSingle", sender: nil)
     }
     
@@ -167,25 +188,32 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
+    func generateCellForEmpty(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
+        let cell = tableview.dequeueReusableCell(withIdentifier: MonitoringEmptyTableViewCell.reuseIdentifier, for: index as IndexPath) as! MonitoringEmptyTableViewCell
+        
+        cell.selectionStyle = .none
+        
+        cell.titleLabel.text = "Sem monitoramentos salvos"
+        
+        return cell
+    }
+    
     func generateCellForIdentidifcation(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
         let cell = tableview.dequeueReusableCell(withIdentifier: MonitoringInfoTableViewCell.reuseIdentifier, for: index as IndexPath) as! MonitoringInfoTableViewCell
         
         cell.selectionStyle = .none
         
-        let newLog = self.tableViewInfo[index.row]
+        let newLog = self.tableViewOrder[index.row].1
         
         cell.monitoringTime.text = newLog.dateFormatted
         cell.monitoringTitle.text = newLog.prague.name
         cell.monitoringCount.text = String(newLog.pragueQuantity)
         
         if newLog.isNaturalEnemy{
-        
             cell.tagView.backgroundColor = ColorPalette.defaultPalette.naturalEnemyTableViewColor
         }
         else{
-        
             cell.tagView.backgroundColor = ColorPalette.defaultPalette.pragueTableViewColor
-
         }
         
         return cell

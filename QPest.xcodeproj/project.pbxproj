@@ -35,6 +35,9 @@
 		6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F11DBE881A00637547 /* QPestNotification.swift */; };
 		6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F31DBE884400637547 /* NotificationDataSource.swift */; };
 		6B4C85F61DBEAD4600637547 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4C85F51DBEAD4600637547 /* SwiftDate.framework */; };
+		6B4C85F91DBF7AE900637547 /* MonitoringSingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F71DBF7AE900637547 /* MonitoringSingleTableViewCell.swift */; };
+		6B4C85FA1DBF7AE900637547 /* MonitoringSingleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85F81DBF7AE900637547 /* MonitoringSingleTableViewCell.xib */; };
+		6B4C86011DBF83B200637547 /* MonitoringMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C86001DBF83B200637547 /* MonitoringMapViewController.swift */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -78,8 +81,6 @@
 		6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */; };
 		6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */; };
 		6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */; };
-		6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */; };
-		6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */; };
 		6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */; };
 		6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */; };
 		6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */; };
@@ -129,6 +130,9 @@
 		6B4C85F11DBE881A00637547 /* QPestNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestNotification.swift; sourceTree = "<group>"; };
 		6B4C85F31DBE884400637547 /* NotificationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDataSource.swift; sourceTree = "<group>"; };
 		6B4C85F51DBEAD4600637547 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		6B4C85F71DBF7AE900637547 /* MonitoringSingleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSingleTableViewCell.swift; sourceTree = "<group>"; };
+		6B4C85F81DBF7AE900637547 /* MonitoringSingleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringSingleTableViewCell.xib; sourceTree = "<group>"; };
+		6B4C86001DBF83B200637547 /* MonitoringMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringMapViewController.swift; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,8 +178,6 @@
 		6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSingleViewController.swift; sourceTree = "<group>"; };
-		6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringImageTableViewCell.swift; sourceTree = "<group>"; };
-		6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringImageTableViewCell.xib; sourceTree = "<group>"; };
 		6B7073061DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringAddNewLogViewController.swift; sourceTree = "<group>"; };
 		6B70730E1DB64934005ABB31 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
 		6B7073101DB64BFF005ABB31 /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
@@ -317,6 +319,15 @@
 				6B4C85F31DBE884400637547 /* NotificationDataSource.swift */,
 			);
 			name = Notification;
+			sourceTree = "<group>";
+		};
+		6B4C85FB1DBF7E0400637547 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				6B4C85F71DBF7AE900637547 /* MonitoringSingleTableViewCell.swift */,
+				6B4C85F81DBF7AE900637547 /* MonitoringSingleTableViewCell.xib */,
+			);
+			name = TableView;
 			sourceTree = "<group>";
 		};
 		6B52B3681DA8676B00D632E1 = {
@@ -622,18 +633,10 @@
 			isa = PBXGroup;
 			children = (
 				6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */,
-				6B7073051DB5D499005ABB31 /* Image */,
+				6B4C86001DBF83B200637547 /* MonitoringMapViewController.swift */,
+				6B4C85FB1DBF7E0400637547 /* TableView */,
 			);
 			name = MonitoringSingleViewController;
-			sourceTree = "<group>";
-		};
-		6B7073051DB5D499005ABB31 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				6B7073011DB5D493005ABB31 /* MonitoringImageTableViewCell.swift */,
-				6B7073021DB5D493005ABB31 /* MonitoringImageTableViewCell.xib */,
-			);
-			name = Image;
 			sourceTree = "<group>";
 		};
 		6B7073081DB643D3005ABB31 /* Add New */ = {
@@ -773,7 +776,6 @@
 				DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */,
 				6B49ADC61DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib in Resources */,
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
-				6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */,
 				6B5C4F2E1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib in Resources */,
 				6B4C85EF1DBE870B00637547 /* NotificationTableViewCell.xib in Resources */,
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
@@ -783,6 +785,7 @@
 				6B5C4F221DBAA751004E0D86 /* ResultsInfoTableViewCell.xib in Resources */,
 				6B52B3AA1DA87A2900D632E1 /* IdentificationMainTableViewCell.xib in Resources */,
 				6B5C4F281DBAA78B004E0D86 /* ResultsHeaderTableViewCell.xib in Resources */,
+				6B4C85FA1DBF7AE900637547 /* MonitoringSingleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,10 +830,10 @@
 				6B49AD951DB7108B0079A242 /* GeneralInfoMainViewController.swift in Sources */,
 				6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */,
 				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
+				6B4C86011DBF83B200637547 /* MonitoringMapViewController.swift in Sources */,
 				6B49ADBF1DB9C5010079A242 /* SurveyFlowViewController.swift in Sources */,
 				6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */,
 				6B49AD9D1DB732A10079A242 /* GraphViewController.swift in Sources */,
-				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,
 				DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */,
 				6B49AD991DB710F50079A242 /* ActionMainViewController.swift in Sources */,
 				DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */,
@@ -849,6 +852,7 @@
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,
 				6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */,
 				6B4C85EA1DBE82C700637547 /* MonitoringEmptyTableViewCell.swift in Sources */,
+				6B4C85F91DBF7AE900637547 /* MonitoringSingleTableViewCell.swift in Sources */,
 				6B49ADBC1DB9BFDD0079A242 /* SurveyDataSource.swift in Sources */,
 				DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */,
 				6B49ADB61DB9BE8C0079A242 /* Survey.swift in Sources */,

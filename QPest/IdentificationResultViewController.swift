@@ -33,10 +33,12 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.didIdentifyImage = true
         self.configueView()
         self.decision()
         self.setupTableView()
-
+        self.setuplocation()
+        
         self.setupKeyboardSettings()
 
     }
@@ -151,13 +153,11 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         
         let newCoordinate = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
         self.locationCoordinate = newCoordinate
-        
     }
     
     func getLocation() -> CLLocation{
         return self.locationCoordinate
     }
-    
 
     func decision(){
 

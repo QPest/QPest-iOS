@@ -155,42 +155,6 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         
     }
     
-    func getMonthName(month : Int) -> String{
-    
-        var newMonth : String = ""
-        
-        switch month {
-        case 1:
-            newMonth = "Janeiro"
-        case 2:
-            newMonth = "Fevereiro"
-        case 3:
-            newMonth = "Março"
-        case 4:
-            newMonth = "Abril"
-        case 5:
-            newMonth = "Maio"
-        case 6:
-            newMonth = "Junho"
-        case 7:
-            newMonth = "Julho"
-        case 8:
-            newMonth = "Agosto"
-        case 9:
-            newMonth = "Setembro"
-        case 10:
-            newMonth = "Outubro"
-        case 11:
-            newMonth = "November"
-        case 12:
-            newMonth = "December"
-        default:
-            break
-        }
-        
-        return newMonth
-    }
-    
     //MARK: UITableViewDelegate
     
     private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -210,7 +174,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
             return self.generateCellForEmpty(tableview: tableView, index: indexPath as NSIndexPath)
         }
         else{
-            return self.generateCellForIdentidifcation(tableview: tableView, index: indexPath as NSIndexPath)
+            return self.generateCellForIdentification(tableview: tableView, index: indexPath as NSIndexPath)
         }
     }
     
@@ -220,8 +184,10 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        self.logSelected = self.tableViewOrder[indexPath.row].1
-        self.performSegue(withIdentifier: "goSingle", sender: nil)
+        if self.tableViewOrder[indexPath.row].0 == "Log"{
+            self.logSelected = self.tableViewOrder[indexPath.row].1
+            self.performSegue(withIdentifier: "goSingle", sender: nil)
+        }
     }
     
     func generateCellForHeader(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
@@ -232,7 +198,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         let newLog =  self.tableViewOrder[index.row].1
         let newDate = newLog.date
         
-        cell.dateTitle.text = String(newDate.day) + " de " + self.getMonthName(month: newDate.month)
+        cell.dateTitle.text = String(newDate.day) + " de " + QPestIOSUtil.getMonthName(month: newDate.month)
         
         return cell
     }
@@ -247,7 +213,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
-    func generateCellForIdentidifcation(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
+    func generateCellForIdentification(tableview : UITableView, index : NSIndexPath)->UITableViewCell{
         let cell = tableview.dequeueReusableCell(withIdentifier: MonitoringInfoTableViewCell.reuseIdentifier, for: index as IndexPath) as! MonitoringInfoTableViewCell
         
         cell.selectionStyle = .none
@@ -263,6 +229,16 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         }
         else{
             cell.tagView.backgroundColor = ColorPalette.defaultPalette.pragueTableViewColor
+        }
+
+        cell.mapIcon.image = cell.mapIcon.image!.withRenderingMode(.alwaysTemplate)
+        cell.mapIcon.tintColor = UIColor.lightGray
+        
+        if newLog.localization == nil{
+            cell.mapIcon.isHidden = true
+        }
+        else{
+            cell.mapIcon.isHidden = false
         }
         
         return cell

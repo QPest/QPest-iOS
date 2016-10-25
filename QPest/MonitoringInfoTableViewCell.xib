@@ -13,9 +13,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="375" height="69.5"/>
+                <frame key="frameInset" width="375" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hva-rO-FNH">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="v8D-qI-b9y"/>
+                            <constraint firstAttribute="width" constant="140" id="xkW-BM-L9c"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="6 pragas">
+                                <attributes>
+                                    <color key="NSColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="Avenir-Book"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-sx-DUg">
                         <color key="backgroundColor" red="0.8901960784313725" green="0.38431372549019605" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -73,22 +89,13 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hva-rO-FNH">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="GNz-yo-Ppl">
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.42656250000000001" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="14" id="v8D-qI-b9y"/>
-                            <constraint firstAttribute="width" constant="140" id="xkW-BM-L9c"/>
+                            <constraint firstAttribute="width" constant="17" id="boy-Hv-2K4"/>
+                            <constraint firstAttribute="height" constant="17" id="onR-fg-dZq"/>
                         </constraints>
-                        <attributedString key="attributedText">
-                            <fragment content="6 pragas">
-                                <attributes>
-                                    <color key="NSColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="12" name="Avenir-Book"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Pg7-ML-l94" firstAttribute="leading" secondItem="lrg-sx-DUg" secondAttribute="trailing" constant="21" id="0IN-FJ-Ipc"/>
@@ -98,14 +105,17 @@
                     <constraint firstAttribute="bottomMargin" secondItem="K5w-r0-cJY" secondAttribute="bottom" constant="6" id="75u-j4-FNx"/>
                     <constraint firstItem="Po5-vN-bBk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="7xN-br-ABe"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Hva-rO-FNH" secondAttribute="bottom" constant="7" id="Jgc-Cr-4AF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GNz-yo-Ppl" secondAttribute="trailing" constant="115" id="Mcw-fp-Zzf"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Po5-vN-bBk" secondAttribute="trailing" constant="22" id="Ppa-Uk-Jna"/>
                     <constraint firstItem="lrg-sx-DUg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tbp-Ub-KaB"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GNz-yo-Ppl" secondAttribute="bottom" constant="6" id="V4O-oy-fTO"/>
                     <constraint firstAttribute="bottom" secondItem="lrg-sx-DUg" secondAttribute="bottom" constant="-1" id="YKa-VJ-hlz"/>
                     <constraint firstAttribute="bottomMargin" secondItem="6tv-fi-5oB" secondAttribute="bottom" constant="6" id="abl-0X-vYh"/>
                     <constraint firstItem="6tv-fi-5oB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="139" id="d6s-ld-gus"/>
                     <constraint firstItem="6tv-fi-5oB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="32" id="fLt-TR-M9e"/>
                     <constraint firstItem="lrg-sx-DUg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fnL-XL-uuA"/>
                     <constraint firstItem="K5w-r0-cJY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="32" id="iUf-sR-pNy"/>
+                    <constraint firstItem="GNz-yo-Ppl" firstAttribute="top" secondItem="Pg7-ML-l94" secondAttribute="bottom" id="joY-CQ-Mhr"/>
                     <constraint firstItem="Hva-rO-FNH" firstAttribute="leading" secondItem="6tv-fi-5oB" secondAttribute="trailing" constant="8" id="kFg-R8-ISD"/>
                     <constraint firstItem="Pg7-ML-l94" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="laA-Zl-VcF"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Po5-vN-bBk" secondAttribute="bottom" constant="18" id="lo5-tr-eT6"/>
@@ -114,6 +124,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="mapIcon" destination="GNz-yo-Ppl" id="ni7-dE-L35"/>
                 <outlet property="monitoringCount" destination="Hva-rO-FNH" id="o31-gE-7pJ"/>
                 <outlet property="monitoringTime" destination="2yW-BI-puM" id="njY-Gv-IwV"/>
                 <outlet property="monitoringTitle" destination="Pg7-ML-l94" id="I1c-S6-mrE"/>
@@ -126,5 +137,6 @@
         <image name="arrow" width="30" height="52"/>
         <image name="date" width="16" height="16"/>
         <image name="details" width="15" height="11"/>
+        <image name="mapIcon2" width="36" height="36"/>
     </resources>
 </document>

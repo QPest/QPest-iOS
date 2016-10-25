@@ -1,15 +1,18 @@
 //
-//  MonitoringImageTableViewCell.swift
+//  MonitoringSingleTableViewCell.swift
 //  QPest
 //
-//  Created by Henrique Dutra on 18/10/16.
+//  Created by Henrique Dutra on 25/10/16.
 //  Copyright © 2016 Henrique Dutra. All rights reserved.
 //
 
 import UIKit
 
-class MonitoringImageTableViewCell: UITableViewCell {
+class MonitoringSingleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +24,12 @@ class MonitoringImageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    class var reuseIdentifier: String {
+        get {
+            return "monitoringSingleCell"
+        }
+    }
 }
+
+

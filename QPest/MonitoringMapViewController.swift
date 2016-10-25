@@ -40,12 +40,9 @@ class MonitoringMapViewController: UIViewController, MKMapViewDelegate {
     
         self.mapView.centerCoordinate = self.mapLocalization.coordinate
         self.mapView.showsUserLocation = true
-        self.mapView.userLocation.title = "Minha Localização"
+        self.mapView.userLocation.title = "Localização da praga identificada"
         self.mapView.delegate = self
-        
+    
     }
     
-    
-    
-
 }

@@ -13,15 +13,15 @@
             <rect key="frame" x="0.0" y="0.0" width="459" height="206"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="459" height="205.5"/>
+                <frame key="frameInset" width="459" height="205"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U18-ji-tWW">
                         <attributedString key="attributedText">
                             <fragment content="Informe, se possível, a quantidade de pragas encontradas">
                                 <attributes>
-                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="20" name="Helvetica-Light"/>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.82187500000000002" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="19" name="Helvetica-Light"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>

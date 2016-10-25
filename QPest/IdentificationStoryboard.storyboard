@@ -730,10 +730,11 @@
                                 <state key="normal" backgroundImage="exitCameraButton"/>
                                 <connections>
                                     <action selector="didClickExit:" destination="EqW-7y-x9T" eventType="touchUpInside" id="3ey-ve-7B6"/>
+                                    <action selector="didClickExit:" destination="ZpS-yl-y7T" eventType="touchUpInside" id="saz-BZ-jHz"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.66274509800000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H69-ta-7xQ" firstAttribute="top" secondItem="Id1-z2-Rf6" secondAttribute="bottom" id="NMQ-w8-dnw"/>
                             <constraint firstItem="H69-ta-7xQ" firstAttribute="leading" secondItem="w5T-d0-ptQ" secondAttribute="leadingMargin" id="c8c-Sr-leM"/>

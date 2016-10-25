@@ -57,10 +57,8 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if mapConfigViewGround {
             drawPolygonsArea()
         } else {
-            
-            if self.isInEditingMode == false {
-                removePolygonsArea()
-            }
+
+            removePolygonsArea()
         }
         self.loadMap()
     }

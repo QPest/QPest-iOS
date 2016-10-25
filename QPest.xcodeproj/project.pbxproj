@@ -27,6 +27,13 @@
 		6B49ADBF1DB9C5010079A242 /* SurveyFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADBE1DB9C5010079A242 /* SurveyFlowViewController.swift */; };
 		6B49ADC51DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49ADC31DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift */; };
 		6B49ADC61DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B49ADC41DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib */; };
+		6B4C85E71DBD9C4400637547 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85E61DBD9C4400637547 /* ExportViewController.swift */; };
+		6B4C85EA1DBE82C700637547 /* MonitoringEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85E81DBE82C700637547 /* MonitoringEmptyTableViewCell.swift */; };
+		6B4C85EB1DBE82C700637547 /* MonitoringEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85E91DBE82C700637547 /* MonitoringEmptyTableViewCell.xib */; };
+		6B4C85EE1DBE870B00637547 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85EC1DBE870B00637547 /* NotificationTableViewCell.swift */; };
+		6B4C85EF1DBE870B00637547 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */; };
+		6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F11DBE881A00637547 /* QPestNotification.swift */; };
+		6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F31DBE884400637547 /* NotificationDataSource.swift */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -58,6 +65,15 @@
 		6B52B3D81DAA912C00D632E1 /* MonitoringLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D71DAA912C00D632E1 /* MonitoringLog.swift */; };
 		6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3D91DAA91B100D632E1 /* MonitoringLogDataSource.swift */; };
 		6B52B3DF1DAA946A00D632E1 /* IdentificationManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */; };
+		6B5C4F211DBAA751004E0D86 /* ResultsInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4F1F1DBAA751004E0D86 /* ResultsInfoTableViewCell.swift */; };
+		6B5C4F221DBAA751004E0D86 /* ResultsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C4F201DBAA751004E0D86 /* ResultsInfoTableViewCell.xib */; };
+		6B5C4F271DBAA78B004E0D86 /* ResultsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4F251DBAA78B004E0D86 /* ResultsHeaderTableViewCell.swift */; };
+		6B5C4F281DBAA78B004E0D86 /* ResultsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C4F261DBAA78B004E0D86 /* ResultsHeaderTableViewCell.xib */; };
+		6B5C4F2D1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4F2B1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.swift */; };
+		6B5C4F2E1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C4F2C1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib */; };
+		6B5C4F311DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4F2F1DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift */; };
+		6B5C4F321DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C4F301DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib */; };
+		6B5C4F351DBC4FAB004E0D86 /* DecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4F341DBC4FAB004E0D86 /* DecisionViewController.swift */; };
 		6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */; };
 		6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */; };
 		6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */; };
@@ -74,6 +90,7 @@
 		DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */; };
 		DD03767A1DBA2CD900FF0B24 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0376791DBA2CD900FF0B24 /* opencv2.framework */; };
 		DD03767C1DBA50F100FF0B24 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03767B1DBA50F100FF0B24 /* MapAnnotation.swift */; };
+		DD03767E1DBF013600FF0B24 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD03767D1DBF013600FF0B24 /* SwiftDate.framework */; };
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
 		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
@@ -104,6 +121,13 @@
 		6B49ADBE1DB9C5010079A242 /* SurveyFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyFlowViewController.swift; sourceTree = "<group>"; };
 		6B49ADC31DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6B49ADC41DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurveyHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		6B4C85E61DBD9C4400637547 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
+		6B4C85E81DBE82C700637547 /* MonitoringEmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringEmptyTableViewCell.swift; sourceTree = "<group>"; };
+		6B4C85E91DBE82C700637547 /* MonitoringEmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringEmptyTableViewCell.xib; sourceTree = "<group>"; };
+		6B4C85EC1DBE870B00637547 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		6B4C85F11DBE881A00637547 /* QPestNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestNotification.swift; sourceTree = "<group>"; };
+		6B4C85F31DBE884400637547 /* NotificationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDataSource.swift; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +161,15 @@
 		6B52B3D71DAA912C00D632E1 /* MonitoringLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringLog.swift; sourceTree = "<group>"; };
 		6B52B3D91DAA91B100D632E1 /* MonitoringLogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringLogDataSource.swift; sourceTree = "<group>"; };
 		6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationManualViewController.swift; sourceTree = "<group>"; };
+		6B5C4F1F1DBAA751004E0D86 /* ResultsInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsInfoTableViewCell.swift; sourceTree = "<group>"; };
+		6B5C4F201DBAA751004E0D86 /* ResultsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsInfoTableViewCell.xib; sourceTree = "<group>"; };
+		6B5C4F251DBAA78B004E0D86 /* ResultsHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		6B5C4F261DBAA78B004E0D86 /* ResultsHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		6B5C4F2B1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsQuantityTableViewCell.swift; path = ../ResultsQuantityTableViewCell.swift; sourceTree = "<group>"; };
+		6B5C4F2C1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsQuantityTableViewCell.xib; path = ../ResultsQuantityTableViewCell.xib; sourceTree = "<group>"; };
+		6B5C4F2F1DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationManulTableViewCell.swift; sourceTree = "<group>"; };
+		6B5C4F301DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IdentificationManulTableViewCell.xib; sourceTree = "<group>"; };
+		6B5C4F341DBC4FAB004E0D86 /* DecisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionViewController.swift; sourceTree = "<group>"; };
 		6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		6B7072FF1DB5D274005ABB31 /* MonitoringSingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSingleViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +187,7 @@
 		DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Euschistus_cascade_stage8.xml; sourceTree = "<group>"; };
 		DD0376791DBA2CD900FF0B24 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
 		DD03767B1DBA50F100FF0B24 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		DD03767D1DBF013600FF0B24 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -175,6 +209,7 @@
 				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
 				6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */,
 				DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */,
+				DD03767E1DBF013600FF0B24 /* SwiftDate.framework in Frameworks */,
 				6B49ADB01DB953FE0079A242 /* PaperSwitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +224,7 @@
 				6B49AD911DB70CEF0079A242 /* Info */,
 				6B49AD901DB70CEA0079A242 /* MIP */,
 				6B52B3D21DAA8CDD00D632E1 /* Survey */,
+				6B4C85E51DBD9C3200637547 /* Export */,
 			);
 			name = "Action Controllers";
 			sourceTree = "<group>";
@@ -266,6 +302,23 @@
 			name = "Table View Survey";
 			sourceTree = "<group>";
 		};
+		6B4C85E51DBD9C3200637547 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				6B4C85E61DBD9C4400637547 /* ExportViewController.swift */,
+			);
+			name = Export;
+			sourceTree = "<group>";
+		};
+		6B4C85F01DBE880200637547 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6B4C85F11DBE881A00637547 /* QPestNotification.swift */,
+				6B4C85F31DBE884400637547 /* NotificationDataSource.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
 		6B52B3681DA8676B00D632E1 = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +358,8 @@
 		6B52B3861DA867CF00D632E1 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				DD0376741DB7987A00FF0B24 /* Annotation */,
 				6B52B39F1DA86D8E00D632E1 /* MapStoryboard.storyboard */,
+				DD0376741DB7987A00FF0B24 /* Annotation */,
 				6B52B3D01DAA8C4C00D632E1 /* Main */,
 				6B7073121DB6560E005ABB31 /* Configuration */,
 			);
@@ -317,8 +370,8 @@
 			isa = PBXGroup;
 			children = (
 				6B52B39D1DA86D8600D632E1 /* IdentificationStoryboard.storyboard */,
-				DD06DF3A1DAAF46600BAC1A2 /* Camera */,
 				6B52B3CF1DAA8C3700D632E1 /* Main */,
+				DD06DF3A1DAAF46600BAC1A2 /* Camera */,
 				6B70731A1DB6B83C005ABB31 /* Menu */,
 				6B52B3DD1DAA945500D632E1 /* Manual */,
 			);
@@ -381,6 +434,7 @@
 		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD03767D1DBF013600FF0B24 /* SwiftDate.framework */,
 				6B49ADAE1DB953FE0079A242 /* PaperSwitch.framework */,
 				6B49ADAF1DB953FE0079A242 /* Segmentio.framework */,
 				6B7073181DB6B711005ABB31 /* CircleMenu.framework */,
@@ -400,6 +454,8 @@
 				6B52B3B61DA9323800D632E1 /* MonitoringInfoTableViewCell.xib */,
 				6B7072FA1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift */,
 				6B7072FB1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib */,
+				6B4C85E81DBE82C700637547 /* MonitoringEmptyTableViewCell.swift */,
+				6B4C85E91DBE82C700637547 /* MonitoringEmptyTableViewCell.xib */,
 			);
 			name = "Table View";
 			sourceTree = "<group>";
@@ -441,6 +497,8 @@
 			isa = PBXGroup;
 			children = (
 				6B52B3BA1DA941EA00D632E1 /* MonitoringNotificationViewController.swift */,
+				6B4C85EC1DBE870B00637547 /* NotificationTableViewCell.swift */,
+				6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */,
 			);
 			name = Notification;
 			sourceTree = "<group>";
@@ -503,6 +561,7 @@
 		6B52B3DB1DAA92C400D632E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B4C85F01DBE880200637547 /* Notification */,
 				6B49ADB41DB9BDFA0079A242 /* Survey */,
 				6B49ADA51DB7DFA60079A242 /* Prague Model */,
 				6B52B3D61DAA90A700D632E1 /* Monitoring Model */,
@@ -514,8 +573,49 @@
 			isa = PBXGroup;
 			children = (
 				6B52B3DE1DAA946A00D632E1 /* IdentificationManualViewController.swift */,
+				6B5C4F2F1DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift */,
+				6B5C4F301DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib */,
 			);
 			name = Manual;
+			sourceTree = "<group>";
+		};
+		6B5C4F1A1DBAA715004E0D86 /*  TableView */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C4F251DBAA78B004E0D86 /* ResultsHeaderTableViewCell.swift */,
+				6B5C4F261DBAA78B004E0D86 /* ResultsHeaderTableViewCell.xib */,
+				6B5C4F1F1DBAA751004E0D86 /* ResultsInfoTableViewCell.swift */,
+				6B5C4F201DBAA751004E0D86 /* ResultsInfoTableViewCell.xib */,
+				6B5C4F2B1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.swift */,
+				6B5C4F2C1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib */,
+			);
+			name = " TableView";
+			sourceTree = "<group>";
+		};
+		6B5C4F1B1DBAA724004E0D86 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */,
+				DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		6B5C4F1C1DBAA729004E0D86 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */,
+				6B5C4F1A1DBAA715004E0D86 /*  TableView */,
+			);
+			name = Results;
+			sourceTree = "<group>";
+		};
+		6B5C4F331DBC4F98004E0D86 /* Decision */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C4F341DBC4FAB004E0D86 /* DecisionViewController.swift */,
+			);
+			name = Decision;
 			sourceTree = "<group>";
 		};
 		6B7072FE1DB5D257005ABB31 /* MonitoringSingleViewController */ = {
@@ -578,9 +678,9 @@
 		DD06DF3A1DAAF46600BAC1A2 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */,
-				DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */,
-				6B49ADAC1DB802F90079A242 /* IdentificationResultViewController.swift */,
+				6B5C4F1B1DBAA724004E0D86 /* Camera */,
+				6B5C4F1C1DBAA729004E0D86 /* Results */,
+				6B5C4F331DBC4F98004E0D86 /* Decision */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -662,21 +762,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B49ADA41DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib in Resources */,
+				6B4C85EB1DBE82C700637547 /* MonitoringEmptyTableViewCell.xib in Resources */,
 				6B52B3A01DA86D8E00D632E1 /* MapStoryboard.storyboard in Resources */,
 				DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */,
 				6B52B3B81DA9323800D632E1 /* MonitoringInfoTableViewCell.xib in Resources */,
 				6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */,
 				6B52B39E1DA86D8600D632E1 /* IdentificationStoryboard.storyboard in Resources */,
 				6B52B3CB1DA9E72200D632E1 /* terms.txt in Resources */,
+				6B5C4F321DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib in Resources */,
 				DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */,
 				6B49ADC61DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib in Resources */,
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
 				6B7073041DB5D493005ABB31 /* MonitoringImageTableViewCell.xib in Resources */,
+				6B5C4F2E1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib in Resources */,
+				6B4C85EF1DBE870B00637547 /* NotificationTableViewCell.xib in Resources */,
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
 				6B52B38B1DA869DD00D632E1 /* QPestTabBar.storyboard in Resources */,
 				6B52B39C1DA86D7000D632E1 /* MonotoringStoryboard.storyboard in Resources */,
 				6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */,
+				6B5C4F221DBAA751004E0D86 /* ResultsInfoTableViewCell.xib in Resources */,
 				6B52B3AA1DA87A2900D632E1 /* IdentificationMainTableViewCell.xib in Resources */,
+				6B5C4F281DBAA78B004E0D86 /* ResultsHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +800,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/CircleMenu.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CameraManager.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PaperSwitch.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
 			);
 			outputPaths = (
 			);
@@ -713,12 +820,15 @@
 				6B52B3A91DA87A2900D632E1 /* IdentificationMainTableViewCell.swift in Sources */,
 				6B52B3A21DA86DDB00D632E1 /* MapMainViewController.swift in Sources */,
 				6B49ADC51DB9C61D0079A242 /* SurveyHeaderTableViewCell.swift in Sources */,
+				6B5C4F2D1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.swift in Sources */,
 				6B49AD9F1DB7DB130079A242 /* ActionSinglePragueViewController.swift in Sources */,
 				6B52B38D1DA86A1900D632E1 /* QPestTabBarController.swift in Sources */,
 				6B7073111DB64BFF005ABB31 /* UIViewController+Util.swift in Sources */,
 				6B49AD951DB7108B0079A242 /* GeneralInfoMainViewController.swift in Sources */,
+				6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */,
 				6B7073001DB5D274005ABB31 /* MonitoringSingleViewController.swift in Sources */,
 				6B49ADBF1DB9C5010079A242 /* SurveyFlowViewController.swift in Sources */,
+				6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */,
 				6B49AD9D1DB732A10079A242 /* GraphViewController.swift in Sources */,
 				6B7073031DB5D493005ABB31 /* MonitoringImageTableViewCell.swift in Sources */,
 				DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */,
@@ -729,17 +839,21 @@
 				6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */,
 				6B7073141DB65627005ABB31 /* MapConfigurationViewController.swift in Sources */,
 				6B52B3911DA86A7400D632E1 /* CustomTabBar.swift in Sources */,
+				6B4C85EE1DBE870B00637547 /* NotificationTableViewCell.swift in Sources */,
 				6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
 				6B49ADA31DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift in Sources */,
+				6B5C4F311DBBF5DE004E0D86 /* IdentificationManulTableViewCell.swift in Sources */,
 				DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */,
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,
 				6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */,
+				6B4C85EA1DBE82C700637547 /* MonitoringEmptyTableViewCell.swift in Sources */,
 				6B49ADBC1DB9BFDD0079A242 /* SurveyDataSource.swift in Sources */,
 				DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */,
 				6B49ADB61DB9BE8C0079A242 /* Survey.swift in Sources */,
 				6B52B39A1DA86B4D00D632E1 /* UIColor+Util.swift in Sources */,
 				6B52B3A61DA86DEB00D632E1 /* MonitoringMainViewController.swift in Sources */,
+				6B5C4F351DBC4FAB004E0D86 /* DecisionViewController.swift in Sources */,
 				DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */,
 				6B49ADA71DB7DFB40079A242 /* Prague.swift in Sources */,
 				6B52B3DA1DAA91B100D632E1 /* MonitoringLogDataSource.swift in Sources */,
@@ -748,11 +862,14 @@
 				6B7073071DB643CF005ABB31 /* MonitoringAddNewLogViewController.swift in Sources */,
 				6B49ADB31DB9B97D0079A242 /* SweetAlert.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
+				6B5C4F211DBAA751004E0D86 /* ResultsInfoTableViewCell.swift in Sources */,
 				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
 				DD03767C1DBA50F100FF0B24 /* MapAnnotation.swift in Sources */,
+				6B4C85E71DBD9C4400637547 /* ExportViewController.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,
 				6B52B3941DA86AAB00D632E1 /* CustomTabBarItem.swift in Sources */,
 				6B49ADB81DB9BEA70079A242 /* Question.swift in Sources */,
+				6B5C4F271DBAA78B004E0D86 /* ResultsHeaderTableViewCell.swift in Sources */,
 				6B49ADBA1DB9BF0D0079A242 /* Option.swift in Sources */,
 				6B52B3D41DAA8D1B00D632E1 /* SurveyMainViewController.swift in Sources */,
 				6B52B3AD1DA920F300D632E1 /* ColorPalette.swift in Sources */,

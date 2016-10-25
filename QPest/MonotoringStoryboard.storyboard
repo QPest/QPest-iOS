@@ -276,6 +276,9 @@
                             <constraint firstItem="F2w-7U-iIi" firstAttribute="leading" secondItem="lon-6Q-ajL" secondAttribute="leading" id="zh1-dl-9Gw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="F2w-7U-iIi" id="Xyt-vu-XfH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEH-KB-egM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

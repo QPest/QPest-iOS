@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsHeader" rowHeight="206" id="KGk-i7-Jjw" customClass="ResultsHeaderTableViewCell" customModule="QPest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="206"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="384" height="205.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh9-Q2-CRd">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="X2e-Ft-rF8"/>
+                            <constraint firstAttribute="width" constant="200" id="cvd-Iz-9r9"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Veja abaixo as informações">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name="Helvetica-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sucess" translatesAutoresizingMaskIntoConstraints="NO" id="vG1-MB-Ju6">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="mE7-7S-6nR"/>
+                            <constraint firstAttribute="height" constant="80" id="mme-5g-Hod"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqs-dm-F04">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="295" id="Qlc-c1-phT"/>
+                            <constraint firstAttribute="height" constant="37" id="WU3-q0-5bg"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Identificado com sucesso">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="24" name="Helvetica-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="vqs-dm-F04" secondAttribute="trailing" constant="36" id="3eH-1F-DNO"/>
+                    <constraint firstItem="Eh9-Q2-CRd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="84" id="3fw-u3-7uA"/>
+                    <constraint firstItem="vqs-dm-F04" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="37" id="4Ro-py-ODH"/>
+                    <constraint firstItem="vG1-MB-Ju6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="144" id="BOD-TU-7sz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vG1-MB-Ju6" secondAttribute="trailing" constant="144" id="Stw-Is-uFP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="vG1-MB-Ju6" secondAttribute="bottom" constant="96.5" id="YdK-zu-UMm"/>
+                    <constraint firstItem="Eh9-Q2-CRd" firstAttribute="top" secondItem="vqs-dm-F04" secondAttribute="bottom" constant="8" id="Zcm-iV-L54"/>
+                    <constraint firstItem="vqs-dm-F04" firstAttribute="top" secondItem="vG1-MB-Ju6" secondAttribute="bottom" constant="9" id="l0O-ZU-7gB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Eh9-Q2-CRd" secondAttribute="trailing" constant="84" id="yJe-JS-4cq"/>
+                    <constraint firstItem="vG1-MB-Ju6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="yae-GU-3Xn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.23529411764705882" green="0.66274509803921566" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="imageResult" destination="vG1-MB-Ju6" id="3z6-15-eMA"/>
+                <outlet property="info" destination="Eh9-Q2-CRd" id="85L-Fo-f5K"/>
+                <outlet property="title" destination="vqs-dm-F04" id="tCk-PJ-dmd"/>
+            </connections>
+            <point key="canvasLocation" x="49" y="58"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sucess" width="300" height="300"/>
+    </resources>
+</document>

@@ -39,17 +39,37 @@
                                     <action selector="didClickContune:" destination="kbQ-rO-d2U" eventType="touchUpInside" id="lTk-x4-xsq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="two arrows" translatesAutoresizingMaskIntoConstraints="NO" id="Nlz-Sb-5Cw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="STu-8Q-uo1"/>
+                                    <constraint firstAttribute="height" constant="27" id="WBY-JL-qrp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="two arrows" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-6N-9cV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="9s6-bB-ghd"/>
+                                    <constraint firstAttribute="width" constant="31" id="cQq-74-UeG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Nlz-Sb-5Cw" firstAttribute="top" secondItem="Gkh-cL-JfP" secondAttribute="bottom" constant="515" id="CAs-ed-NR3"/>
+                            <constraint firstItem="gEe-6N-9cV" firstAttribute="leading" secondItem="fOY-an-yWB" secondAttribute="leadingMargin" constant="26" id="EIG-DP-jBW"/>
+                            <constraint firstItem="lu6-nu-Gph" firstAttribute="top" secondItem="gEe-6N-9cV" secondAttribute="bottom" constant="105" id="KmN-0k-8Wi"/>
+                            <constraint firstItem="gEe-6N-9cV" firstAttribute="top" secondItem="Gkh-cL-JfP" secondAttribute="bottom" constant="515" id="UV2-kY-hWW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5fX-Fo-Sab" secondAttribute="trailing" constant="119" id="VnC-Sl-VJj"/>
                             <constraint firstItem="5fX-Fo-Sab" firstAttribute="leading" secondItem="fOY-an-yWB" secondAttribute="leadingMargin" constant="118" id="fMv-eJ-Xr0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nlz-Sb-5Cw" secondAttribute="trailing" constant="27" id="noK-Nw-7Zf"/>
+                            <constraint firstItem="lu6-nu-Gph" firstAttribute="top" secondItem="Nlz-Sb-5Cw" secondAttribute="bottom" constant="105" id="rXY-WH-Yf6"/>
                             <constraint firstItem="lu6-nu-Gph" firstAttribute="top" secondItem="5fX-Fo-Sab" secondAttribute="bottom" constant="107" id="zim-Oj-YX2"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="continueButton" destination="5fX-Fo-Sab" id="N0y-IW-VvF"/>
+                        <outlet property="leftArrows" destination="gEe-6N-9cV" id="NNl-1r-FmS"/>
+                        <outlet property="rightArrows" destination="Nlz-Sb-5Cw" id="gqt-XH-qis"/>
                         <segue destination="L01-cz-4XS" kind="presentation" identifier="goTerms" id="gqy-lj-Ira"/>
                     </connections>
                 </viewController>
@@ -143,4 +163,7 @@
             <point key="canvasLocation" x="693.60000000000002" y="13.943028485757123"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="two arrows" width="33" height="31"/>
+    </resources>
 </document>

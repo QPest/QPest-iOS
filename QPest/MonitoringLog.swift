@@ -12,11 +12,11 @@ import UIKit
 class MonitoringLog: NSObject {
 
     var date : Date = Date()
-    var isPrague : Bool = false
-    var isNaturalEnemy : Bool = false
-    var pragueQuantity : Int = Int()
-    var pragueName : String = String()
     var localization : String = String()
     var dateFormatted : String = String()
+    var isNaturalEnemy : Bool = false
+    var isPrague : Bool = false
+    var pragueQuantity : Int = Int()
+    var prague : Prague = Prague()
 
 }

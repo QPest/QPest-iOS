@@ -77,7 +77,7 @@ class GeneralInfoMainViewController: UIViewController, UITableViewDataSource, UI
             self.performSegue(withIdentifier: "goGraph", sender: nil)
         }
         else {
-            self.exportData()
+            self.performSegue(withIdentifier: "goExport", sender: nil)
         }
     }
     
@@ -107,10 +107,4 @@ class GeneralInfoMainViewController: UIViewController, UITableViewDataSource, UI
         }
    
     }
-    
-    func exportData(){
-    
-        
-    }
-    
 }

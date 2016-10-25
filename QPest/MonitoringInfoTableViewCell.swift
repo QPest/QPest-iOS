@@ -32,6 +32,4 @@ class MonitoringInfoTableViewCell: UITableViewCell {
             return "monitoringCell"
         }
     }
-    
-    
 }

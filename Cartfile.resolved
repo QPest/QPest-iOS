@@ -1,4 +1,5 @@
 github "imaginary-cloud/CameraManager" "3.0.0"
+github "malcommac/SwiftDate" "4.0.7"
 github "raulriera/TextFieldEffects" "1.3.0"
 github "Ramotion/circle-menu" "2.0.1"
 github "Ramotion/paper-onboarding" "2.0.1"

@@ -36,8 +36,7 @@ class CameraViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         cameraManager.resumeCaptureSession()
     }
-    
-    
+ 
     fileprivate func addCameraToView(){
         _ = cameraManager.addPreviewLayerToView(cameraView, newCameraOutputMode: CameraOutputMode.stillImage)
         cameraManager.showErrorBlock = { [weak self] (erTitle: String, erMessage: String) -> Void in
@@ -47,6 +46,10 @@ class CameraViewController: UIViewController {
             
             self?.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func unwindToVCNumber2(segue: UIStoryboardSegue) {
+        
     }
     
     private func setupCameraState(){
@@ -125,6 +128,5 @@ class CameraViewController: UIViewController {
             imageViewController.image = self.image
         }
     }
-    
 
 }

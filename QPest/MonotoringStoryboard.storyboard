@@ -166,8 +166,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Confirmar">
                                             <attributes>
-                                                <color key="NSColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="15" name="Avenir-Medium"/>
+                                                <color key="NSColor" red="0.23529411764705882" green="0.66274509803921566" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="16" name="Avenir-Medium"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -193,11 +193,48 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3p-9a-0b5" userLabel="Blue View">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ativar localização" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGh-Mh-Tcp">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salvar no monitoramento a localização exata que você está" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQc-w3-Dx0" userLabel="Description">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="234" id="t6S-HB-LAY"/>
+                                            <constraint firstAttribute="height" constant="47" id="xQV-ip-rMR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-x2-Rcr" customClass="RAMPaperSwitch" customModule="PaperSwitch">
+                                        <color key="onTintColor" red="0.23529411764705882" green="0.66274509803921566" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="lGh-Mh-Tcp" firstAttribute="top" secondItem="D3p-9a-0b5" secondAttribute="top" constant="69" id="2j0-vb-wzL"/>
+                                    <constraint firstAttribute="bottom" secondItem="9v0-x2-Rcr" secondAttribute="bottom" constant="44" id="4vU-9Y-mME"/>
+                                    <constraint firstItem="9v0-x2-Rcr" firstAttribute="leading" secondItem="D3p-9a-0b5" secondAttribute="leading" constant="168" id="KAy-bU-m0k"/>
+                                    <constraint firstItem="9v0-x2-Rcr" firstAttribute="top" secondItem="yQc-w3-Dx0" secondAttribute="bottom" constant="22" id="NDX-Rx-zRQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="yQc-w3-Dx0" secondAttribute="trailing" constant="79" id="PbM-AA-5jU"/>
+                                    <constraint firstItem="lGh-Mh-Tcp" firstAttribute="leading" secondItem="D3p-9a-0b5" secondAttribute="leading" constant="104" id="RFP-ao-hVa"/>
+                                    <constraint firstItem="yQc-w3-Dx0" firstAttribute="leading" secondItem="D3p-9a-0b5" secondAttribute="leading" constant="71" id="UEf-GK-a2k"/>
+                                    <constraint firstAttribute="trailing" secondItem="9v0-x2-Rcr" secondAttribute="trailing" constant="167" id="fW9-VW-WJi"/>
+                                    <constraint firstAttribute="trailing" secondItem="lGh-Mh-Tcp" secondAttribute="trailing" constant="103" id="pdJ-FX-aMT"/>
+                                    <constraint firstItem="yQc-w3-Dx0" firstAttribute="top" secondItem="lGh-Mh-Tcp" secondAttribute="bottom" constant="8" id="x92-JA-ZX1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5Nl-GO-k8h" secondAttribute="trailing" constant="12" id="0jR-p0-Nsq"/>
+                            <constraint firstItem="D3p-9a-0b5" firstAttribute="top" secondItem="ApJ-RX-doe" secondAttribute="bottom" constant="94" id="2Ac-9L-6aH"/>
                             <constraint firstItem="XP0-SJ-SIQ" firstAttribute="top" secondItem="dku-D4-Z0i" secondAttribute="bottom" constant="74" id="3qw-hL-vEV"/>
+                            <constraint firstAttribute="trailing" secondItem="D3p-9a-0b5" secondAttribute="trailing" id="4Vq-ZA-qC2"/>
+                            <constraint firstItem="D3p-9a-0b5" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leading" id="6Ic-Dx-Zyl"/>
                             <constraint firstItem="dku-D4-Z0i" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leadingMargin" constant="136" id="AJp-q4-jL1"/>
                             <constraint firstItem="XP0-SJ-SIQ" firstAttribute="top" secondItem="aTP-Yl-TxB" secondAttribute="bottom" constant="118" id="KGN-5e-Ree"/>
                             <constraint firstItem="EzY-24-91z" firstAttribute="top" secondItem="uCt-dy-y7Q" secondAttribute="bottom" constant="20" id="R67-Ab-kI4"/>
@@ -207,6 +244,7 @@
                             <constraint firstItem="5Nl-GO-k8h" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leading" constant="13" id="YqO-HS-jcN"/>
                             <constraint firstItem="EzY-24-91z" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leadingMargin" constant="13" id="bbk-0z-Yhj"/>
                             <constraint firstAttribute="trailing" secondItem="aTP-Yl-TxB" secondAttribute="trailing" id="eLx-IY-wne"/>
+                            <constraint firstItem="dku-D4-Z0i" firstAttribute="top" secondItem="D3p-9a-0b5" secondAttribute="bottom" constant="17" id="eOC-4x-sNO"/>
                             <constraint firstItem="5Nl-GO-k8h" firstAttribute="top" secondItem="ApJ-RX-doe" secondAttribute="bottom" constant="8" id="fT6-j5-DqK"/>
                             <constraint firstItem="ApJ-RX-doe" firstAttribute="leading" secondItem="s7y-jy-0Xz" secondAttribute="leading" constant="13" id="pkq-rN-Bx5"/>
                             <constraint firstItem="ApJ-RX-doe" firstAttribute="top" secondItem="uCt-dy-y7Q" secondAttribute="bottom" constant="80" id="qWV-ps-WcI"/>
@@ -214,6 +252,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="localizationDescription" destination="yQc-w3-Dx0" id="tCC-AB-KhT"/>
+                        <outlet property="localizationImageView" destination="D3p-9a-0b5" id="zJc-XV-eMI"/>
+                        <outlet property="localizationTitle" destination="lGh-Mh-Tcp" id="HYa-n5-yn6"/>
+                        <outlet property="paperSwitch" destination="9v0-x2-Rcr" id="hYz-da-8Uw"/>
                         <outlet property="pragueTextField" destination="ApJ-RX-doe" id="9wf-BS-Xig"/>
                         <outlet property="quantityTextField" destination="5Nl-GO-k8h" id="8CV-Zz-l50"/>
                     </connections>

@@ -95,17 +95,27 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
 
     func didSaveNewLog(){
          _ = SweetAlert().showAlert("Sucesso!", subTitle: "Monitoramento salvo", style: AlertStyle.success)
+        
+        self.reloadData()
+    }
+    
+    func reloadData(){
+    
+        self.getLogs()
+        self.setupTableOrder()
+        self.tableView.reloadData()
+
     }
     
     func getLogs(){
-    
-        MonitoringLogDataSource.defaultLogDataSource.reload()
-    
+        
         self.monitoringLogs =  MonitoringLogDataSource.defaultLogDataSource.getLogInfo()
         self.monitoringDates = MonitoringLogDataSource.defaultLogDataSource.getLogDates()
     }
     
     func setupTableOrder(){
+        
+        self.tableViewOrder = []
         
         for newDate in self.monitoringDates{
             

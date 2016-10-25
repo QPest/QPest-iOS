@@ -8,29 +8,30 @@
 
 import UIKit
 import TextFieldEffects
+import CoreLocation
 
-class IdentificationResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class IdentificationResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
     @IBOutlet weak var imageTaken: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    var imageWasChosenFromLibrary : Bool = false
-    var quantityTextField : MadokaTextField!
-
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var decisionButton: UIButton!
     @IBOutlet weak var takeOtherImageButton: UIButton!
     
+    let locationManager : CLLocationManager = CLLocationManager()
+    var locationCoordinate : CLLocation = CLLocation(latitude: 0, longitude: 0)
+
     var imageRecieved : UIImage = UIImage()
     var didIdentifyImage : Bool = Bool()
     var pragueIdentified : Prague!
     
     var tableCount : Int = 0
     
+    var imageWasChosenFromLibrary : Bool = false
+    var quantityTextField : MadokaTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //self.didIdentifyImage = true
         
         self.configueView()
         self.decision()
@@ -45,19 +46,31 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didClickContinue(_ sender: AnyObject) {
+        self.decideForLogCreation()
+    }
+    
+    @IBAction func didClickTakeOtherImage(_ sender: AnyObject) {
+        self.decideForLogCreation()
+
+    }
     @IBAction func didClickExit(_ sender: AnyObject) {
-  
-        self.createNewLog()
+        self.decideForLogCreation()
     }
   
+    @IBAction func didClickDecision(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "goDecision", sender: nil)
+    }
+    
+    func decideForLogCreation(){
+        if self.didIdentifyImage {
+            self.createNewLog()
+        }
+    }
+    
     func configueView(){
         self.imageTaken.image = self.imageRecieved
-        
         self.configueButtons()
-    }
-    @IBAction func didClickDecision(_ sender: AnyObject) {
-        
-        self.performSegue(withIdentifier: "goDecision", sender: nil)
     }
     
     func configueButtons(){
@@ -94,11 +107,58 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     
     func createNewLog(){
     
-       // let newPrague = Prague()
         let newMonitoringLog = MonitoringLog()
+        newMonitoringLog.date = Date()
+        newMonitoringLog.imageTaken = self.imageRecieved
+        newMonitoringLog.localization = self.getLocation()
+        
+        if let num = Int(self.quantityTextField.text!) {
+            newMonitoringLog.pragueQuantity = num
+        }
+        else{
+            newMonitoringLog.pragueQuantity = 0
+        }
+        
+        newMonitoringLog.prague.name = self.getPragueName()
+        newMonitoringLog.setFormattedDate()
+        
         MonitoringLogDataSource.defaultLogDataSource.addLog(log: newMonitoringLog)
+        
+        _ = SweetAlert().showAlert("Sucesso!", subTitle: "Monitoramento salvo", style: AlertStyle.success)
+        
+        let nc = NotificationCenter.default
+        nc.post(name: Notification.Name("didSaveNewLog"), object: nil)
+
     }
     
+    func getLocalization() -> CLLocation{
+        return self.locationCoordinate
+    }
+    
+    private func setuplocation(){
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        
+        let newCoordinate = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        self.locationCoordinate = newCoordinate
+        
+    }
+    
+    func getLocation() -> CLLocation{
+        return self.locationCoordinate
+    }
+    
+
     func decision(){
 
         if self.didIdentifyImage{
@@ -114,6 +174,12 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
             self.takeOtherImageButton.isHidden = true
         }
     }
+    
+    func getPragueName() -> String{
+        return "Euschistus"
+    }
+    
+    // MARK: Table View
     
     func setupTableView(){
         
@@ -222,7 +288,6 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
                 self.view.frame.origin.y -= keyboardSize.height
             }
         }
-        
     }
     
     // MARK: Keyboard

@@ -25,16 +25,35 @@ class MonitoringLogDataSource: NSObject {
 
     }
     
+    func saveData(){
+    
+    }
+    
     func addLog(log : MonitoringLog){
         self.monitoringLogs.append(log)
+        self.compareDates(log: log)
+        self.sortLogs()
+        self.saveData()
     }
     
     func deleteLog(index : Int){
         
     }
     
-    func reload(){
+    func sortLogs(){
     
+        self.monitoringLogs.sort { $0.date > $1.date }
+        self.monitoringDates.sort { $0 > $1 }
+
+    }
+    
+    func compareDates(log : MonitoringLog){
+    
+        let pos = 0
+        
+        if log.date.day != self.monitoringDates[pos].day || log.date.month != self.monitoringDates[pos].month {
+            self.monitoringDates.append(log.date)
+        }
     }
     
     func addInitialLogs(){
@@ -47,36 +66,39 @@ class MonitoringLogDataSource: NSObject {
         logOne.isPrague = true
         logOne.pragueQuantity = 6
         logOne.prague.name = "Euschistus"
-        logOne.date = Date()
+        logOne.date = Date() - 2.day
         
         logTwo.isPrague = true
         logTwo.pragueQuantity = 13
         logTwo.prague.name = "Euschistus"
-        logTwo.date = Date()
+        logTwo.date = Date() - 2.day
 
         logThree.isNaturalEnemy = true
         logThree.pragueQuantity = 1
         logThree.prague.name = "Inimigo Natural"
-        logThree.date = Date()
+        logThree.date = Date() - 1.day
 
         logFour.isPrague = true
         logFour.pragueQuantity = 2
         logFour.prague.name = "Euschistus"
-        logFour.date = Date() - 1.day
+        logFour.date = Date() - 2.day
 
 
-        logOne.dateFormatted = "16:32"
-        logTwo.dateFormatted = "16:32"
-        logThree.dateFormatted = "16:32"
-        logFour.dateFormatted = "16:32"
+        logOne.setFormattedDate()
+        logTwo.setFormattedDate()
+        logThree.setFormattedDate()
+        logFour.setFormattedDate()
         
         self.monitoringLogs.append(logOne)
         self.monitoringLogs.append(logTwo)
         self.monitoringLogs.append(logThree)
         self.monitoringLogs.append(logFour)
         
-        self.monitoringDates.append(Date())
+        self.sortLogs()
+        
         self.monitoringDates.append(Date() - 1.day)
+        self.monitoringDates.append(Date() - 2.day)
+
     }
     
     func getLogInfo() -> [MonitoringLog]{

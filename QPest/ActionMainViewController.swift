@@ -85,9 +85,15 @@ class ActionMainViewController: UIViewController, UITableViewDelegate, UITableVi
         
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = .none
-        cell.pragueTitle.textColor = UIColor.white
+
+        cell.pragueScientificName.textColor = UIColor.white
+        cell.pragueScientificName.text = newPrague.scientificName.uppercased()
         
-        cell.pragueTitle.text = newPrague.name
+        cell.pragueCommonName.text = newPrague.name
+        cell.pragueCommonName.textColor = UIColor.white
+        
+        cell.arrow.image = cell.arrow.image!.withRenderingMode(.alwaysTemplate)
+        cell.arrow.tintColor = UIColor.white
         
         return cell
     }

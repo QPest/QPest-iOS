@@ -828,10 +828,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgD-MD-Akc">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="S69-hl-w59"/>
-                                    <constraint firstAttribute="width" constant="33" id="e3B-tr-Q3k"/>
+                                    <constraint firstAttribute="height" constant="32" id="S69-hl-w59"/>
+                                    <constraint firstAttribute="width" constant="18" id="e3B-tr-Q3k"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="exitCameraButton"/>
+                                <state key="normal" backgroundImage="arrow"/>
                                 <connections>
                                     <action selector="didClickExit:" destination="Qfc-33-zaO" eventType="touchUpInside" id="Xcc-BC-4Ch"/>
                                 </connections>
@@ -844,27 +844,36 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Euschistus">
                                         <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.61568627450980395" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="21" name="ChalkboardSE-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yac-Fr-t1q">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.23529411759999999" green="0.66274509800000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="trailing" secondItem="3ZB-at-mru" secondAttribute="trailingMargin" id="0uo-yc-0oH"/>
-                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="top" secondItem="iYL-kw-qM0" secondAttribute="bottom" id="EJj-UL-rxj"/>
+                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="trailing" secondItem="3ZB-at-mru" secondAttribute="trailingMargin" constant="-11" id="0uo-yc-0oH"/>
+                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="top" secondItem="iYL-kw-qM0" secondAttribute="bottom" constant="6" id="EJj-UL-rxj"/>
+                            <constraint firstItem="yac-Fr-t1q" firstAttribute="leading" secondItem="3ZB-at-mru" secondAttribute="leading" id="HKE-JI-HEf"/>
                             <constraint firstItem="PgD-MD-Akc" firstAttribute="leading" secondItem="3ZB-at-mru" secondAttribute="leadingMargin" id="LCi-b9-vcu"/>
-                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="leading" secondItem="PgD-MD-Akc" secondAttribute="trailing" constant="19" id="MGE-m8-KKF"/>
-                            <constraint firstItem="feh-HY-o9v" firstAttribute="top" secondItem="A8O-Ew-Ra5" secondAttribute="bottom" constant="616" id="cZV-rq-IyP"/>
+                            <constraint firstItem="A8O-Ew-Ra5" firstAttribute="leading" secondItem="PgD-MD-Akc" secondAttribute="trailing" constant="23" id="MGE-m8-KKF"/>
+                            <constraint firstAttribute="trailing" secondItem="yac-Fr-t1q" secondAttribute="trailing" id="QIP-9X-KWd"/>
+                            <constraint firstItem="yac-Fr-t1q" firstAttribute="top" secondItem="iYL-kw-qM0" secondAttribute="bottom" constant="55" id="Rze-Gx-uND"/>
+                            <constraint firstItem="feh-HY-o9v" firstAttribute="top" secondItem="A8O-Ew-Ra5" secondAttribute="bottom" constant="610" id="cZV-rq-IyP"/>
                             <constraint firstItem="PgD-MD-Akc" firstAttribute="top" secondItem="iYL-kw-qM0" secondAttribute="bottom" constant="5" id="sew-Jh-45g"/>
+                            <constraint firstItem="feh-HY-o9v" firstAttribute="top" secondItem="yac-Fr-t1q" secondAttribute="bottom" id="vE9-we-eZ6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="exitButton" destination="PgD-MD-Akc" id="Kft-Z1-Pqe"/>
                         <outlet property="pragueTitle" destination="A8O-Ew-Ra5" id="1pE-nJ-HaV"/>
+                        <outlet property="tableView" destination="yac-Fr-t1q" id="rvH-3d-Hnc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v71-ON-R63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1093,6 +1102,7 @@
     </scenes>
     <resources>
         <image name="MIPTitle" width="297" height="100"/>
+        <image name="arrow" width="30" height="52"/>
         <image name="back" width="30" height="52"/>
         <image name="cameraBack" width="54" height="54"/>
         <image name="cameraButton" width="114" height="114"/>

@@ -198,7 +198,7 @@ class MonitoringMainViewController: UIViewController, UITableViewDataSource, UIT
         let newLog =  self.tableViewOrder[index.row].1
         let newDate = newLog.date
         
-        cell.dateTitle.text = String(newDate.day) + " de " + QPestIOSUtil.getMonthName(month: newDate.month)
+        cell.cellTitle.text = String(newDate.day) + " de " + QPestIOSUtil.getMonthName(month: newDate.month)
         
         return cell
     }

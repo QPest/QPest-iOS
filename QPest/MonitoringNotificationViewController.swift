@@ -136,7 +136,7 @@ class MonitoringNotificationViewController: UIViewController, UITableViewDelegat
         
         cell.selectionStyle = .none
         
-        cell.dateTitle.text = self.tableViewOrder[index.row].1.notificationTitle
+        cell.cellTitle.text = self.tableViewOrder[index.row].1.notificationTitle
         
         return cell
     }

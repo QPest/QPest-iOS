@@ -38,6 +38,8 @@
 		6B4C85F91DBF7AE900637547 /* MonitoringSingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F71DBF7AE900637547 /* MonitoringSingleTableViewCell.swift */; };
 		6B4C85FA1DBF7AE900637547 /* MonitoringSingleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85F81DBF7AE900637547 /* MonitoringSingleTableViewCell.xib */; };
 		6B4C86011DBF83B200637547 /* MonitoringMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C86001DBF83B200637547 /* MonitoringMapViewController.swift */; };
+		6B4C86041DBFAFA700637547 /* ActionInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C86021DBFAFA700637547 /* ActionInfoTableViewCell.swift */; };
+		6B4C86051DBFAFA700637547 /* ActionInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C86031DBFAFA700637547 /* ActionInfoTableViewCell.xib */; };
 		6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B52B3741DA8676B00D632E1 /* AppDelegate.swift */; };
 		6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37B1DA8676B00D632E1 /* Assets.xcassets */; };
 		6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */; };
@@ -133,6 +135,8 @@
 		6B4C85F71DBF7AE900637547 /* MonitoringSingleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSingleTableViewCell.swift; sourceTree = "<group>"; };
 		6B4C85F81DBF7AE900637547 /* MonitoringSingleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringSingleTableViewCell.xib; sourceTree = "<group>"; };
 		6B4C86001DBF83B200637547 /* MonitoringMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringMapViewController.swift; sourceTree = "<group>"; };
+		6B4C86021DBFAFA700637547 /* ActionInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionInfoTableViewCell.swift; sourceTree = "<group>"; };
+		6B4C86031DBFAFA700637547 /* ActionInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionInfoTableViewCell.xib; sourceTree = "<group>"; };
 		6B52B3711DA8676B00D632E1 /* QPest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52B3741DA8676B00D632E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B52B37B1DA8676B00D632E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 			children = (
 				6B49ADA11DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift */,
 				6B49ADA21DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib */,
+				6B4C86021DBFAFA700637547 /* ActionInfoTableViewCell.swift */,
+				6B4C86031DBFAFA700637547 /* ActionInfoTableViewCell.xib */,
 			);
 			name = "TableView Cell";
 			sourceTree = "<group>";
@@ -781,6 +787,7 @@
 				6B52B37C1DA8676B00D632E1 /* Assets.xcassets in Resources */,
 				6B52B38B1DA869DD00D632E1 /* QPestTabBar.storyboard in Resources */,
 				6B52B39C1DA86D7000D632E1 /* MonotoringStoryboard.storyboard in Resources */,
+				6B4C86051DBFAFA700637547 /* ActionInfoTableViewCell.xib in Resources */,
 				6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */,
 				6B5C4F221DBAA751004E0D86 /* ResultsInfoTableViewCell.xib in Resources */,
 				6B52B3AA1DA87A2900D632E1 /* IdentificationMainTableViewCell.xib in Resources */,
@@ -837,6 +844,7 @@
 				DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */,
 				6B49AD991DB710F50079A242 /* ActionMainViewController.swift in Sources */,
 				DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */,
+				6B4C86041DBFAFA700637547 /* ActionInfoTableViewCell.swift in Sources */,
 				6B49ADAD1DB802F90079A242 /* IdentificationResultViewController.swift in Sources */,
 				6B52B3961DA86AB300D632E1 /* CustomTabAnimatedTransitioning.swift in Sources */,
 				6B49ADA91DB7DFC60079A242 /* PragueDataSource.swift in Sources */,

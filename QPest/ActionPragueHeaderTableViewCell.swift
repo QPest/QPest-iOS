@@ -10,7 +10,9 @@ import UIKit
 
 class ActionPragueHeaderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var pragueTitle: UILabel!
+    @IBOutlet weak var pragueScientificName: UILabel!
+    @IBOutlet weak var pragueCommonName: UILabel!
+    @IBOutlet weak var arrow: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

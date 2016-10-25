@@ -71,9 +71,9 @@
 		6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7073181DB6B711005ABB31 /* CircleMenu.framework */; };
 		6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */; };
 		DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */; };
-		DD0376761DB7988F00FF0B24 /* MapAnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */; };
 		DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */; };
 		DD03767A1DBA2CD900FF0B24 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0376791DBA2CD900FF0B24 /* opencv2.framework */; };
+		DD03767C1DBA50F100FF0B24 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03767B1DBA50F100FF0B24 /* MapAnnotation.swift */; };
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
 		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
@@ -151,9 +151,9 @@
 		6B7073181DB6B711005ABB31 /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
 		6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMenuViewController.swift; sourceTree = "<group>"; };
 		DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMainViewController.swift; sourceTree = "<group>"; };
-		DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotationViewController.swift; sourceTree = "<group>"; };
 		DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Euschistus_cascade_stage8.xml; sourceTree = "<group>"; };
 		DD0376791DBA2CD900FF0B24 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
+		DD03767B1DBA50F100FF0B24 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -570,7 +570,7 @@
 		DD0376741DB7987A00FF0B24 /* Annotation */ = {
 			isa = PBXGroup;
 			children = (
-				DD0376751DB7988F00FF0B24 /* MapAnnotationViewController.swift */,
+				DD03767B1DBA50F100FF0B24 /* MapAnnotation.swift */,
 			);
 			name = Annotation;
 			sourceTree = "<group>";
@@ -732,7 +732,6 @@
 				6B7073161DB68A99005ABB31 /* ConfigurationStandards.swift in Sources */,
 				6B52B3981DA86AF900D632E1 /* QPestIOSUtil.swift in Sources */,
 				6B49ADA31DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.swift in Sources */,
-				DD0376761DB7988F00FF0B24 /* MapAnnotationViewController.swift in Sources */,
 				DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */,
 				6B7072FC1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.swift in Sources */,
 				6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */,
@@ -750,6 +749,7 @@
 				6B49ADB31DB9B97D0079A242 /* SweetAlert.swift in Sources */,
 				6B52B3B71DA9323800D632E1 /* MonitoringInfoTableViewCell.swift in Sources */,
 				6B52B3BB1DA941EA00D632E1 /* MonitoringNotificationViewController.swift in Sources */,
+				DD03767C1DBA50F100FF0B24 /* MapAnnotation.swift in Sources */,
 				6B52B3751DA8676B00D632E1 /* AppDelegate.swift in Sources */,
 				6B52B3941DA86AAB00D632E1 /* CustomTabBarItem.swift in Sources */,
 				6B49ADB81DB9BEA70079A242 /* Question.swift in Sources */,

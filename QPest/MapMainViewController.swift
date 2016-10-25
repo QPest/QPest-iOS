@@ -24,7 +24,8 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     var regionRadius: CLLocationDistance = 1000
     var mapType : Int = 0
     
-    var annotations = [MKPointAnnotation]()
+    //var myAnnotations = [MKPointAnnotation]()
+    var annotations = [MapAnnotation]()
     var polygon : MKPolygon?
     var areaCoordinates = [MKPolygon]()
     
@@ -191,10 +192,10 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             let touchPoint = gestureRecognize.location(in: self.mapView)
             let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
             
-            let currentAnnotation = MKPointAnnotation()
+            let currentAnnotation = MapAnnotation(touchMapCoordinate)//MKPointAnnotation()
             
             currentAnnotation.title = "Vértice \(annotations.count)"
-            currentAnnotation.coordinate = touchMapCoordinate
+            // currentAnnotation.coordinate = touchMapCoordinate
             mapView.addAnnotation(currentAnnotation)
             
             annotations.append(currentAnnotation)
@@ -386,7 +387,7 @@ class MapMainViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
         // Start editing, createing shapes, etc
         let mapConfigViewGround = ConfigurationStandards.defaultStandards.prefferedVisualizationOfGround
-        print ("Edit \(mapConfigViewGround)")
+
         if mapConfigViewGround == false {
             drawPolygonsArea()
         }

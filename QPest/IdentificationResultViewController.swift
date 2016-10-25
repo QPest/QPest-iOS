@@ -33,7 +33,6 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.didIdentifyImage = true
         self.configueView()
         self.decision()
         self.setupTableView()

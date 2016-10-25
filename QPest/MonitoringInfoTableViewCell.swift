@@ -11,11 +11,11 @@ import UIKit
 class MonitoringInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var tagView: UIView!
-    
     @IBOutlet weak var monitoringTime: UILabel!
     @IBOutlet weak var monitoringTitle: UILabel!
     @IBOutlet weak var monitoringCount: UILabel!
-        
+    @IBOutlet weak var mapIcon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

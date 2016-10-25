@@ -666,6 +666,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="didClickTakeOtherImage:" destination="EqW-7y-x9T" eventType="touchUpInside" id="z6f-u7-3qV"/>
                                     <segue destination="v0E-MX-ex7" kind="unwind" unwindAction="unwindToVCNumber2WithSegue:" id="pbw-jh-dLK"/>
                                 </connections>
                             </button>
@@ -677,6 +678,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="didClickContinue:" destination="EqW-7y-x9T" eventType="touchUpInside" id="mVl-cw-PRg"/>
                                     <segue destination="v0E-MX-ex7" kind="unwind" unwindAction="unwindToVCWithSegue:" id="4c1-IZ-6Az"/>
                                 </connections>
                             </button>

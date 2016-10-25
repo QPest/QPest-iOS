@@ -82,6 +82,42 @@ class QPestIOSUtil: NSObject {
         defaults.set(status, forKey: "userAgreedTerms")
     }
 
+    class func getMonthName(month : Int) -> String{
+        
+        var newMonth : String = ""
+        
+        switch month {
+        case 1:
+            newMonth = "Janeiro"
+        case 2:
+            newMonth = "Fevereiro"
+        case 3:
+            newMonth = "Março"
+        case 4:
+            newMonth = "Abril"
+        case 5:
+            newMonth = "Maio"
+        case 6:
+            newMonth = "Junho"
+        case 7:
+            newMonth = "Julho"
+        case 8:
+            newMonth = "Agosto"
+        case 9:
+            newMonth = "Setembro"
+        case 10:
+            newMonth = "Outubro"
+        case 11:
+            newMonth = "Novembro"
+        case 12:
+            newMonth = "Dezembro"
+        default:
+            break
+        }
+        
+        return newMonth
+    }
+    
     
 }
 

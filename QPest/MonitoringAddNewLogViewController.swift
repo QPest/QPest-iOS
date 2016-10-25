@@ -8,13 +8,21 @@
 
 import UIKit
 import TextFieldEffects
+import PaperSwitch
+import CoreLocation
 
-class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
+class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+    
+    let locationManager : CLLocationManager = CLLocationManager()
+    var locationCoordinate : CLLocation = CLLocation(latitude: 0, longitude: 0)
+
+    @IBOutlet weak var localizationImageView: UIView!
+    @IBOutlet weak var localizationDescription: UILabel!
+    @IBOutlet weak var localizationTitle: UILabel!
+    @IBOutlet weak var paperSwitch: RAMPaperSwitch!
     
     @IBOutlet weak var quantityTextField: HoshiTextField!
     @IBOutlet weak var pragueTextField: HoshiTextField!
-    
-    var quantity : Int = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +31,9 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
         
         self.quantityTextField.delegate = self
         self.pragueTextField.delegate = self
+        
+        self.setupPaperSwitch()
+        self.setuplocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +90,12 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
 
         newLog.date = Date()
         newLog.prague.name = self.pragueTextField.text!
-        newLog.pragueQuantity = self.quantity
+        newLog.pragueQuantity = Int(self.quantityTextField.text!)!
+        newLog.setFormattedDate()
+        
+        if self.paperSwitch.isOn{
+            newLog.localization = self.getLocalization()
+        }
         
         MonitoringLogDataSource.defaultLogDataSource.addLog(log: newLog)
         
@@ -90,4 +106,43 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate {
        _ = self.navigationController?.popViewController(animated: true)
     }
     
+    func getLocalization() -> CLLocation{
+        return self.locationCoordinate
+    }
+    
+    private func setuplocation(){
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        
+        let newCoordinate = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        self.locationCoordinate = newCoordinate
+        
+    }
+    
+    private func setupPaperSwitch() {
+        
+        self.paperSwitch.isOn = true
+        
+        self.paperSwitch.animationDidStartClosure = {(onAnimation: Bool) in
+            
+            self.animateLabel(self.localizationTitle, onAnimation: onAnimation, duration: self.paperSwitch.duration)
+            self.animateLabel(self.localizationDescription, onAnimation: onAnimation, duration: self.paperSwitch.duration)
+        }
+    }
+    
+    private func animateLabel(_ label: UILabel, onAnimation: Bool, duration: TimeInterval) {
+        UIView.transition(with: label, duration: duration, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+            label.textColor = onAnimation ? UIColor.white : UIColor.colorWithHexString(hex: "1D1D26")
+            }, completion:nil)
+    }
 }

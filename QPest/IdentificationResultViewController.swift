@@ -10,7 +10,7 @@ import UIKit
 import TextFieldEffects
 import CoreLocation
 
-class IdentificationResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+class IdentificationResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imageTaken: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -100,7 +100,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     func setupKeyboardSettings(){
     
         self.hideKeyboardWhenTappedAround()
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(IdentificationResultViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(IdentificationResultViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
@@ -112,6 +112,8 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         newMonitoringLog.date = Date()
         newMonitoringLog.imageTaken = self.imageRecieved
         newMonitoringLog.localization = self.getLocation()
+        newMonitoringLog.prague.name = self.getPragueName()
+        newMonitoringLog.setFormattedDate()
         
         if let num = Int(self.quantityTextField.text!) {
             newMonitoringLog.pragueQuantity = num
@@ -119,9 +121,6 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         else{
             newMonitoringLog.pragueQuantity = 0
         }
-        
-        newMonitoringLog.prague.name = self.getPragueName()
-        newMonitoringLog.setFormattedDate()
         
         MonitoringLogDataSource.defaultLogDataSource.addLog(log: newMonitoringLog)
         
@@ -175,7 +174,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     }
     
     func getPragueName() -> String{
-        return "Euschistus"
+        return self.pragueIdentified.name
     }
     
     // MARK: Table View
@@ -262,7 +261,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         cell.backgroundColor = UIColor.colorWithHexString(hex: "4DCB72")
         cell.selectionStyle = .none
         
-        cell.label.text = "Nome da praga : Euschistus "
+        cell.label.text = "Nome da praga : " + self.pragueIdentified!.name
         cell.label.textColor = UIColor.white
         
         return cell
@@ -276,10 +275,13 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         cell.selectionStyle = .none
         
         self.quantityTextField = cell.quantityTextField
+        self.quantityTextField.delegate = self
         
         return cell
     }
     
+    // MARK: Keyboard
+
     func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -289,8 +291,6 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         }
     }
     
-    // MARK: Keyboard
-    
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
@@ -298,5 +298,9 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
             }
         }
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

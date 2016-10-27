@@ -15,6 +15,7 @@ class ImageViewController: UIViewController {
     var imageWasChosenFromLibrary : Bool = false
     
     var pragueIdentified : Prague!
+    var isPrague : Bool = Bool()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var discardButton: UIButton!
@@ -56,32 +57,68 @@ class ImageViewController: UIViewController {
 
     @IBAction func identifyImage(_ sender: UIButton) {
         // Path to the trained cascade for faces
-        let cascadePath = Bundle.main.path(forResource: "Euschistus_cascade_stage8", ofType: "xml")
+        let euschistus9Path = Bundle.main.path(forResource: "Euschistus_stage9", ofType: "xml")
+        let zellusPath = Bundle.main.path(forResource: "Zellus_stage16", ofType: "xml")
+        
+        let pathsPrague : [String:String] = [euschistus9Path! : "Euschistus"]
+        let pathsEnemy : [String:String] = [zellusPath! : "Zellus"]
         
         // Set size to scale down the image taken and save process time
         let scale = 200 / (imageView.image?.size.width)!
         let size = CGSize(width: 200, height: (imageView.image?.size.height)! * scale)
         let imageCropped = OpenCVWrapper.resize(imageView.image, newSize: size)
         
-        let imageDetect = OpenCVWrapper.detectCascade(imageCropped, withCascade: cascadePath)
-        //self.imageView.image = imageCropped
-        self.imageView.image = imageDetect
+        for (cascade, namePrague) in pathsPrague {
+            // Try to detect object in image
+            self.imageWasDetected = detectObject(cascade: cascade,
+                                                 imageCropped: imageCropped!,
+                                                 nameObject: namePrague)
+            
+            if self.imageWasDetected == true{
+                self.isPrague = true
+                break
+            }
+            
+        }
         
-        // Try to detect object in image
-        let objectDetected = OpenCVWrapper.cascadeDetected(imageCropped, withCascade: cascadePath)
+        if self.imageWasDetected == true {
+            // Continue
+        } else {
         
-        if objectDetected {
-            print("Detected")
-            self.imageWasDetected = true
-            self.createPragueWithName(name: "Euschistus")
-        }else{
-            print("Not detected")
-            self.imageWasDetected = false
+            for (cascade, namePrague) in pathsEnemy {
+                // Try to detect object in image
+                self.imageWasDetected = detectObject(cascade: cascade,
+                                                     imageCropped: imageCropped!,
+                                                     nameObject: namePrague)
+                
+                if self.imageWasDetected == true{
+                    self.isPrague = false
+                    break
+                }
+            }
+            
         }
         
         self.goToResults()
     }
 
+    private func detectObject(cascade: String, imageCropped: UIImage, nameObject: String) -> Bool{
+        let objectDetected = OpenCVWrapper.cascadeDetected(imageCropped, withCascade: cascade)
+        
+        if objectDetected {
+            print("Detected")
+            self.createPragueWithName(name: nameObject)
+            
+            let imageDetect = OpenCVWrapper.detectCascade(imageCropped, withCascade: cascade)
+            self.imageView.image = imageDetect
+            
+        }else{
+            print("Not detected")
+        }
+        
+        return objectDetected
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,6 +147,7 @@ class ImageViewController: UIViewController {
             destination.imageRecieved = self.imageView.image!
             destination.imageWasChosenFromLibrary = self.imageWasChosenFromLibrary
             destination.pragueIdentified = self.pragueIdentified
+            destination.ispragueIdentified = self.isPrague
         }
         
     }

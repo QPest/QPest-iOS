@@ -14,6 +14,8 @@ class ImageViewController: UIViewController {
     var imageWasDetected : Bool = Bool()
     var imageWasChosenFromLibrary : Bool = false
     
+    var pragueIdentified : Prague!
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var discardButton: UIButton!
     @IBOutlet weak var identifyButton: UIButton!
@@ -72,6 +74,7 @@ class ImageViewController: UIViewController {
         if objectDetected {
             print("Detected")
             self.imageWasDetected = true
+            self.createPragueWithName(name: "Euschistus")
         }else{
             print("Not detected")
             self.imageWasDetected = false
@@ -93,12 +96,22 @@ class ImageViewController: UIViewController {
         self.performSegue(withIdentifier: "goResults", sender: nil)
     }
     
+    func createPragueWithName(name : String){
+    
+        let newPrague : Prague = Prague()
+        newPrague.name = name
+        
+        self.pragueIdentified = newPrague
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goResults"){
             let destination = segue.destination as! IdentificationResultViewController
             destination.didIdentifyImage = self.imageWasDetected
             destination.imageRecieved = self.imageView.image!
             destination.imageWasChosenFromLibrary = self.imageWasChosenFromLibrary
+            destination.pragueIdentified = self.pragueIdentified
         }
         
     }

@@ -38,10 +38,11 @@ class MonitoringMapViewController: UIViewController, MKMapViewDelegate {
     
     func setupLocation(){
     
-        self.mapView.centerCoordinate = self.mapLocalization.coordinate
-        self.mapView.showsUserLocation = true
-        self.mapView.userLocation.title = "Localização da praga identificada"
-        self.mapView.delegate = self
+        let currentAnnotation = MKPointAnnotation()
+        
+        currentAnnotation.title = "Localização da praga identificada"
+        currentAnnotation.coordinate = self.mapLocalization.coordinate
+        mapView.addAnnotation(currentAnnotation)
     
     }
     

@@ -75,7 +75,7 @@ class MonitoringLogDataSource: NSObject {
 
         logThree.isNaturalEnemy = true
         logThree.pragueQuantity = 1
-        logThree.prague.name = "Inimigo Natural"
+        logThree.prague.name = "Zellus"
         logThree.date = Date() - 1.day
 
         logFour.isPrague = true

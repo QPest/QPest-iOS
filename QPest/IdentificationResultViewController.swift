@@ -23,6 +23,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
 
     var imageRecieved : UIImage = UIImage()
     var didIdentifyImage : Bool = Bool()
+    var ispragueIdentified : Bool = Bool()
     var pragueIdentified : Prague!
     
     var tableCount : Int = 0
@@ -110,6 +111,8 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
     
         let newMonitoringLog = MonitoringLog()
         newMonitoringLog.date = Date()
+        newMonitoringLog.isPrague = self.ispragueIdentified
+        newMonitoringLog.isNaturalEnemy = !(self.ispragueIdentified)
         newMonitoringLog.imageTaken = self.imageRecieved
         newMonitoringLog.localization = self.getLocation()
         newMonitoringLog.prague.name = self.getPragueName()
@@ -119,7 +122,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
             newMonitoringLog.pragueQuantity = num
         }
         else{
-            newMonitoringLog.pragueQuantity = 0
+            newMonitoringLog.pragueQuantity = 1
         }
         
         MonitoringLogDataSource.defaultLogDataSource.addLog(log: newMonitoringLog)
@@ -261,7 +264,16 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
         cell.backgroundColor = UIColor.colorWithHexString(hex: "4DCB72")
         cell.selectionStyle = .none
         
-        cell.label.text = "Nome da praga : " + self.pragueIdentified!.name
+        var prefix = "Nome d"
+        
+        if ispragueIdentified {
+            prefix += "a praga : "
+        
+        }else{
+            prefix += "o inimigo : "
+        }
+        
+        cell.label.text =  prefix + self.pragueIdentified!.name
         cell.label.textColor = UIColor.white
         
         return cell

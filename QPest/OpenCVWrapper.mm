@@ -115,20 +115,9 @@
     cascade.detectMultiScale(imageMat, objects, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
     
     BOOL objectDetected = NO;
-    for (int i = 0; i < objects.size(); i++) {
+    
+    if (objects.size() > 0){
         objectDetected = YES;
-        
-        int width = objects[i].width;// * 0.5;
-        int height = objects[i].height;// * 0.5;
-        
-        CGFloat x = objects[i].x + width;
-        CGFloat y = objects[i].y + height;
-        
-        cv::Point center(x, y);
-        cv::Size size(width,height);
-        cv::Scalar color = cv::Scalar(0, 50, 0);
-        cv::rectangle(imageMat, center, size, color, 2);
-        //cv::ellipse(imageMat, center, size, 0, 0, 360, color, 4, 8, 0);
     }
     
     return objectDetected;

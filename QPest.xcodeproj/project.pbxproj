@@ -34,7 +34,6 @@
 		6B4C85EF1DBE870B00637547 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */; };
 		6B4C85F21DBE881A00637547 /* QPestNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F11DBE881A00637547 /* QPestNotification.swift */; };
 		6B4C85F41DBE884400637547 /* NotificationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F31DBE884400637547 /* NotificationDataSource.swift */; };
-		6B4C85F61DBEAD4600637547 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4C85F51DBEAD4600637547 /* SwiftDate.framework */; };
 		6B4C85F91DBF7AE900637547 /* MonitoringSingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C85F71DBF7AE900637547 /* MonitoringSingleTableViewCell.swift */; };
 		6B4C85FA1DBF7AE900637547 /* MonitoringSingleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C85F81DBF7AE900637547 /* MonitoringSingleTableViewCell.xib */; };
 		6B4C86011DBF83B200637547 /* MonitoringMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C86001DBF83B200637547 /* MonitoringMapViewController.swift */; };
@@ -91,13 +90,14 @@
 		6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7073181DB6B711005ABB31 /* CircleMenu.framework */; };
 		6B70731C1DB6B873005ABB31 /* IdentificationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */; };
 		DD0376731DB712E800FF0B24 /* IdentificationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */; };
-		DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */; };
 		DD03767A1DBA2CD900FF0B24 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0376791DBA2CD900FF0B24 /* opencv2.framework */; };
 		DD03767C1DBA50F100FF0B24 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03767B1DBA50F100FF0B24 /* MapAnnotation.swift */; };
 		DD06DF381DAAE4B100BAC1A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */; };
 		DD06DF401DAAFE0A00BAC1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */; };
+		DD50C4AB1DC1B5A700B1474C /* Euschistus_cascade_stage8.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD50C4AA1DC1B5A700B1474C /* Euschistus_cascade_stage8.xml */; };
+		DD50C4AD1DC1B5C800B1474C /* Euschistus_stage9.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD50C4AC1DC1B5C800B1474C /* Euschistus_stage9.xml */; };
+		DD50C4AF1DC1B5D700B1474C /* Zellus_stage16.xml in Resources */ = {isa = PBXBuildFile; fileRef = DD50C4AE1DC1B5D700B1474C /* Zellus_stage16.xml */; };
 		DDED5ABE1DB3DD77009DAF69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */; };
-		DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */ = {isa = PBXBuildFile; fileRef = DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */; };
 		DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */; };
 		DDFA2AC61DAACC3A00BEF766 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
@@ -131,7 +131,6 @@
 		6B4C85ED1DBE870B00637547 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		6B4C85F11DBE881A00637547 /* QPestNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPestNotification.swift; sourceTree = "<group>"; };
 		6B4C85F31DBE884400637547 /* NotificationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDataSource.swift; sourceTree = "<group>"; };
-		6B4C85F51DBEAD4600637547 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		6B4C85F71DBF7AE900637547 /* MonitoringSingleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSingleTableViewCell.swift; sourceTree = "<group>"; };
 		6B4C85F81DBF7AE900637547 /* MonitoringSingleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringSingleTableViewCell.xib; sourceTree = "<group>"; };
 		6B4C86001DBF83B200637547 /* MonitoringMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringMapViewController.swift; sourceTree = "<group>"; };
@@ -191,15 +190,16 @@
 		6B7073181DB6B711005ABB31 /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
 		6B70731B1DB6B873005ABB31 /* IdentificationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMenuViewController.swift; sourceTree = "<group>"; };
 		DD0376721DB712E800FF0B24 /* IdentificationMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentificationMainViewController.swift; sourceTree = "<group>"; };
-		DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Euschistus_cascade_stage8.xml; sourceTree = "<group>"; };
 		DD0376791DBA2CD900FF0B24 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = QPest/opencv2.framework; sourceTree = "<group>"; };
 		DD03767B1DBA50F100FF0B24 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		DD06DF371DAAE4B100BAC1A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		DD06DF3F1DAAFE0A00BAC1A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD50C4AA1DC1B5A700B1474C /* Euschistus_cascade_stage8.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Euschistus_cascade_stage8.xml; sourceTree = "<group>"; };
+		DD50C4AC1DC1B5C800B1474C /* Euschistus_stage9.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Euschistus_stage9.xml; sourceTree = "<group>"; };
+		DD50C4AE1DC1B5D700B1474C /* Zellus_stage16.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Zellus_stage16.xml; sourceTree = "<group>"; };
 		DDED5ABB1DB3DD76009DAF69 /* QPest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QPest-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDED5ABC1DB3DD77009DAF69 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		DDED5ABD1DB3DD77009DAF69 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
-		DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt_tree.xml; sourceTree = "<group>"; };
 		DDFA2AC01DAAB76100BEF766 /* CameraManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CameraManager.framework; path = Carthage/Build/iOS/CameraManager.framework; sourceTree = "<group>"; };
 		DDFA2AC51DAACC3A00BEF766 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,7 +215,6 @@
 				6B70730F1DB64934005ABB31 /* TextFieldEffects.framework in Frameworks */,
 				6B7073191DB6B711005ABB31 /* CircleMenu.framework in Frameworks */,
 				DDFA2AC11DAAB76100BEF766 /* CameraManager.framework in Frameworks */,
-				DD03767E1DBF013600FF0B24 /* SwiftDate.framework in Frameworks */,
 				6B49ADB01DB953FE0079A242 /* PaperSwitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,8 +419,9 @@
 		6B52B38F1DA86A2900D632E1 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */,
-				DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */,
+				DD50C4AA1DC1B5A700B1474C /* Euschistus_cascade_stage8.xml */,
+				DD50C4AC1DC1B5C800B1474C /* Euschistus_stage9.xml */,
+				DD50C4AE1DC1B5D700B1474C /* Zellus_stage16.xml */,
 				6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */,
 				6B52B3801DA8676B00D632E1 /* Info.plist */,
 				6B52B3CA1DA9E72200D632E1 /* terms.txt */,
@@ -451,7 +451,6 @@
 		6B52B3AE1DA922C400D632E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD03767D1DBF013600FF0B24 /* SwiftDate.framework */,
 				6B49ADAE1DB953FE0079A242 /* PaperSwitch.framework */,
 				6B49ADAF1DB953FE0079A242 /* Segmentio.framework */,
 				6B7073181DB6B711005ABB31 /* CircleMenu.framework */,
@@ -773,13 +772,13 @@
 				6B49ADA41DB7DCE80079A242 /* ActionPragueHeaderTableViewCell.xib in Resources */,
 				6B4C85EB1DBE82C700637547 /* MonitoringEmptyTableViewCell.xib in Resources */,
 				6B52B3A01DA86D8E00D632E1 /* MapStoryboard.storyboard in Resources */,
-				DDED5AC01DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml in Resources */,
 				6B52B3B81DA9323800D632E1 /* MonitoringInfoTableViewCell.xib in Resources */,
 				6B52B37F1DA8676B00D632E1 /* LaunchScreen.storyboard in Resources */,
 				6B52B39E1DA86D8600D632E1 /* IdentificationStoryboard.storyboard in Resources */,
 				6B52B3CB1DA9E72200D632E1 /* terms.txt in Resources */,
 				6B5C4F321DBBF5DE004E0D86 /* IdentificationManulTableViewCell.xib in Resources */,
-				DD0376781DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml in Resources */,
+				DD50C4AB1DC1B5A700B1474C /* Euschistus_cascade_stage8.xml in Resources */,
+				DD50C4AD1DC1B5C800B1474C /* Euschistus_stage9.xml in Resources */,
 				6B49ADC61DB9C61D0079A242 /* SurveyHeaderTableViewCell.xib in Resources */,
 				6B52B3C31DA975A900D632E1 /* OnboardingStoryboard.storyboard in Resources */,
 				6B5C4F2E1DBAA7BD004E0D86 /* ResultsQuantityTableViewCell.xib in Resources */,
@@ -788,6 +787,7 @@
 				6B52B38B1DA869DD00D632E1 /* QPestTabBar.storyboard in Resources */,
 				6B52B39C1DA86D7000D632E1 /* MonotoringStoryboard.storyboard in Resources */,
 				6B4C86051DBFAFA700637547 /* ActionInfoTableViewCell.xib in Resources */,
+				DD50C4AF1DC1B5D700B1474C /* Zellus_stage16.xml in Resources */,
 				6B7072FD1DB5C7AD005ABB31 /* MonitoringHeaderTableViewCell.xib in Resources */,
 				6B5C4F221DBAA751004E0D86 /* ResultsInfoTableViewCell.xib in Resources */,
 				6B52B3AA1DA87A2900D632E1 /* IdentificationMainTableViewCell.xib in Resources */,

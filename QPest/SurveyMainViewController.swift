@@ -82,7 +82,7 @@ class SurveyMainViewController: UIViewController,UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedSurveyIndex = indexPath.row
-        self.goSurvey()
+        //self.goSurvey()
     }
     
     func generateCell(tableview : UITableView, index : NSIndexPath)->UITableViewCell{

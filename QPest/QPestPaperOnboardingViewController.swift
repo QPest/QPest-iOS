@@ -34,7 +34,6 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
     }
     
     private func setupContinueButton(){
-    
         self.view.bringSubview(toFront: self.continueButton)
         self.continueButton.layer.cornerRadius = 8
         self.continueButton.isHidden = true
@@ -45,7 +44,6 @@ class QPestPaperOnboardingViewController: UIViewController, PaperOnboardingDataS
         UIView.animate(withDuration: self.duration, delay: 0, options: [.curveEaseInOut], animations: { self.leftArrows.alpha = 1
             self.rightArrows.alpha = 1
             } , completion: self.fadeOut)
-
 }
     
     func fadeOut(finished: Bool) {

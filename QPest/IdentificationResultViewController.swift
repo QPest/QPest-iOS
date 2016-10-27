@@ -119,7 +119,7 @@ class IdentificationResultViewController: UIViewController, UITableViewDelegate,
             newMonitoringLog.pragueQuantity = num
         }
         else{
-            newMonitoringLog.pragueQuantity = 0
+            newMonitoringLog.pragueQuantity = 1
         }
         
         MonitoringLogDataSource.defaultLogDataSource.addLog(log: newMonitoringLog)

@@ -227,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6B49AD8F1DB70CDB0079A242 /* Action with Info */,
-				6B49AD911DB70CEF0079A242 /* Info */,
+				6B49AD911DB70CEF0079A242 /* Graph */,
 				6B49AD901DB70CEA0079A242 /* MIP */,
 				6B52B3D21DAA8CDD00D632E1 /* Survey */,
 				6B4C85E51DBD9C3200637547 /* Export */,
@@ -253,13 +253,13 @@
 			name = MIP;
 			sourceTree = "<group>";
 		};
-		6B49AD911DB70CEF0079A242 /* Info */ = {
+		6B49AD911DB70CEF0079A242 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
 				6B49AD941DB7108B0079A242 /* GeneralInfoMainViewController.swift */,
 				6B49AD9C1DB732A10079A242 /* GraphViewController.swift */,
 			);
-			name = Info;
+			name = Graph;
 			sourceTree = "<group>";
 		};
 		6B49ADA01DB7DCCC0079A242 /* TableView Cell */ = {
@@ -420,9 +420,9 @@
 		6B52B38F1DA86A2900D632E1 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */,
 				DDED5ABF1DB3E34D009DAF69 /* haarcascade_frontalface_alt_tree.xml */,
 				DD0376771DB7D6B400FF0B24 /* Euschistus_cascade_stage8.xml */,
-				6B52B37D1DA8676B00D632E1 /* LaunchScreen.storyboard */,
 				6B52B3801DA8676B00D632E1 /* Info.plist */,
 				6B52B3CA1DA9E72200D632E1 /* terms.txt */,
 			);

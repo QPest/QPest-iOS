@@ -66,7 +66,9 @@ class GraphViewController: UIViewController {
     
         var index : Int = 1
         
-        for newLog in MonitoringLogDataSource.defaultLogDataSource.monitoringLogs{
+        let logs = MonitoringLogDataSource.defaultLogDataSource.monitoringLogs.reversed()
+        
+        for newLog in logs{
         
             data.append(Double(newLog.pragueQuantity))
             labels.append("Log #" + String(index))

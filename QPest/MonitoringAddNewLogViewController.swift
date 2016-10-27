@@ -20,7 +20,6 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate, 
     @IBOutlet weak var localizationDescription: UILabel!
     @IBOutlet weak var localizationTitle: UILabel!
     @IBOutlet weak var paperSwitch: RAMPaperSwitch!
-    
     @IBOutlet weak var quantityTextField: HoshiTextField!
     @IBOutlet weak var pragueTextField: HoshiTextField!
     
@@ -95,6 +94,10 @@ class MonitoringAddNewLogViewController: UIViewController, UITextFieldDelegate, 
         
         if self.paperSwitch.isOn{
             newLog.localization = self.getLocalization()
+        }
+        
+        if newLog.pragueQuantity == 0{
+            newLog.pragueQuantity = 1
         }
         
         MonitoringLogDataSource.defaultLogDataSource.addLog(log: newLog)

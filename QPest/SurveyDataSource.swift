@@ -25,13 +25,13 @@ class SurveyDataSource: NSObject {
         let surveyOne = Survey()
         let surveyTwo = Survey()
         
-        surveyOne.title = "Titlo tres"
-        surveyOne.descriptionText = "Temos evidências de uma nova praga em sua região. Responda esse questionário e nos ajude"
-        surveyOne.category = "Novas"
+        surveyOne.title = "Questionário inicial"
+        surveyOne.descriptionText = "Nos ajuse a saber um pouco mais sobre você e seus terrenos"
+        surveyOne.category = "Inicial"
     
-        surveyTwo.title = "Mais um titulo"
-        surveyTwo.descriptionText = "Temos evidências de uma nova praga em sua região. Responda esse questionário e nos ajude ajude ajude ajude ajude ajude"
-        surveyTwo.category = "Velhas"
+        surveyTwo.title = "Nova praga"
+        surveyTwo.descriptionText = "Temos evidências de uma nova praga em sua região. Responda esse questionário e nos ajude"
+        surveyTwo.category = "Manejo de Pragas"
         
         self.surveys.append(surveyOne)
         self.surveys.append(surveyTwo)

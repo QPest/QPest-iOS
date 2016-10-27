@@ -28,7 +28,6 @@ class ImageViewController: UIViewController {
         }
         
         self.setupButtonsAppearance()
-
     }
 
     private func setupButtonsAppearance(){
@@ -103,7 +102,6 @@ class ImageViewController: UIViewController {
         
         self.pragueIdentified = newPrague
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goResults"){
